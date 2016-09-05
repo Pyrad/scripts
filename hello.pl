@@ -13,3 +13,4 @@ print "$year-$mon-$mday $hour:$min:$sec"."\n";
 print "Good bye"."\n";
 
 print "Few days are left"."\n";
+print "How precious they are"."\n";
