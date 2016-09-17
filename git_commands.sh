@@ -8,3 +8,6 @@ git branch
 git add $FILENAME
 git commit -m "Add file for first time"
 git push -u origin master
+
+### Download changes from remote
+git pull origin master
