@@ -5,7 +5,8 @@
 FILENAME="XXX.py"
 git status
 git branch
-git add $FILENAME
+# FILE_NAME could be a file or a directory
+git add $FILE_NAME
 git commit -m "Add file for first time"
 git push -u origin master
 
@@ -18,6 +19,10 @@ git clone git@github.com:Pyrad/scripts.git
 ### Download changes from remote
 git pull origin master
 
+### Remove a file
+# FILE_NAME could be a file or a directory
+git rm $FILE_NAME
+git commit -m "<Removed_A_File>"
 
 ### General steps
 echo "# c_cpp_notes" >> README.md
