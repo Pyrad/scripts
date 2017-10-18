@@ -20,6 +20,12 @@ print('{0:.3f}'.format(1.0/3))
 print('{0:_^11}'.format('hello'))
 print('{name} wrote {book}'.format(name='Swaroop', book='A Byte of Python'))
 
+fmt = '{0:15}${1:>6}'
+# Output is: 'Registration    $    35'
+# Field 0: left justify, pad to 15 chars
+# Field 1: right justify(use '>'), pad to 6 chars
+fmt.format('Registration', 35)
+
 # Replace implicit <CR>
 print('a', end=' ')
 print('b', end=' ')
@@ -429,6 +435,8 @@ print('mylist is', mylist) # different from shoplist since it's a copy
 
 
 # Operations in string
+print('')
+print('---Operations in string---')
 name = 'Swaroop'
 if name.startswith('Swa'):
 	print("Yes, the string starts with 'Swa'")
@@ -444,16 +452,68 @@ print(delimiter.join(mylist))
 
 
 
+# Class
+print('')
+print('---Class---')
+class Person:
+	def __init__(self, name):
+		self.name = name
+	def say_hi(self):
+		print('Hello, my name is', self.name)
+
+p = Person('Swaroop')
+print(p) # <__main__.Person object at 0x00000000025C9EF0>
+p.say_hi()
 
 
+class Robot:
+	'''This is a robot with a name'''
+	
+	population = 0
+	__ancestor = "ZEUS" # A private class member, with '__' as prefix
+	
+	def __init__(self, name):
+		''' Initialize data'''
+		self.name = name
+		print("(Initializing {})".format(self.name))
+		Robot.population += 1
+		
+	def die(self):
+		'''Destroy a robot'''
+		print("{} is being destroyed!".format(self.name))
+		Robot.population -= 1
+		if Robot.population == 0:
+			print("{} was the last one".format(self.name))
+		else:
+			print("There are still {:d} robots working.".format(Robot.population))
 
+	def say_hi(self):
+		''' Sincere greetings from robot
+		
+		No problem you could do it'''
+		print("Greetings, my masters call me {}".format(self.name))
+		
+	@classmethod
+	def how_many(cls):
+		''' Print current population'''
+		print("We have {:d} robots.".format(cls.population))
 
+print('')
+droid1 = Robot("R2-D2")
+droid1.say_hi()
+Robot.how_many()
+droid1.__class__.how_many() # Use __class__ to access classmethod
 
+droid2 = Robot("C-3PO")
+droid2.say_hi()
+Robot.how_many()
+droid2.__class__.how_many() # Use __class__ to access classmethod
 
-
-
-
-
+print("\nRobots can do some work here.\n")
+print("Robots have finished their work. So let's destroy them.")
+droid1.die()
+droid2.die()
+Robot.how_many()
 
 
 
