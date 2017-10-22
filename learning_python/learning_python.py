@@ -1,5 +1,6 @@
 import sys
 import os
+import pickle
 
 ### This script exits in github of Pyrad
 
@@ -518,16 +519,106 @@ Robot.how_many()
 
 
 
+# Inheritence of classes
+print('')
+print('---Inheritence of classes---')
+class SchoolMember:
+	''' Represent a member in school '''
+	def __init__(self, name, age):
+		self.name = name
+		self.age = age
+		print('(Initialized SchoolMember: {})'.format(self.name))
+		
+	def tell(self):
+		''' Tell me about details '''
+		print('Name: "{}" Age: "{}"'.format(self.name, self.age))
+
+class Teacher(SchoolMember):
+	''' Represent a teacher in school '''
+	### (1)If __init__ method in a child class is NOT defined
+	###    __init__ method of parent class will be called automatically
+	### (3)If __init__ method in a child class is defined
+	###    __init__ method in parent class should be called explicitly in child classes
+	###    since it will NOT be called automatically
+	def __init__(self, name, age, salary):
+		SchoolMember.__init__(self, name, age)
+		self.salary = salary
+		print('(Initialized Teacher: {})'.format(self.name))
+		
+	def tell(self):
+		SchoolMember.tell(self)
+		print('Salary: "{:d}"'.format(self.salary))
+
+class Student(SchoolMember):
+	''' Represent a student in school '''
+	def __init__(self, name, age, marks):
+		SchoolMember.__init__(self, name, age)
+		self.marks = marks
+		print('(Initialized Student: {})'.format(self.name))
+		
+	def tell(self):
+		SchoolMember.tell(self)
+		print('Marks: "{:d}"'.format(self.marks))
+
+t = Teacher('Mrs. Schrividya', 40, 30000)
+s = Student('Swaroop', 25, 75)
+
+# Print a blank line
+print()
+
+for member in [t, s]:
+	member.tell()
 
 
 
 
+### Input & output
+
+## Files
+print('')
+print('---Files---')
+
+poem_text = '''\
+(This is a temp file, which could be removed at will by Long Cai)
+Programming is func_name
+When the work is done
+if you wanna make your work also fun:
+	use Python!
+'''
+
+### File should be created outside 'C:\\' since no permission
+f = open('D:\\VirtualMachineShare\\poem.txt', mode='w')
+f.write(poem_text)
+f.close()
+
+f = open('D:\\VirtualMachineShare\\poem.txt') ## default is 'r', which refers to read mode
+lcnt = 0
+while True:
+	line = f.readline()
+	if len(line) == 0:
+		break
+	lcnt += 1 ### "lnct++" is C-like method, which is not applied to Python !!!
+	print(line, end='')
+f.close()
 
 
+## Pickle
+print('')
+print('---Pickle operations---')
 
+shoplistfile = 'D:\\VirtualMachineShare\\shoplist.data'
+shoplist = ['apple', 'mango', 'carrot']
 
+f = open(shoplistfile, mode='wb')
+### Use pickle to dump a object to a file for further use
+pickle.dump(shoplist, f)
+del shoplist
 
-
+# Read back from the storage
+f = open(shoplistfile, 'rb')
+# Use pickle to re-load the object from the file
+storedlst = pickle.load(f)
+print(storedlst)
 
 ### A flag to show the end of this Python script
 print(' ')
