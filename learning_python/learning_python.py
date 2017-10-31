@@ -1,6 +1,7 @@
 import sys
 import os
 import pickle
+from functools import reduce
 
 ### This script exits in github of Pyrad
 
@@ -619,6 +620,207 @@ f = open(shoplistfile, 'rb')
 # Use pickle to re-load the object from the file
 storedlst = pickle.load(f)
 print(storedlst)
+
+
+
+
+## Exceptions
+print('')
+print('---Exceptions---')
+
+class stringLengthException(Exception):
+	''' A customized exception '''
+	def __init__(self, length, atleast):
+		Exception.__init__(self)
+		self.length = length
+		self.atleast = atleast
+
+# Use a fixed string instead of inputing
+a_test_string = 'Good day today!'
+try:
+	text = a_test_string
+	if len(text) < 3:
+		raise stringLengthException(len(text), 3)
+	elif len(text) < 10:
+		raise stringLengthException(len(text), 10)
+	else:
+		raise stringLengthException(len(text), 100)
+except stringLengthException as ex:
+	print('stringLengthException: The input was {} long, except at least {}'.format(ex.length, ex.atleast))
+else:
+	# the else block of try statement will be executed if no exceptions thrown
+	print('You entered {}'.format(text))
+finally:
+	# the finally block of try statement will be executed no matter exceptions thrown or not
+	print('Insist doing something')
+
+
+
+
+## Passing tuples
+print('')
+print('---Passing tuples---')
+
+def return_a_tuple():
+	return (2, 'details')
+
+first_res, second_res = return_a_tuple()
+print('First results returned is {0} and the second is {1}'.format(first_res, second_res))
+
+
+
+
+## The quickest way to swap 2 values in Python
+print('')
+print('---The quickest way to swap 2 values in Python---')
+
+first_var = 5
+second_var = 8
+print('Before swap, the first variable is {0} and the second variable is {1}'.format(first_var, second_var))
+first_var, second_var = second_var, first_var
+print('After swap, the first variable is {0} and the second variable is {1}'.format(first_var, second_var))
+
+
+
+
+
+## Specail methods in a python class
+print('')
+print('---Specail methods in a python class---')
+class pronghorn:
+	def __init__(self, value):
+		self.m_value = value
+		print("This is the __init__ method of class 'pronghorn'")
+
+	def __del__(self):
+		print("This is the __del__ method of class 'pronghorn'")
+	
+	def __str__(self):
+		print("This is the __str__ method of class 'pronghorn'")
+	
+	def __lt__(self, other):
+		print("This is the __lt__ method of class 'pronghorn'")
+		return self.m_value < other.m_value
+	
+	def __gt__(self, other):
+		print("This is the __gt__ method of class 'pronghorn'")
+		return self.m_value > other.m_value
+	
+	def __le__(self, other):
+		print("This is the __le__ method of class 'pronghorn'")
+		return self.m_value <= other.m_value
+	
+	def __ge__(self, other):
+		print("This is the __ge__ method of class 'pronghorn'")
+		return self.m_value >= other.m_value
+	
+	def __eq__(self, other):
+		print("This is the __eq__ method of class 'pronghorn'")
+		return self.m_value == other.m_value
+	
+	def __cmp__(src, dst):
+		print("This is the __cmp__ method of class 'pronghorn'")
+		
+	def __len__(self):
+		print("This is the __len__ method of class 'pronghorn'")
+	
+	def __getitem__(self, key):
+		print("This is the __getitem__ method of class 'pronghorn'")
+
+
+
+print("Initialize 'phg_1'...")
+phg_1 = pronghorn(5)
+print()
+
+print("Initialize 'phg_2'...")
+phg_2 = pronghorn(3)
+print()
+
+print("Comparing 'phg_1' and 'phg_2'...")
+result = phg_1 == phg_2
+print("phg_1 equals phg_2 ?", result)
+print()
+
+print("Comparing 'phg_1' and 'phg_2'...")
+result = phg_1 > phg_2
+print("phg_1 is greater than phg_2 ?", result)
+print()
+
+print("Comparing 'phg_1' and 'phg_2'...")
+result = phg_1 <= phg_2
+print("phg_1 is less than or equal to phg_2 ?", result)
+print()
+
+
+
+## Lamda Expression
+print('')
+print('---Lamda Expression---')
+foo = [2, 18, 9, 22, 17, 24, 8, 12, 27]
+
+### Get numbers of multiple of 3
+# in python 2.x could be --> print(filter(lambda x: x % 3 == 0, foo))
+filterObject = filter(lambda x: x % 3 == 0, foo)
+flist = [item for item in filterObject] ### List Comprehension
+print(flist)
+
+### Simialr to filter operation above
+print([item for item in map(lambda x: x * 2 + 10, foo)])
+
+### Need to do import operation --> from functools import reduce
+## reduce returns an integer
+print(reduce(lambda x, y: x + y, foo))
+
+
+points = [{'x': 2, 'y': 3}, {'x': 4, 'y': 1}]
+points.sort(key = lambda i: i['y'])
+print(points)
+
+
+
+## List Comprehension
+print('')
+print('---List Comprehension---')
+
+listone = [2, 3, 4]
+listtwo = [2 * i for i in listone if i > 2]
+print(listtwo)
+
+
+
+## Variable-length arguments
+print('')
+print('---Variable-length arguments---')
+def powerSum(power, *args):
+	''' Return the sum of each argument raised to the specified power '''
+	res = 0
+	for i in args:
+		res += pow(i, power)
+	return res
+
+print("Variable-length arguments -> passing tuple")
+print(powerSum(2, 5, 6))
+print(powerSum(2, 10))
+todo_list = [2, 4, 6, 8]
+print(powerSum(*todo_list))
+
+
+def printDict(**dictArgs):
+	for key in dictArgs:
+		print("Key {0} --> Value {1}".format(key, dictArgs[key]))
+
+print("Variable-length arguments -> passing dict")
+myDict = {'Monday': 10, 'Tuesday': 30, 'Friday': 90}
+printDict(**myDict)
+
+## Assert statement
+assert len(todo_list) >= 1
+
+
+
+
+
 
 ### A flag to show the end of this Python script
 print(' ')
