@@ -6,7 +6,7 @@ FILENAME="XXX.py"
 git status
 git branch
 # FILE_NAME could be a file or a directory
-git add $FILE_NAME
+git add $FILE_NAME # or 'git add *'
 git commit -m "Add file for first time"
 # Or use '-a' option to add comments in the prompt-up
 git commit -a
