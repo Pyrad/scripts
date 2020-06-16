@@ -2,5 +2,5 @@
 
 import time
 print "Good day today"
-tmtag = time.asctime( time.localtime(time.time()))
-print "Local time: ", tmtag
+time_tag = time.asctime(time.localtime(time.time()))
+print "Local time: ", time_tag
