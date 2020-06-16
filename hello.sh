@@ -7,3 +7,8 @@ if [[ -d ${dname} ]]; then
 else
     echo "${dname} is NOT a directory"
 fi
+
+# Ways to check CentOS version
+lsb_release -d
+hostnamectl
+rpm -qa centos-release
