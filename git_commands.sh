@@ -33,3 +33,15 @@ git add README.md
 git commit -m "first commit"
 git remote add origin git@github.com:Pyrad/<REPO_NAME>.git
 git push -u origin master ###Before this you should create repo <REPO_NAME> first in github manually via website
+
+### Pull from origin
+git pull origin master # Equals to 'fetch + merge'
+# After pulled, use 'git status -uno' to check if there's any conflict
+# If there is, modify the conflicted files and then commit
+
+### Remove untracked files/dirs in a specified path
+git clean -f <path>
+### Remove untracked files/dirs in current path
+git clean -df
+### Tells which files will be removed, just give the information but not remove indeed
+git clean -n
