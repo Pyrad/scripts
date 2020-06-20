@@ -82,4 +82,30 @@ cd <PATH_TO_BOOST>/boost_1_72_0/
 
 
 
+##############################
+# Install newer version of gcc
+# take gcc8 as an example
+##############################
+# 1. Login as root
+#    $ su
+# 
+# 2. Install scl
+#    $ install centos-release-scl scl-utils-build
+# 
+# 3. check if there's the tool set in the repo list
+#    $ yum list all --enablerepo='centos-sclo-rh' | grep "devtoolset-"
+# 
+# 4. Install
+#    $ yum install -y devtoolset-8-toolchain
+#
+# 5. Must enable first, otherwise the newer version can't be found 
+#    $ scl enable devtoolset-8 bash
+#
+# 6. Check where it is installed
+#    $ rpm -qa | grep "gcc"
+#
+#    For example, it might be installed into path below:
+#    /opt/rh/devtoolset-8/root/usr/bin/
+
+
 
