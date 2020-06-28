@@ -108,4 +108,17 @@ cd <PATH_TO_BOOST>/boost_1_72_0/
 #    /opt/rh/devtoolset-8/root/usr/bin/
 
 
+##############################
+# Install build-essentials for ubuntu
+##############################
+1. Step 1: Installing compilers using apt command
+$ sudo apt-get update
+$ sudo apt-get upgrade
+$ sudo apt-get install build-essential
+
+2. Step 2: Installing the dev man pages on a Ubuntu Linux
+$ sudo apt-get install manpages-dev man-db manpages-posix-dev
+
+3. Step 3: Installing the X11 development compilers
+$ sudo apt install libx11-dev
 
