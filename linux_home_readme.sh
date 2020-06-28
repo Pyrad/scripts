@@ -122,3 +122,41 @@ $ sudo apt-get install manpages-dev man-db manpages-posix-dev
 3. Step 3: Installing the X11 development compilers
 $ sudo apt install libx11-dev
 
+####################################
+# Gvim can not be compiled on Ubuntu
+####################################
+# One case I encountered is that I need to install libxaw7-dev,
+# it will install some file to /usr/include/X11/Xaw/*. (using sudo apt-get install libxaw7-dev)
+# While if I used "apt-cache search xaw", libxaw7-dev didn't showed up, very strange.
+# Finally I realized that the some packages in the mirror that my OS referred to is missing,
+# so I go to the Ali mirror(https://developer.aliyun.com/mirror/ubuntu?spm=a2c6h.13651102.0.0.3e221b11TjzTEt)
+# to change the source.list, after that I update the apt using "apt-get update", then I again searched it
+# using command "apt-cache search xaw", and it showed up!!! What a shit mirror I used!!
+#
+# Here are the content of /etc/apt/source.list for Ubuntu 20.04 LTS
+# -----------------------
+# deb http://mirrors.aliyun.com/ubuntu/ focal main restricted universe multiverse
+# deb-src http://mirrors.aliyun.com/ubuntu/ focal main restricted universe multiverse
+# 
+# deb http://mirrors.aliyun.com/ubuntu/ focal-security main restricted universe multiverse
+# deb-src http://mirrors.aliyun.com/ubuntu/ focal-security main restricted universe multiverse
+# 
+# deb http://mirrors.aliyun.com/ubuntu/ focal-updates main restricted universe multiverse
+# deb-src http://mirrors.aliyun.com/ubuntu/ focal-updates main restricted universe multiverse
+# 
+# deb http://mirrors.aliyun.com/ubuntu/ focal-proposed main restricted universe multiverse
+# deb-src http://mirrors.aliyun.com/ubuntu/ focal-proposed main restricted universe multiverse
+# 
+# deb http://mirrors.aliyun.com/ubuntu/ focal-backports main restricted universe multiverse
+# deb-src http://mirrors.aliyun.com/ubuntu/ focal-backports main restricted universe multiverse
+
+# -----------------------
+# Final configure command
+# ./configure --with-features=huge --enable-python3interp --with-python3-config-dir=/home/pyrad/procs/python38/lib/python3.8/config-3.8-x86_64-linux-gnu --with-tlib=ncurses --enable-fontset --enable-perlinterp --enable-cscope --enable-multibyte --prefix=/home/pyrad/procs/vim82 --enable-gui=gtk3 --with-compiledby="Pyrad Selong"
+# make
+# make install
+#
+# [Note] that use gtk3 on condition that libgtk-3-dev has already been installed
+
+
+
