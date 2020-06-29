@@ -193,3 +193,15 @@ $ sudo apt install libx11-dev
 #    --> To github.com:Pyrad/project_cig.git
 #    -->    4cc5a30..40a473d  HEAD -> master
 
+
+######################################################
+# "aclocal not found" error when compiling cgdb
+######################################################
+# when compiling cgdb, it maybe complains that "aclocal" is not found, as below
+#    [pyrad@ssea-ubuntu cgdb-master]$ ./autogen.sh 
+#    -- Update configure.in to reflect the new version number
+#    -- Running aclocal
+#    ./autogen.sh: 15: aclocal: not found
+#    
+# This maybe the reason that the 'automake' is not installed in machine, so
+#    $ sudo apt-get install automake
