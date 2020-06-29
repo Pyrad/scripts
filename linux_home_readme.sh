@@ -160,3 +160,36 @@ $ sudo apt install libx11-dev
 
 
 
+### git push error
+## Once encounter the "Internal Server Error" below, try to use the following commands
+# -------------------------------------
+#      [pyrad@ssea-ubuntu project_cig]$ git push -u origin master 
+#      Enumerating objects: 5, done.
+#      Counting objects: 100% (5/5), done.
+#      Compressing objects: 100% (3/3), done.
+#      Writing objects: 100% (3/3), 332 bytes | 166.00 KiB/s, done.
+#      Total 3 (delta 2), reused 0 (delta 0)
+#      remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+#      remote: Internal Server Error
+#      To github.com:Pyrad/project_cig.git
+#       ! [remote failure]  master -> master (remote failed to report status)
+#      error: failed to push some refs to 'git@github.com:Pyrad/project_cig.git'
+# -------------------------------------
+# 1. Rebase
+#    $ git pull --rebase origin master
+#
+#    --> From github.com:Pyrad/project_cig
+#    --> * branch            master     -> FETCH_HEAD
+#    --> Current branch master is up to date.
+# 2. Push again
+#    $ git push origin HEAD:master
+#
+#    --> Enumerating objects: 5, done.
+#    --> Counting objects: 100% (5/5), done.
+#    --> Compressing objects: 100% (3/3), done.
+#    --> Writing objects: 100% (3/3), 332 bytes | 166.00 KiB/s, done.
+#    --> Total 3 (delta 2), reused 0 (delta 0)
+#    --> remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+#    --> To github.com:Pyrad/project_cig.git
+#    -->    4cc5a30..40a473d  HEAD -> master
+
