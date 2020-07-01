@@ -205,3 +205,15 @@ $ sudo apt install libx11-dev
 #    
 # This maybe the reason that the 'automake' is not installed in machine, so
 #    $ sudo apt-get install automake
+
+######################################################
+# Install fonts in linux without root privilege
+######################################################
+# 1. Create directory ~/.fonts, and download font files inside
+#    mkdir ~/.fonts
+#    cp <*.ttf> ~/.fonts/
+
+# 2. Execute command fc-cache
+#    fc-cache -vf ~/.fonts
+
+
