@@ -69,3 +69,8 @@ git add -A
 git commit -m "XXXXX"
 git push (or use git push origin <NEW_BRANCH_NAME>)
 
+### Create a local branch tracking a branch from remote 
+# If a branch already exists in remote repo, and you would like to create a branch
+# in local to track it, use command below
+git checkout --track origin/<BRANCH_NAME>
+
