@@ -74,3 +74,9 @@ git push (or use git push origin <NEW_BRANCH_NAME>)
 # in local to track it, use command below
 git checkout --track origin/<BRANCH_NAME>
 
+
+### A new behavior was introduced in Git2.16, which makes 'git branch'
+### shows the result like command 'less' behaves, and this was set to
+### default since then.
+### So in order to change this back to old behavior, use below
+git config --global pager.branch false
