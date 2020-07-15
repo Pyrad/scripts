@@ -217,3 +217,17 @@ $ sudo apt install libx11-dev
 #    fc-cache -vf ~/.fonts
 
 
+######################################################
+# VM palyer drag-and-drop issue
+######################################################
+# After copying files in windows(host), if you switch to
+# linux(guest, virtual machine), then the VM Player will
+# automatically copy the file from windows to linux, which is
+# to say VM Player will automatically copy files from host
+# to guest without your permission!!
+# Terrible!
+# I have not figured out a solution to disable it, but now
+# files will be copied to the following directoies, which can
+# be deleted to free some space
+# Dir1: /var/run/vmblock-fuse/blockdir/*
+# Dir2: ~/.cache/vmware/drag_and_drop/*
