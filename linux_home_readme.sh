@@ -231,3 +231,25 @@ $ sudo apt install libx11-dev
 # be deleted to free some space
 # Dir1: /var/run/vmblock-fuse/blockdir/*
 # Dir2: ~/.cache/vmware/drag_and_drop/*
+
+######################################################
+# OpenSUSE packages installed by root
+######################################################
+  8  2020-07-06 17:07:21 zypper install -t pattern devel_C_C++
+ 21  2020-07-09 08:49:02 zypper install gvim
+ 23  2020-07-09 08:49:35 zypper install tkdiff
+ 57  2020-07-09 09:14:05 zypper install p7zip
+ 61  2020-07-09 13:45:56 zypper install libX11-devel
+ 77  2020-07-10 13:05:42 zypper install libXaw7
+ 78  2020-07-10 13:06:16 zypper install libXaw7-debuginfo 
+ 80  2020-07-10 13:07:57 zypper install libXaw-devel
+ 83  2020-07-10 13:28:55 zypper install libXdmcp-devel
+ 85  2020-07-10 13:29:33 zypper install libnsl-devel
+ 89  2020-07-10 13:36:41 zypper install libelf-devel
+ 91  2020-07-13 08:57:03 zypper install gnome-terminal
+ 94  2020-07-13 09:09:13 zypper install readline-devel
+ 97  2020-07-13 09:11:08 zypper install readline6
+ 98  2020-07-13 09:11:27 zypper install libreadline7
+100  2020-07-13 09:12:34 zypper install readline-devel
+105  2020-07-15 08:48:20 zypper install gitg
+108  2020-07-20 08:37:25 history | grep "zypper install" >> /home/pyrad/temp/packages.to.install 
