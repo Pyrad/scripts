@@ -74,6 +74,16 @@ git push (or use git push origin <NEW_BRANCH_NAME>)
 # in local to track it, use command below
 git checkout --track origin/<BRANCH_NAME>
 
+### Merge code in branch B to branch A
+# Step 1. Switch to branch A
+git checkout <BRANCH_A>
+# Step 2. Maks sure branch A is clean and up to date
+git status
+git pull
+# Step 3. Merge code from branch B
+git merge <BRANCH_B>
+# Step 4. Upload code changes to remote
+git push
 
 ### A new behavior was introduced in Git2.16, which makes 'git branch'
 ### shows the result like command 'less' behaves, and this was set to
