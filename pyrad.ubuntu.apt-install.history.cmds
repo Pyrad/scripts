@@ -1,0 +1,52 @@
+    5  sudo apt-get install build-essential 
+   10  sudo apt-get install cmake
+   11  sudo apt-get install manpages-dev man-db manpages-posix-dev 
+   45  sudo apt-get install git
+  115  sudo apt-get install libx11-dev 
+  117  sudo apt-get install tcl-dev tk-dev
+  167  sudo apt-get install bzip2
+  169  sudo apt-get install libbz2-dev
+  172  sudo apt-get install _bz2->bzip2-devel.i686
+  178  sudo apt-get install libgdbm-dev
+  182  sudo apt-get install libgdbm-dev
+  183  sudo apt-get install liblzma-dev
+  185  sudo apt-get install libsqlite3-dev
+  196  sudo apt-get install libssl-dev
+  198  sudo apt-get install libreadline-dev
+  200  sudo apt-get install libncurses-dev
+  203  sudo apt-get install libpython3-dev
+  206  sudo apt-get install libncurses*-dev
+  208  sudo apt-get install openssl
+  214  sudo apt-get install vim-gtk3
+  219  sudo apt-get install libgtk-3-0
+  244  sudo apt-get install cgdb
+  406  sudo apt-get install libx11-dev libxtst-dev
+  412  sudo apt-get install libx11-dev
+  414  sudo apt-get install vim-gnome
+  416  sudo apt-get install vim-gtk3
+  417  sudo apt-get install vim-gui-common 
+  418  sudo apt-get install vim-common 
+  419  sudo apt-get install vim-runtime 
+  425  sudo apt-get install libxt6
+  426  sudo apt-get install libxt-dev
+  427  sudo apt-get install libxext-dev
+  428  sudo apt-get install libxtst-dev
+  429  sudo apt-get install libxtst6
+  445  sudo apt-get install libx11-dev
+  446  sudo apt-get install dbus-x11 
+  447  sudo apt-get install libxaw7
+  448  sudo apt-get install tk-dev 
+  449  sudo apt-get install x11-utils 
+  451  sudo apt-get install libxaw7-dev
+  453  sudo apt-get install libxpm4
+  479  sudo apt-get install libxaw7-dev
+  482  sudo apt-get install libperl-dev
+  484  sudo apt-get install libxpm-dev
+  486  sudo apt-get install libxpm-dev
+  494  sudo apt-get install libgtk-3-dev 
+  497  sudo apt-get install libxfont-dev 
+  500  sudo apt-get install libxaw7-dev
+  501  sudo apt-get install nextaw
+  508  sudo apt-get install libx11-dev 
+  760  ./b2 install --prefix=/home/pyrad/procs/boost_1_73_0
+  806  git commit -m "add comments for installing GVIM from source"
