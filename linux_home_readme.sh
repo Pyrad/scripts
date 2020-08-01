@@ -233,6 +233,11 @@ $ sudo apt install libx11-dev
 # Dir2: ~/.cache/vmware/drag_and_drop/*
 
 ######################################################
+#Use feh instead of display as image viewer
+######################################################
+zypper install feh
+
+######################################################
 # OpenSUSE packages installed by root
 ######################################################
   8  2020-07-06 17:07:21 zypper install -t pattern devel_C_C++
