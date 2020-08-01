@@ -80,6 +80,12 @@ cd <PATH_TO_BOOST>/boost_1_72_0/
 	       --with-tcltk-libs="-L/home/pyrad/procs/tcl8.6.10/lib -ltcl8.6 -L/home/pyrad/procs/tk8.6.10/lib -ltk8.6"
 4. make && make install
 
+######################################################
+# Setups for vim
+######################################################
+1. First of first, git clone Vundle plugin manager
+   git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+
 
 
 ##############################
