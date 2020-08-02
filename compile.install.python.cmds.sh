@@ -1,5 +1,6 @@
 #!/bin/sh -
 
+TIMECHK0=$SECONDS
 ########################################
 #### The following must be specified
 ########################################
@@ -10,6 +11,12 @@ TK_HOME='/home/pyrad/procs/tk8.6.10'
 PREFIX_BASE='/home/pyrad/temp/tmpprocs'
 #### Where is the tarball?
 TARBALL='/home/pyrad/temp/tmpswap/Python-3.8.3.tar.xz'
+#### Test mode? If it is, configure, make and
+#### make install will be skipped to avoid wasting
+#### time for test
+TESTMODE=1
+#### wait time for reminder
+WAIT_SEC=1
 
 
 # tcl & tk include files & libs
@@ -85,33 +92,63 @@ if [[ ! -d $BUILD_PATH ]]; then
     exit
 fi
 
+TIMECHK_BEFORE_CONFIG=$SECONDS
 # Step 3.0: Change to build path and configure
 cd $BUILD_PATH
 echo -e "[${INFO}] Change dir to $BUILD_PATH"
 echo -e "[$WARNING] Takes a while to configure..."
-sleep 3
+sleep $WAIT_SEC
 if [[ -e ./configure ]]; then
-    ./configure --prefix="${INSTALL_TO_PATH}" \
-        --enable-optimizations --with-lto \
-        --enable-shared --with-tcltk-includes="-I${TCL_INC} -I${TK_INC}" \
-        --with-tcltk-libs="-L${TCL_LIB} -L${TK_LIB} -l${TCL_LIB_NAME} -l${TK_LIB_NAME}"
+    if [[ $TESTMODE -ne 1 ]]; then
+        echo "[$INFO] Start configuration"
+        ./configure --prefix="${INSTALL_TO_PATH}" \
+            --enable-optimizations --with-lto \
+            --enable-shared --with-tcltk-includes="-I${TCL_INC} -I${TK_INC}" \
+            --with-tcltk-libs="-L${TCL_LIB} -L${TK_LIB} -l${TCL_LIB_NAME} -l${TK_LIB_NAME}"
+        echo -e "[${INFO}] Configuration done"
+    else
+        echo -e "[$WARNING] Test-mode, skip configuration"
+    fi
 else
     echo -e "[$ERROR] Can't find configure file, exit"
     exit
 fi
+TIMECHK_AFTER_CONFIG=$SECONDS
 
-echo -e "[${INFO}] Configuration done"
 echo -e "[$WARNING] Takes a while to build..."
-sleep 3
-make
+sleep $WAIT_SEC
+TIMECHK_BEFORE_MAKE=$SECONDS
+if [[ $TESTMODE -ne 1 ]]; then
+    echo -e "[${INFO}] Start building..."
+    make
+    echo -e "[${INFO}] Build done"
+else
+    echo -e "[$WARNING] Test-mode, skip building"
+fi
+TIMECHK_AFTER_MAKE=$SECONDS
 
-echo -e "[${INFO}] Build done"
 echo -e "[$WARNING] Takes a while to install..."
-sleep 3
-make install
-
-echo -e "[${INFO}] Installation done"
+sleep $WAIT_SEC
+TIMECHK_BEFORE_MAKEINSTALL=$SECONDS
+if [[ $TESTMODE -ne 1 ]]; then
+    echo -e "[${INFO}] Start installing..."
+    make install
+    echo -e "[${INFO}] Installation done"
+else
+    echo -e "[$WARNING] Test-mode, skip Installation"
+fi
+TIMECHK_AFTER_MAKEINSTALL=$SECONDS
 
 # Final step, go back to where I came from
 echo -e "[${INFO}] All finished, go back to original path"
 cd $curpath
+
+t1=`expr $TIMECHK_AFTER_CONFIG - $TIMECHK_BEFORE_CONFIG`
+t2=`expr $TIMECHK_AFTER_MAKE - $TIMECHK_BEFORE_MAKE`
+t3=`expr $TIMECHK_AFTER_MAKEINSTALL - $TIMECHK_BEFORE_MAKEINSTALL`
+echo -e "[$INFO]"
+echo -e "[$INFO] -------------------------"
+echo -e "[$INFO] Configuration time: $t1"
+echo -e "[$INFO] Building time: $t2"
+echo -e "[$INFO] Install time: $t3"
+echo -e "[$INFO] -------------------------"
