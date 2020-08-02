@@ -865,14 +865,20 @@ function s:setup_winsizepos()
     " Set window size(by longc)
     ""set lines=50 columns=150
     ""set lines=33 columns=100
-    set lines=33 columns=80
+    set lines=25 columns=82
     " Set window position(by longc)
+    " See help --> :h winpos
     ""winpos 500 50 
     ""winpos 400 40 
-    winpos 300 30 
+    ""winpos 300 30 
+    winpos 572 36
 endfunction " End of function s:setup_winsizepos
 
 
+" ------------------------------------------------------
+" This function implements main flow to call other
+" utility functions
+" ------------------------------------------------------
 function s:main_proc()
     call s:setup_vundle()
     call s:setup_general()
@@ -884,8 +890,12 @@ function s:main_proc()
     ""call s:setup_incsearch()
     ""call s:setup_vimcolorscheme()
     ""call s:setup_youcompleteme()
-    ""call s:setup_winsizepos()
+    call s:setup_winsizepos()
 endfunction " End of function s:main_proc
 
+" ------------------------------------------------------
+" Call the main proc function as the only one
+" entry for setup
+" ------------------------------------------------------
 call s:main_proc()
 
