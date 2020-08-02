@@ -1,27 +1,26 @@
 #!/bin/sh -
 
-# Base path where all programs are installed into
-PREFIX_BASE='/home/pyrad/temp/tmpprocs'
-
-# Python version to install
-PY_VERSION='38' #PY_VERSION='27'
-
-# Path to install for python
-PREFIX_PYTHON='${PREFIX_BASE}/python${PY_VERSION}'
-
-# Need tcl & tk
+########################################
+#### The following must be specified
+########################################
+#### Prerequisites: tcl & tk
 TCL_HOME='/home/pyrad/procs/tcl8.6.10'
+TK_HOME='/home/pyrad/procs/tk8.6.10'
+#### Base path where all programs are installed into
+PREFIX_BASE='/home/pyrad/temp/tmpprocs'
+#### Where is the tarball?
+TARBALL='/home/pyrad/temp/tmpswap/Python-3.8.3.tar.xz'
+
+
+# tcl & tk include files & libs
 TCL_INC="$TCL_HOME/include"
 TCL_LIB="$TCL_HOME/lib"
 TCL_LIB_NAME="tcl8.6"
 
-TK_HOME='/home/pyrad/procs/tk8.6.10'
 TK_INC="$TK_HOME/include"
 TK_LIB="$TK_HOME/lib"
 TK_LIB_NAME="tk8.6"
 
-# Where is the tarball?
-TARBALL='/home/pyrad/temp/tmpswap/Python-3.8.3.tar.xz'
 # Path of tarball
 TARBALL_PATH=`dirname $TARBALL`
 # Name of tarball
@@ -101,13 +100,17 @@ else
     exit
 fi
 
+echo -e "[${INFO}] Configuration done"
 echo -e "[$WARNING] Takes a while to build..."
 sleep 3
 make
 
+echo -e "[${INFO}] Build done"
 echo -e "[$WARNING] Takes a while to install..."
 sleep 3
 make install
+
+echo -e "[${INFO}] Installation done"
 
 # Final step, go back to where I came from
 echo -e "[${INFO}] All finished, go back to original path"
