@@ -264,3 +264,9 @@ zypper install feh
 100  2020-07-13 09:12:34 zypper install readline-devel
 105  2020-07-15 08:48:20 zypper install gitg
 108  2020-07-20 08:37:25 history | grep "zypper install" >> /home/pyrad/temp/packages.to.install 
+
+######################################################
+# 2 web page showing how to plot binary tree with graphviz
+######################################################
+https://www.cnblogs.com/rocketfan/archive/2009/09/10/1564232.html
+https://blog.nanpuyue.com/2019/054.html
