@@ -37,6 +37,12 @@ example:
 Umount:
     umount /mnt/share/VirtualBoxShare/
 
+####################################################
+# Needs the following when building cgdb from source
+####################################################
+apt-get install autotools-dev
+apt-get install automake
+
 
 ##########################
 # Install boost in linux
