@@ -26,6 +26,17 @@ gsettings set org.gnome.desktop.interface text-scaling-factor 1.5
 ## unmount
 # umount /mnt/hgfs/vmWinShare
 
+#####################################
+# Mount shared folder in VirtualBox
+#####################################
+Command:
+    mount -t vboxsf <ShareFolerNameInWindows> <MountPointInLinux>
+example:
+    mount -t vboxsf Ubuntu20.04LTS.WinLinuxShare /mnt/share/VirtualBoxShare/
+
+Umount:
+    umount /mnt/share/VirtualBoxShare/
+
 
 ##########################
 # Install boost in linux
