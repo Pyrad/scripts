@@ -26,6 +26,16 @@ git pull origin master
 git rm $FILE_NAME
 git commit -m "<Removed_A_File>"
 
+### Use GUI to check diffs, specify one of the following GUIs
+### Check all tracked file (not staged)
+git difftool -t <kompare|meld|vimdiff|...>
+### Check a single tracked file (not staged)
+git difftool -t <kompare|meld|vimdiff|...> <FILE_NAME>
+### Check all tracked file (staged)
+git difftool -t <kompare|meld|vimdiff|...> --staged
+### Check a single tracked file (not staged)
+git difftool -t <kompare|meld|vimdiff|...> --staged <FILE_NAME>
+
 ### General steps
 echo "# c_cpp_notes" >> README.md
 git init
