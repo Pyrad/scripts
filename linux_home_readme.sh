@@ -42,6 +42,8 @@ Umount:
 ####################################################
 apt-get install autotools-dev
 apt-get install automake
+apt-get install flex
+apt-get install texinfo # for makeinfo
 
 
 ##########################
