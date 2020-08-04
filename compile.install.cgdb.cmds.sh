@@ -5,9 +5,9 @@ TIMECHK0=$SECONDS
 #### The following must be specified
 ########################################
 #### Base path where all programs are installed into
-PREFIX_BASE='/home/pyrad/temp/tmpprocs'
+PREFIX_BASE='/home/pyrad/procs'
 #### Where is the tarball?
-TARBALL='/home/pyrad/temp/tmpswap/cgdb-master.zip'
+TARBALL='/home/pyrad/swap/cgdb-master.zip'
 #### Install to where?
 INSTALL_DIR_NAME="cgdb"
 #### Test mode? If it is, configure, make and
@@ -92,9 +92,9 @@ echo -e "[$WARNING] Executing autogen.sh first ..."
 sleep $WAIT_SEC
 if [[ -e ./autogen.sh ]]; then
     if [[ $TESTMODE -ne 1 ]]; then
-        echo "[$INFO] Start autogen"
+        echo -e "[$INFO] Start autogen"
         bash ./autogen.sh
-        echo "[$INFO] End autogen"
+        echo -e "[$INFO] End autogen"
     else
         echo -e "[$WARNING] Test-mode, skip autogen"
     fi
