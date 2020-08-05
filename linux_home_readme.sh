@@ -45,6 +45,11 @@ apt-get install automake
 apt-get install flex
 apt-get install texinfo # for makeinfo
 
+####################################################
+# [VIM] Delete specific lines matching a pattern
+####################################################
+Command: <startLineNum>,<endLineNum>g/Keyword/d
+32,71g/keywordstr/d
 
 ##########################
 # Install boost in linux
