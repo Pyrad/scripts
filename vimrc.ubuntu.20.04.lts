@@ -395,7 +395,7 @@ function s:setup_general()
     ""set guifont=Monospace\ 18
     ""set guifont=Source\ Code\ Pro\ for\ Powerline\ Regular\ 16
     ""set guifont=Consolas:h14:cANSI
-    set guifont=Inconsolata\ for\ Powerline\ 22
+    ""set guifont=Inconsolata\ for\ Powerline\ 22
 
     "Don't wrap lines
     set nowrap
