@@ -318,3 +318,28 @@ vim-runtime x11-utils  openssl-dev
 
 Note: libssl1.1, openssl, openssl-dev are for python pip, pip may
       not work without them
+
+###############################################################
+# Use domestic package mirrors for Python
+###############################################################
+Mirror URLs:
+http://pypi.douban.com/simple/ 豆瓣 
+http://mirrors.aliyun.com/pypi/simple/ 阿里 
+http://pypi.hustunique.com/simple/ 华中理工大学 
+http://pypi.sdutlinux.org/simple/ 山东理工大学 
+http://pypi.mirrors.ustc.edu.cn/simple/ 中国科学技术大学
+https://pypi.tuna.tsinghua.edu.cn/simple 清华水木
+
+Use command to install from mirrors specified:
+pip install -i <URL> --trusted-host <Domain> <PackageName>
+
+E.g. To install numpy, use
+pip install -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com numpy
+
+Note: Use option '--trusted-host' to get ssl certificate, otherwise
+      it reports error:
+
+      WARNING: The repository located at mirrors.aliyun.com is not a trusted or secure host and is being ignored. If this repository is available via HTTPS we recommend you use HTTPS instead, otherwise you may silence this warning and allow it anyway with '--trusted-host mirrors.aliyun.com'.
+      ERROR: Could not find a version that satisfies the requirement sympy (from versions: none)
+      ERROR: No matching distribution found for sympy
+      WARNING: The repository located at mirrors.aliyun.com is not a trusted or secure host and is being ignored. If this repository is available via HTTPS we recommend you use HTTPS instead, otherwise you may silence this warning and allow it anyway with '--trusted-host mirrors.aliyun.com'.
