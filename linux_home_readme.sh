@@ -294,3 +294,27 @@ zypper install feh
 ######################################################
 https://www.cnblogs.com/rocketfan/archive/2009/09/10/1564232.html
 https://blog.nanpuyue.com/2019/054.html
+
+
+
+
+###############################################################
+# Packages need to install for Ubuntu development enviroment
+###############################################################
+Use command below to install the packages
+
+$ sudo apt-get install <PACKAGE_NAME>
+
+Packages (2020.08.16)
+build-essential _bz2(bzip2-devel.i686) bzip2 cgdb cmake dbus-x11
+git libbz2-dev libgdbm-dev libgtk-3-0 libgtk-3-dev liblzma-dev
+libncurses*-dev libncurses-dev libperl-dev libpython3-dev
+libreadline-dev libsqlite3-dev libssl-dev libx11-dev libx11-dev 
+libx11-dev libxtst-dev libxaw7 libxaw7-dev libxext-dev libxfont-dev 
+libxpm4 libxpm-dev libxt6 libxt-dev libxtst6 libxtst-dev
+manpages-dev man-db manpages-posix-dev nextaw openssl libssl1.1
+tcl-dev tk-dev tk-dev vim-common vim-gnome vim-gtk3 vim-gui-common 
+vim-runtime x11-utils  openssl-dev
+
+Note: libssl1.1, openssl, openssl-dev are for python pip, pip may
+      not work without them
