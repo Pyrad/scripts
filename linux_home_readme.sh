@@ -294,3 +294,52 @@ zypper install feh
 ######################################################
 https://www.cnblogs.com/rocketfan/archive/2009/09/10/1564232.html
 https://blog.nanpuyue.com/2019/054.html
+
+
+
+
+###############################################################
+# Packages need to install for Ubuntu development enviroment
+###############################################################
+Use command below to install the packages
+
+$ sudo apt-get install <PACKAGE_NAME>
+
+Packages (2020.08.16)
+build-essential _bz2(bzip2-devel.i686) bzip2 cgdb cmake dbus-x11
+git libbz2-dev libgdbm-dev libgtk-3-0 libgtk-3-dev liblzma-dev
+libncurses*-dev libncurses-dev libperl-dev libpython3-dev
+libreadline-dev libsqlite3-dev libssl-dev libx11-dev libx11-dev 
+libx11-dev libxtst-dev libxaw7 libxaw7-dev libxext-dev libxfont-dev 
+libxpm4 libxpm-dev libxt6 libxt-dev libxtst6 libxtst-dev
+manpages-dev man-db manpages-posix-dev nextaw openssl libssl1.1
+tcl-dev tk-dev tk-dev vim-common vim-gnome vim-gtk3 vim-gui-common 
+vim-runtime x11-utils  openssl-dev
+
+Note: libssl1.1, openssl, openssl-dev are for python pip, pip may
+      not work without them
+
+###############################################################
+# Use domestic package mirrors for Python
+###############################################################
+Mirror URLs:
+http://pypi.douban.com/simple/ 豆瓣 
+http://mirrors.aliyun.com/pypi/simple/ 阿里 
+http://pypi.hustunique.com/simple/ 华中理工大学 
+http://pypi.sdutlinux.org/simple/ 山东理工大学 
+http://pypi.mirrors.ustc.edu.cn/simple/ 中国科学技术大学
+https://pypi.tuna.tsinghua.edu.cn/simple 清华水木
+
+Use command to install from mirrors specified:
+pip install -i <URL> --trusted-host <Domain> <PackageName>
+
+E.g. To install numpy, use
+pip install -i http://mirrors.aliyun.com/pypi/simple/ --trusted-host mirrors.aliyun.com numpy
+
+Note: Use option '--trusted-host' to get ssl certificate, otherwise
+      it reports error:
+
+      WARNING: The repository located at mirrors.aliyun.com is not a trusted or secure host and is being ignored. If this repository is available via HTTPS we recommend you use HTTPS instead, otherwise you may silence this warning and allow it anyway with '--trusted-host mirrors.aliyun.com'.
+      ERROR: Could not find a version that satisfies the requirement sympy (from versions: none)
+      ERROR: No matching distribution found for sympy
+      WARNING: The repository located at mirrors.aliyun.com is not a trusted or secure host and is being ignored. If this repository is available via HTTPS we recommend you use HTTPS instead, otherwise you may silence this warning and allow it anyway with '--trusted-host mirrors.aliyun.com'.

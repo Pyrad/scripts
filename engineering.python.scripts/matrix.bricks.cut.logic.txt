@@ -1,0 +1,679 @@
+
+In this case, matrix is M x N
+(1) M > 2, N > 2
+    E: Use ARRAY_BOX to cut E pbc_box, use E blades to cut
+	W: Use ARRAY_BOX to cut W pbc_box, use W blades to cut
+	N: Use ARRAY_BOX to cut N pbc_box, use N blades to cut
+	S: Use ARRAY_BOX to cut S pbc_box, use S blades to cut
+	NE: Use ARRAY_BOX to cut NE pbc_box, use N,E blades to cut
+	NW: Use ARRAY_BOX to cut NW pbc_box, use N,W blades to cut
+	SE: Use ARRAY_BOX to cut SE pbc_box, use S,E blades to cut
+	SW: Use ARRAY_BOX to cut SW pbc_box, use S,W blades to cut
+-----------------------------------
+[pyrad@ssea-ubuntu myscripts]$ ./plot.boxes.bricks.normal.py
+0 [-1.0 2.0] [-1 2]
+   [-2.0 2.0] [-2 2]
+   M x N = 4 x 3
+   Clip: N:False S:False W:False E:False 
+   Clip: NE:False NW:False SE:False SW:False 
+
+1 [-1.0 2.0] [-1 2]
+   [-2.0 2.3333333333333335] [-2 3]
+   M x N = 5 x 3
+   Clip: N:True S:False W:False E:False 
+   Clip: NE:False NW:False SE:False SW:False 
+
+2 [-1.0 2.2] [-1 3]
+   [-2.0 2.0] [-2 2]
+   M x N = 4 x 4
+   Clip: N:False S:False W:False E:True 
+   Clip: NE:False NW:False SE:False SW:False 
+
+3 [-1.0 2.2] [-1 3]
+   [-2.0 2.3333333333333335] [-2 3]
+   M x N = 5 x 4
+   Clip: N:True S:False W:False E:True 
+   Clip: NE:True NW:False SE:False SW:False 
+
+4 [-1.2 2.0] [-2 2]
+   [-2.0 2.0] [-2 2]
+   M x N = 4 x 4
+   Clip: N:False S:False W:True E:False 
+   Clip: NE:False NW:False SE:False SW:False 
+
+5 [-1.2 2.0] [-2 2]
+   [-2.0 2.3333333333333335] [-2 3]
+   M x N = 5 x 4
+   Clip: N:True S:False W:True E:False 
+   Clip: NE:False NW:True SE:False SW:False 
+
+6 [-1.2 2.2] [-2 3]
+   [-2.0 2.0] [-2 2]
+   M x N = 4 x 5
+   Clip: N:False S:False W:True E:True 
+   Clip: NE:False NW:False SE:False SW:False 
+
+7 [-1.2 2.2] [-2 3]
+   [-2.0 2.3333333333333335] [-2 3]
+   M x N = 5 x 5
+   Clip: N:True S:False W:True E:True 
+   Clip: NE:True NW:True SE:False SW:False 
+
+8 [-1.0 2.0] [-1 2]
+   [-2.3333333333333335 2.0] [-3 2]
+   M x N = 5 x 3
+   Clip: N:False S:True W:False E:False 
+   Clip: NE:False NW:False SE:False SW:False 
+
+9 [-1.0 2.0] [-1 2]
+   [-2.3333333333333335 2.3333333333333335] [-3 3]
+   M x N = 6 x 3
+   Clip: N:True S:True W:False E:False 
+   Clip: NE:False NW:False SE:False SW:False 
+
+10 [-1.0 2.2] [-1 3]
+   [-2.3333333333333335 2.0] [-3 2]
+   M x N = 5 x 4
+   Clip: N:False S:True W:False E:True 
+   Clip: NE:False NW:False SE:True SW:False 
+
+11 [-1.0 2.2] [-1 3]
+   [-2.3333333333333335 2.3333333333333335] [-3 3]
+   M x N = 6 x 4
+   Clip: N:True S:True W:False E:True 
+   Clip: NE:True NW:False SE:True SW:False 
+
+12 [-1.2 2.0] [-2 2]
+   [-2.3333333333333335 2.0] [-3 2]
+   M x N = 5 x 4
+   Clip: N:False S:True W:True E:False 
+   Clip: NE:False NW:False SE:False SW:True 
+
+13 [-1.2 2.0] [-2 2]
+   [-2.3333333333333335 2.3333333333333335] [-3 3]
+   M x N = 6 x 4
+   Clip: N:True S:True W:True E:False 
+   Clip: NE:False NW:True SE:False SW:True 
+
+14 [-1.2 2.2] [-2 3]
+   [-2.3333333333333335 2.0] [-3 2]
+   M x N = 5 x 5
+   Clip: N:False S:True W:True E:True 
+   Clip: NE:False NW:False SE:True SW:True 
+
+15 [-1.2 2.2] [-2 3]
+   [-2.3333333333333335 2.3333333333333335] [-3 3]
+   M x N = 6 x 5
+   Clip: N:True S:True W:True E:True 
+   Clip: NE:True NW:True SE:True SW:True 
+
+
+
+
+
+
+In this case, matrix is 1x1, use the ARRAY_BOX to cut only one (shifted) PBC_BOX
+Use all 4 segments of ARRAY_BOX as blades to cut
+(1) M == 1, N == 1
+    S:n/a
+	N:n/a
+	W:n/a
+	E:n/a
+	NE==NW==SE==SW: Use ARRAY_BOX to cut NW pbc_box, use E,W,N,S blades to cut
+-----------------------------------
+[pyrad@ssea-ubuntu myscripts]$ ./plot.boxes.bricks.special.0.py 
+0 [-1.0 0.0] [-1 0]
+   [-2.0 -1.0] [-2 -1]
+   M x N = 1 x 1
+   Clip: N:False S:False W:False E:False 
+   Clip: NE:False NW:False SE:False SW:False 
+
+1 [-1.0 -0.2] [-1 0]
+   [-2.0 -1.0] [-2 -1]
+   M x N = 1 x 1
+   Clip: N:False S:False W:False E:True 
+   Clip: NE:False NW:False SE:False SW:False 
+
+2 [-1.0 0.0] [-1 0]
+   [-2.0 -1.3333333333333333] [-2 -1]
+   M x N = 1 x 1
+   Clip: N:True S:False W:False E:False 
+   Clip: NE:False NW:False SE:False SW:False 
+
+3 [-1.0 -0.2] [-1 0]
+   [-2.0 -1.3333333333333333] [-2 -1]
+   M x N = 1 x 1
+   Clip: N:True S:False W:False E:True 
+   Clip: NE:True NW:False SE:False SW:False 
+
+4 [-0.8 0.0] [-1 0]
+   [-2.0 -1.0] [-2 -1]
+   M x N = 1 x 1
+   Clip: N:False S:False W:True E:False 
+   Clip: NE:False NW:False SE:False SW:False 
+
+5 [-0.8 -0.2] [-1 0]
+   [-2.0 -1.0] [-2 -1]
+   M x N = 1 x 1
+   Clip: N:False S:False W:True E:True 
+   Clip: NE:False NW:False SE:False SW:False 
+
+6 [-0.8 0.0] [-1 0]
+   [-2.0 -1.3333333333333333] [-2 -1]
+   M x N = 1 x 1
+   Clip: N:True S:False W:True E:False 
+   Clip: NE:False NW:True SE:False SW:False 
+
+7 [-0.8 -0.2] [-1 0]
+   [-2.0 -1.3333333333333333] [-2 -1]
+   M x N = 1 x 1
+   Clip: N:True S:False W:True E:True 
+   Clip: NE:True NW:True SE:False SW:False 
+
+8 [-1.0 0.0] [-1 0]
+   [-1.6666666666666667 -1.0] [-2 -1]
+   M x N = 1 x 1
+   Clip: N:False S:True W:False E:False 
+   Clip: NE:False NW:False SE:False SW:False 
+
+9 [-1.0 -0.2] [-1 0]
+   [-1.6666666666666667 -1.0] [-2 -1]
+   M x N = 1 x 1
+   Clip: N:False S:True W:False E:True 
+   Clip: NE:False NW:False SE:True SW:False 
+
+10 [-1.0 0.0] [-1 0]
+   [-1.6666666666666667 -1.3333333333333333] [-2 -1]
+   M x N = 1 x 1
+   Clip: N:True S:True W:False E:False 
+   Clip: NE:False NW:False SE:False SW:False 
+
+11 [-1.0 -0.2] [-1 0]
+   [-1.6666666666666667 -1.3333333333333333] [-2 -1]
+   M x N = 1 x 1
+   Clip: N:True S:True W:False E:True 
+   Clip: NE:True NW:False SE:True SW:False 
+
+12 [-0.8 0.0] [-1 0]
+   [-1.6666666666666667 -1.0] [-2 -1]
+   M x N = 1 x 1
+   Clip: N:False S:True W:True E:False 
+   Clip: NE:False NW:False SE:False SW:True 
+
+13 [-0.8 -0.2] [-1 0]
+   [-1.6666666666666667 -1.0] [-2 -1]
+   M x N = 1 x 1
+   Clip: N:False S:True W:True E:True 
+   Clip: NE:False NW:False SE:True SW:True 
+
+14 [-0.8 0.0] [-1 0]
+   [-1.6666666666666667 -1.3333333333333333] [-2 -1]
+   M x N = 1 x 1
+   Clip: N:True S:True W:True E:False 
+   Clip: NE:False NW:True SE:False SW:True 
+
+15 [-0.8 -0.2] [-1 0]
+   [-1.6666666666666667 -1.3333333333333333] [-2 -1]
+   M x N = 1 x 1
+   Clip: N:True S:True W:True E:True 
+   Clip: NE:True NW:True SE:True SW:True 
+-----------------------------------
+
+
+In this case, matrix is M x 1
+M >= 2
+N == 1
+(1) M == 2, N = 1
+    S:n/a
+	N:n/a
+	W:n/a
+	E:n/a
+	NE==NW: Use ARRAY_BOX to cut NW pbc_box, use E,W,N blades to cut
+	SE==SW: Use ARRAY_BOX to cut NW pbc_box, use E,W,S blades to cut
+(2) M > 2, N = 1
+    S:n/a
+	N:n/a
+	W == E: Use ARRAY_BOX to cut W pbc_box, use E,W blades to cut
+	NE==NW: Use ARRAY_BOX to cut NW pbc_box, use E,W,N blades to cut
+	SE==SW: Use ARRAY_BOX to cut NW pbc_box, use E,W,S blades to cut	
+-----------------------------------
+[pyrad@ssea-ubuntu myscripts]$ ./plot.boxes.bricks.special.1.py 
+0 [-1.0 0.0] [-1 0]
+   [-2.0 0.0] [-2 0]
+   M x N = 2 x 1
+   Clip: N:False S:False W:False E:False 
+   Clip: NE:False NW:False SE:False SW:False 
+
+1 [-1.0 -0.2] [-1 0]
+   [-2.0 0.0] [-2 0]
+   M x N = 2 x 1
+   Clip: N:False S:False W:False E:True 
+   Clip: NE:False NW:False SE:False SW:False 
+
+2 [-1.0 0.0] [-1 0]
+   [-2.0 -0.3333333333333333] [-2 0]
+   M x N = 2 x 1
+   Clip: N:True S:False W:False E:False 
+   Clip: NE:False NW:False SE:False SW:False 
+
+3 [-1.0 -0.2] [-1 0]
+   [-2.0 -0.3333333333333333] [-2 0]
+   M x N = 2 x 1
+   Clip: N:True S:False W:False E:True 
+   Clip: NE:True NW:False SE:False SW:False 
+
+4 [-0.8 0.0] [-1 0]
+   [-2.0 0.0] [-2 0]
+   M x N = 2 x 1
+   Clip: N:False S:False W:True E:False 
+   Clip: NE:False NW:False SE:False SW:False 
+
+5 [-0.8 -0.2] [-1 0]
+   [-2.0 0.0] [-2 0]
+   M x N = 2 x 1
+   Clip: N:False S:False W:True E:True 
+   Clip: NE:False NW:False SE:False SW:False 
+
+6 [-0.8 0.0] [-1 0]
+   [-2.0 -0.3333333333333333] [-2 0]
+   M x N = 2 x 1
+   Clip: N:True S:False W:True E:False 
+   Clip: NE:False NW:True SE:False SW:False 
+
+7 [-0.8 -0.2] [-1 0]
+   [-2.0 -0.3333333333333333] [-2 0]
+   M x N = 2 x 1
+   Clip: N:True S:False W:True E:True 
+   Clip: NE:True NW:True SE:False SW:False 
+
+8 [-1.0 0.0] [-1 0]
+   [-1.6666666666666667 0.0] [-2 0]
+   M x N = 2 x 1
+   Clip: N:False S:True W:False E:False 
+   Clip: NE:False NW:False SE:False SW:False 
+
+9 [-1.0 -0.2] [-1 0]
+   [-1.6666666666666667 0.0] [-2 0]
+   M x N = 2 x 1
+   Clip: N:False S:True W:False E:True 
+   Clip: NE:False NW:False SE:True SW:False 
+
+10 [-1.0 0.0] [-1 0]
+   [-1.6666666666666667 -0.3333333333333333] [-2 0]
+   M x N = 2 x 1
+   Clip: N:True S:True W:False E:False 
+   Clip: NE:False NW:False SE:False SW:False 
+
+11 [-1.0 -0.2] [-1 0]
+   [-1.6666666666666667 -0.3333333333333333] [-2 0]
+   M x N = 2 x 1
+   Clip: N:True S:True W:False E:True 
+   Clip: NE:True NW:False SE:True SW:False 
+
+12 [-0.8 0.0] [-1 0]
+   [-1.6666666666666667 0.0] [-2 0]
+   M x N = 2 x 1
+   Clip: N:False S:True W:True E:False 
+   Clip: NE:False NW:False SE:False SW:True 
+
+13 [-0.8 -0.2] [-1 0]
+   [-1.6666666666666667 0.0] [-2 0]
+   M x N = 2 x 1
+   Clip: N:False S:True W:True E:True 
+   Clip: NE:False NW:False SE:True SW:True 
+
+14 [-0.8 0.0] [-1 0]
+   [-1.6666666666666667 -0.3333333333333333] [-2 0]
+   M x N = 2 x 1
+   Clip: N:True S:True W:True E:False 
+   Clip: NE:False NW:True SE:False SW:True 
+
+15 [-0.8 -0.2] [-1 0]
+   [-1.6666666666666667 -0.3333333333333333] [-2 0]
+   M x N = 2 x 1
+   Clip: N:True S:True W:True E:True 
+   Clip: NE:True NW:True SE:True SW:True 
+
+
+
+
+
+In this case, matrix is 1 x N
+M == 1
+N >= 2
+(1) M == 1, N == 2
+    S:n/a
+	N:n/a
+	W:n/a
+	E:n/a
+	NE==SE: Use ARRAY_BOX to cut NE pbc_box, use N,S,E blades to cut
+	NW==SW: Use ARRAY_BOX to cut NW pbc_box, use N,S,W blades to cut
+(2) M == 1, N > 2
+    W:n/a
+	E:n/a
+	N == S: Use ARRAY_BOX to cut N pbc_box, use N,S blades to cut
+	NE==SE: Use ARRAY_BOX to cut NE pbc_box, use N,S,E blades to cut
+	NW==SW: Use ARRAY_BOX to cut NW pbc_box, use N,S,W blades to cut	
+-----------------------------------
+[pyrad@ssea-ubuntu myscripts]$ ./plot.boxes.bricks.special.2.py 
+0 [-1.0 1.0] [-1 1]
+   [-2.0 -1.0] [-2 -1]
+   M x N = 1 x 2
+   Clip: N:False S:False W:False E:False 
+   Clip: NE:False NW:False SE:False SW:False 
+
+1 [-1.0 0.8] [-1 1]
+   [-2.0 -1.0] [-2 -1]
+   M x N = 1 x 2
+   Clip: N:False S:False W:False E:True 
+   Clip: NE:False NW:False SE:False SW:False 
+
+2 [-1.0 1.0] [-1 1]
+   [-2.0 -1.3333333333333333] [-2 -1]
+   M x N = 1 x 2
+   Clip: N:True S:False W:False E:False 
+   Clip: NE:False NW:False SE:False SW:False 
+
+3 [-1.0 0.8] [-1 1]
+   [-2.0 -1.3333333333333333] [-2 -1]
+   M x N = 1 x 2
+   Clip: N:True S:False W:False E:True 
+   Clip: NE:True NW:False SE:False SW:False 
+
+4 [-0.8 1.0] [-1 1]
+   [-2.0 -1.0] [-2 -1]
+   M x N = 1 x 2
+   Clip: N:False S:False W:True E:False 
+   Clip: NE:False NW:False SE:False SW:False 
+
+5 [-0.8 0.8] [-1 1]
+   [-2.0 -1.0] [-2 -1]
+   M x N = 1 x 2
+   Clip: N:False S:False W:True E:True 
+   Clip: NE:False NW:False SE:False SW:False 
+
+6 [-0.8 1.0] [-1 1]
+   [-2.0 -1.3333333333333333] [-2 -1]
+   M x N = 1 x 2
+   Clip: N:True S:False W:True E:False 
+   Clip: NE:False NW:True SE:False SW:False 
+
+7 [-0.8 0.8] [-1 1]
+   [-2.0 -1.3333333333333333] [-2 -1]
+   M x N = 1 x 2
+   Clip: N:True S:False W:True E:True 
+   Clip: NE:True NW:True SE:False SW:False 
+
+8 [-1.0 1.0] [-1 1]
+   [-1.6666666666666667 -1.0] [-2 -1]
+   M x N = 1 x 2
+   Clip: N:False S:True W:False E:False 
+   Clip: NE:False NW:False SE:False SW:False 
+
+9 [-1.0 0.8] [-1 1]
+   [-1.6666666666666667 -1.0] [-2 -1]
+   M x N = 1 x 2
+   Clip: N:False S:True W:False E:True 
+   Clip: NE:False NW:False SE:True SW:False 
+
+10 [-1.0 1.0] [-1 1]
+   [-1.6666666666666667 -1.3333333333333333] [-2 -1]
+   M x N = 1 x 2
+   Clip: N:True S:True W:False E:False 
+   Clip: NE:False NW:False SE:False SW:False 
+
+11 [-1.0 0.8] [-1 1]
+   [-1.6666666666666667 -1.3333333333333333] [-2 -1]
+   M x N = 1 x 2
+   Clip: N:True S:True W:False E:True 
+   Clip: NE:True NW:False SE:True SW:False 
+
+12 [-0.8 1.0] [-1 1]
+   [-1.6666666666666667 -1.0] [-2 -1]
+   M x N = 1 x 2
+   Clip: N:False S:True W:True E:False 
+   Clip: NE:False NW:False SE:False SW:True 
+
+13 [-0.8 0.8] [-1 1]
+   [-1.6666666666666667 -1.0] [-2 -1]
+   M x N = 1 x 2
+   Clip: N:False S:True W:True E:True 
+   Clip: NE:False NW:False SE:True SW:True 
+
+14 [-0.8 1.0] [-1 1]
+   [-1.6666666666666667 -1.3333333333333333] [-2 -1]
+   M x N = 1 x 2
+   Clip: N:True S:True W:True E:False 
+   Clip: NE:False NW:True SE:False SW:True 
+
+15 [-0.8 0.8] [-1 1]
+   [-1.6666666666666667 -1.3333333333333333] [-2 -1]
+   M x N = 1 x 2
+   Clip: N:True S:True W:True E:True 
+   Clip: NE:True NW:True SE:True SW:True 
+
+
+
+In this case, matrix is 2 x 2
+In this case, matrix is M x 2
+In this case, matrix is 2 x N
+
+(1) M == 2, N == 2
+    S:n/a
+	N:n/a
+	W:n/a
+	E:n/a
+	NE: Use ARRAY_BOX to cut NE pbc_box, use N,E blades to cut
+	NW: Use ARRAY_BOX to cut NW pbc_box, use N,W blades to cut
+	SE: Use ARRAY_BOX to cut SE pbc_box, use S,E blades to cut
+	SW: Use ARRAY_BOX to cut SW pbc_box, use S,W blades to cut
+(2) M > 2, N == 2
+    N:n/a
+	S:n/a
+	E: Use ARRAY_BOX to cut E pbc_box, use E blades to cut
+	W: Use ARRAY_BOX to cut W pbc_box, use W blades to cut
+	NE: Use ARRAY_BOX to cut NE pbc_box, use N,E blades to cut
+	NW: Use ARRAY_BOX to cut NW pbc_box, use N,W blades to cut
+	SE: Use ARRAY_BOX to cut SE pbc_box, use S,E blades to cut
+	SW: Use ARRAY_BOX to cut SW pbc_box, use S,W blades to cut	
+(2) M == 2, N > 2
+    E:n/a
+	W:n/a
+	N: Use ARRAY_BOX to cut N pbc_box, use N blades to cut
+	S: Use ARRAY_BOX to cut S pbc_box, use S blades to cut
+	NE: Use ARRAY_BOX to cut NE pbc_box, use N,E blades to cut
+	NW: Use ARRAY_BOX to cut NW pbc_box, use N,W blades to cut
+	SE: Use ARRAY_BOX to cut SE pbc_box, use S,E blades to cut
+	SW: Use ARRAY_BOX to cut SW pbc_box, use S,W blades to cut
+-----------------------------------
+[pyrad@ssea-ubuntu myscripts]$ ./plot.boxes.bricks.special.3.py 
+0 [-1.0 1.0] [-1 1]
+   [-2.0 0.0] [-2 0]
+   M x N = 2 x 2
+   Clip: N:False S:False W:False E:False 
+   Clip: NE:False NW:False SE:False SW:False 
+
+1 [-1.0 0.8] [-1 1]
+   [-2.0 0.0] [-2 0]
+   M x N = 2 x 2
+   Clip: N:False S:False W:False E:True 
+   Clip: NE:False NW:False SE:False SW:False 
+
+2 [-1.0 1.0] [-1 1]
+   [-2.0 -0.3333333333333333] [-2 0]
+   M x N = 2 x 2
+   Clip: N:True S:False W:False E:False 
+   Clip: NE:False NW:False SE:False SW:False 
+
+3 [-1.0 0.8] [-1 1]
+   [-2.0 -0.3333333333333333] [-2 0]
+   M x N = 2 x 2
+   Clip: N:True S:False W:False E:True 
+   Clip: NE:True NW:False SE:False SW:False 
+
+4 [-0.8 1.0] [-1 1]
+   [-2.0 0.0] [-2 0]
+   M x N = 2 x 2
+   Clip: N:False S:False W:True E:False 
+   Clip: NE:False NW:False SE:False SW:False 
+
+5 [-0.8 0.8] [-1 1]
+   [-2.0 0.0] [-2 0]
+   M x N = 2 x 2
+   Clip: N:False S:False W:True E:True 
+   Clip: NE:False NW:False SE:False SW:False 
+
+6 [-0.8 1.0] [-1 1]
+   [-2.0 -0.3333333333333333] [-2 0]
+   M x N = 2 x 2
+   Clip: N:True S:False W:True E:False 
+   Clip: NE:False NW:True SE:False SW:False 
+
+7 [-0.8 0.8] [-1 1]
+   [-2.0 -0.3333333333333333] [-2 0]
+   M x N = 2 x 2
+   Clip: N:True S:False W:True E:True 
+   Clip: NE:True NW:True SE:False SW:False 
+
+8 [-1.0 1.0] [-1 1]
+   [-1.6666666666666667 0.0] [-2 0]
+   M x N = 2 x 2
+   Clip: N:False S:True W:False E:False 
+   Clip: NE:False NW:False SE:False SW:False 
+
+9 [-1.0 0.8] [-1 1]
+   [-1.6666666666666667 0.0] [-2 0]
+   M x N = 2 x 2
+   Clip: N:False S:True W:False E:True 
+   Clip: NE:False NW:False SE:True SW:False 
+
+10 [-1.0 1.0] [-1 1]
+   [-1.6666666666666667 -0.3333333333333333] [-2 0]
+   M x N = 2 x 2
+   Clip: N:True S:True W:False E:False 
+   Clip: NE:False NW:False SE:False SW:False 
+
+11 [-1.0 0.8] [-1 1]
+   [-1.6666666666666667 -0.3333333333333333] [-2 0]
+   M x N = 2 x 2
+   Clip: N:True S:True W:False E:True 
+   Clip: NE:True NW:False SE:True SW:False 
+
+12 [-0.8 1.0] [-1 1]
+   [-1.6666666666666667 0.0] [-2 0]
+   M x N = 2 x 2
+   Clip: N:False S:True W:True E:False 
+   Clip: NE:False NW:False SE:False SW:True 
+
+13 [-0.8 0.8] [-1 1]
+   [-1.6666666666666667 0.0] [-2 0]
+   M x N = 2 x 2
+   Clip: N:False S:True W:True E:True 
+   Clip: NE:False NW:False SE:True SW:True 
+
+14 [-0.8 1.0] [-1 1]
+   [-1.6666666666666667 -0.3333333333333333] [-2 0]
+   M x N = 2 x 2
+   Clip: N:True S:True W:True E:False 
+   Clip: NE:False NW:True SE:False SW:True 
+
+15 [-0.8 0.8] [-1 1]
+   [-1.6666666666666667 -0.3333333333333333] [-2 0]
+   M x N = 2 x 2
+   Clip: N:True S:True W:True E:True 
+   Clip: NE:True NW:True SE:True SW:True 
+
+
+
+
+Loigc Summary:
+
+In this case, matrix is M x N
+(1) M > 2, N > 2
+    E: Use ARRAY_BOX to cut E pbc_box, use E blades to cut
+	W: Use ARRAY_BOX to cut W pbc_box, use W blades to cut
+	N: Use ARRAY_BOX to cut N pbc_box, use N blades to cut
+	S: Use ARRAY_BOX to cut S pbc_box, use S blades to cut
+	NE: Use ARRAY_BOX to cut NE pbc_box, use N,E blades to cut
+	NW: Use ARRAY_BOX to cut NW pbc_box, use N,W blades to cut
+	SE: Use ARRAY_BOX to cut SE pbc_box, use S,E blades to cut
+	SW: Use ARRAY_BOX to cut SW pbc_box, use S,W blades to cut
+-----------------------------------
+
+In this case, matrix is 1x1, use the ARRAY_BOX to cut only one (shifted) PBC_BOX
+Use all 4 segments of ARRAY_BOX as blades to cut
+(1) M == 1, N == 1
+    S:n/a
+	N:n/a
+	W:n/a
+	E:n/a
+	NE==NW==SE==SW: Use ARRAY_BOX to cut NW pbc_box, use E,W,N,S blades to cut
+-----------------------------------
+
+In this case, matrix is M x 1
+M >= 2
+N == 1
+(1) M == 2, N = 1
+    S:n/a
+	N:n/a
+	W:n/a
+	E:n/a
+	NE==NW: Use ARRAY_BOX to cut NW pbc_box, use E,W,N blades to cut
+	SE==SW: Use ARRAY_BOX to cut NW pbc_box, use E,W,S blades to cut
+(2) M > 2, N = 1
+    S:n/a
+	N:n/a
+	W == E: Use ARRAY_BOX to cut W pbc_box, use E,W blades to cut
+	NE==NW: Use ARRAY_BOX to cut NW pbc_box, use E,W,N blades to cut
+	SE==SW: Use ARRAY_BOX to cut NW pbc_box, use E,W,S blades to cut	
+-----------------------------------
+
+In this case, matrix is 1 x N
+M == 1
+N >= 2
+(1) M == 1, N == 2
+    S:n/a
+	N:n/a
+	W:n/a
+	E:n/a
+	NE==SE: Use ARRAY_BOX to cut NE pbc_box, use N,S,E blades to cut
+	NW==SW: Use ARRAY_BOX to cut NW pbc_box, use N,S,W blades to cut
+(2) M == 1, N > 2
+    W:n/a
+	E:n/a
+	N == S: Use ARRAY_BOX to cut N pbc_box, use N,S blades to cut
+	NE==SE: Use ARRAY_BOX to cut NE pbc_box, use N,S,E blades to cut
+	NW==SW: Use ARRAY_BOX to cut NW pbc_box, use N,S,W blades to cut	
+-----------------------------------
+
+In this case, matrix is 2 x 2
+In this case, matrix is M x 2
+In this case, matrix is 2 x N
+(1) M == 2, N == 2
+    S:n/a
+	N:n/a
+	W:n/a
+	E:n/a
+	NE: Use ARRAY_BOX to cut NE pbc_box, use N,E blades to cut
+	NW: Use ARRAY_BOX to cut NW pbc_box, use N,W blades to cut
+	SE: Use ARRAY_BOX to cut SE pbc_box, use S,E blades to cut
+	SW: Use ARRAY_BOX to cut SW pbc_box, use S,W blades to cut
+(2) M > 2, N == 2
+    N:n/a
+	S:n/a
+	E: Use ARRAY_BOX to cut E pbc_box, use E blades to cut
+	W: Use ARRAY_BOX to cut W pbc_box, use W blades to cut
+	NE: Use ARRAY_BOX to cut NE pbc_box, use N,E blades to cut
+	NW: Use ARRAY_BOX to cut NW pbc_box, use N,W blades to cut
+	SE: Use ARRAY_BOX to cut SE pbc_box, use S,E blades to cut
+	SW: Use ARRAY_BOX to cut SW pbc_box, use S,W blades to cut	
+(2) M == 2, N > 2
+    E:n/a
+	W:n/a
+	N: Use ARRAY_BOX to cut N pbc_box, use N blades to cut
+	S: Use ARRAY_BOX to cut S pbc_box, use S blades to cut
+	NE: Use ARRAY_BOX to cut NE pbc_box, use N,E blades to cut
+	NW: Use ARRAY_BOX to cut NW pbc_box, use N,W blades to cut
+	SE: Use ARRAY_BOX to cut SE pbc_box, use S,E blades to cut
+	SW: Use ARRAY_BOX to cut SW pbc_box, use S,W blades to cut
+-----------------------------------

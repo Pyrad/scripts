@@ -51,20 +51,26 @@ fi
 # Check tarball to select which command to decompress
 TARBALL_FORMAT=`file $TARBALL | awk '{print $2}'`
 DECOMP_CMD=""
-if [[ x"$TARBALL_FORMAT" -eq x"bzip2" ]]; then
-    DECOMP_CMD="tar -jxf "
-elif [[ x"$TARBALL_FORMAT" -eq x"gzip" ]]; then
-    DECOMP_CMD="tar -zxf "
-elif [[ x"$TARBALL_FORMAT" -eq x"XZ" ]]; then
-    DECOMP_CMD="tar -Jxf "
-elif [[ x"$TARBALL_FORMAT" -eq x"Zip" ]]; then
-    DECOMP_CMD="unzip -q "
-else
-    echo -e "[${ERROR}] Unknown file format for tarball: $TARBALL"
-    echo -e "[${ERROR}] Unable to decompress due to unknown format"
-    echo -e "[${ERROR}] Exit"
-    exit -1
-fi
+case "$TARBALL_FORMAT" in
+    gzip)
+        DECOMP_CMD="tar -zxf "
+        ;;
+    bzip2)
+        DECOMP_CMD="tar -jxf "
+        ;;
+    XZ)
+        DECOMP_CMD="tar -Jxf "
+        ;;
+    Zip)
+        DECOMP_CMD="unzip -q "
+        ;;
+    *)
+        echo -e "[${ERROR}] Unknown file format for tarball: $TARBALL"
+        echo -e "[${ERROR}] Unable to decompress due to unknown format"
+        echo -e "[${ERROR}] Exit"
+        exit -1
+        ;;
+esac
 
 echo -e "[${INFO}] Tarball file format: $TARBALL_FORMAT"
 echo -e "[${INFO}] Command to decompress tarball: $DECOMP_CMD"
