@@ -103,6 +103,7 @@ if [[ -e ./configure ]]; then
         echo "[$INFO] Start configuration"
         ./configure --prefix="${INSTALL_TO_PATH}" \
             --enable-optimizations --with-lto \
+            --with-ssl \
             --enable-shared --with-tcltk-includes="-I${TCL_INC} -I${TK_INC}" \
             --with-tcltk-libs="-L${TCL_LIB} -L${TK_LIB} -l${TCL_LIB_NAME} -l${TK_LIB_NAME}"
         echo -e "[${INFO}] Configuration done"
