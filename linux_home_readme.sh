@@ -343,3 +343,11 @@ Note: Use option '--trusted-host' to get ssl certificate, otherwise
       ERROR: Could not find a version that satisfies the requirement sympy (from versions: none)
       ERROR: No matching distribution found for sympy
       WARNING: The repository located at mirrors.aliyun.com is not a trusted or secure host and is being ignored. If this repository is available via HTTPS we recommend you use HTTPS instead, otherwise you may silence this warning and allow it anyway with '--trusted-host mirrors.aliyun.com'.
+
+###############################################################
+# Install C/C++ development environment in OpenSUSE 15.2
+###############################################################
+For OpenSUSE:
+Install C/C++ development environment, use (as root):
+zypper install -t pattern devel_C_C++
+
