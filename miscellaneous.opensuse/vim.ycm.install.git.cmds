@@ -1,0 +1,12 @@
+pyrad      3450  0.0  0.1  13600  2880 ?        S    13:26   0:00 /bin/bash -c (git clone --recursive 'https://github.com/ycm-core/YouCompleteMe.git' '/home/pyrad/.vim/bundle/YouCompleteMe') >/tmp/v1ICd4G/6 2>&1
+pyrad      3451  0.0  0.4  66660  8396 ?        S    13:26   0:00 git clone --recursive https://github.com/ycm-core/YouCompleteMe.git /home/pyrad/.vim/bundle/YouCompleteMe
+pyrad      4054  0.0  0.1  18968  3720 ?        S    14:01   0:00 /usr/lib/git/git submodule update --require-init --recursive --no-single-branch
+pyrad      4055  0.0  0.2  14260  3988 ?        S    14:01   0:00 /bin/sh /usr/lib/git/git-submodule update --require-init --recursive --no-single-branch
+pyrad      4089  0.0  0.1  14260  2616 ?        S    14:01   0:00 /bin/sh /usr/lib/git/git-submodule update --require-init --recursive --no-single-branch
+pyrad      4090  0.0  0.1  14260  2432 ?        S    14:01   0:00 /bin/sh /usr/lib/git/git-submodule update --require-init --recursive --no-single-branch
+pyrad      4091  0.0  0.2  19996  4032 ?        S    14:01   0:02 git submodule--helper update-clone --require-init --no-single-branch --
+pyrad      4337  0.0  0.1  18968  3920 ?        S    14:47   0:00 /usr/lib/git/git submodule--helper clone --require-init --path third_party/ycmd --name third_party/ycmd --url https://github.com/ycm-core/ycmd --no-single-branch
+pyrad      4338  0.0  0.2  27164  4120 ?        Sl   14:47   0:00 /usr/lib/git/git clone --no-checkout --separate-git-dir /home/pyrad/.vim/bundle/YouCompleteMe/.git/modules/third_party/ycmd --no-single-branch -- https://github.com/ycm-core/ycmd /home/pyrad/.vim/bundle/YouCompleteMe/third_party/ycmd
+pyrad      4339  0.1  0.5 657104 10276 ?        S    14:47   0:04 /usr/lib/git/git-remote-https origin https://github.com/ycm-core/ycmd
+pyrad      4342  0.0  0.4  27640  8388 ?        S    14:47   0:00 /usr/lib/git/git index-pack --stdin --fix-thin --keep=fetch-pack 4338 on sseaopensuse --check-self-contained-and-connected
+pyrad      5029  0.0  0.0   8688   868 pts/3    S+   15:44   0:00 grep --color=auto git
