@@ -288,6 +288,13 @@ zypper install feh
 100  2020-07-13 09:12:34 zypper install readline-devel
 105  2020-07-15 08:48:20 zypper install gitg
 108  2020-07-20 08:37:25 history | grep "zypper install" >> /home/pyrad/temp/packages.to.install 
+### gtk3 development files
+###################################################
+### GVim can't be built for GUI if gtk3 dev missing in openSUSE
+### Solution is to install dev files for gtk3 as followed,
+###################################################
+# Note: this package in ubuntu is called libgtk-3-dev
+zypper install gtk3-devel
 
 ######################################################
 # 2 web page showing how to plot binary tree with graphviz
