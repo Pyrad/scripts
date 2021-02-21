@@ -5,21 +5,24 @@ TIMECHK0=$SECONDS
 #### The following must be specified
 ########################################
 #### Base path where all programs are installed into
-PREFIX_BASE='/home/pyrad/temp/tmpprocs'
+#PREFIX_BASE='/home/pyrad/temp/tmpprocs'
+PREFIX_BASE='/home/pyrad/procs'
 #### Where is the tarball?
-TARBALL='/home/pyrad/temp/tmpswap/vim-8.2.tar.bz2'
+#TARBALL='/home/pyrad/temp/tmpswap/vim-8.2.tar.bz2'
+TARBALL='/home/pyrad/swap/vim-8.2.tar.bz2'
 #### Install to where in PREFIX_BASE?
 INSTALL_DIR_NAME="vim82"
 
 #### !!! PREREQUISITES: python3 !!!
+PYTHON3_CMD='/home/pyrad/procs/python38/bin/python3'
 PYTHON3_CONFIG_DIR='/home/pyrad/procs/python38/lib/python3.8/config-3.8-x86_64-linux-gnu'
 
 #### Test mode? If it is, configure, make and
 #### make install will be skipped to avoid wasting
 #### time for test
-TESTMODE=1
+TESTMODE=0
 #### wait time for reminder
-WAIT_SEC=2
+WAIT_SEC=1
 
 # Path of tarball
 TARBALL_PATH=`dirname $TARBALL`
@@ -128,6 +131,7 @@ fi
 
 TIMECHK_BEFORE_CONFIG=$SECONDS
 # Step 3.0: Change to build path and configure
+# [NOTE] Add --enable-fail-if-missing to stop exactly where the configuration fails
 cd $BUILD_PATH
 echo -e "[${INFO}] Change dir to $BUILD_PATH"
 echo -e "[$WARNING] Takes a while to configure..."
@@ -138,6 +142,7 @@ if [[ -e ./configure ]]; then
         ./configure --with-features=huge \
                     --enable-rubyinterp \
                     --enable-python3interp \
+                    --with-python3-command=$PYTHON3_CMD \
                     --with-python3-config-dir=${PYTHON3_CONFIG_DIR} \
                     --with-tlib=ncurses \
                     --enable-fontset \
@@ -147,7 +152,8 @@ if [[ -e ./configure ]]; then
                     --enable-multibyte \
                     --prefix=${INSTALL_TO_PATH} \
                     --enable-gui=gtk3 \
-                    --with-compiledby="Pyrad Selong"
+                    --with-compiledby="Pyrad Selong" \
+                    --enable-fail-if-missing
         echo -e "[${INFO}] Configuration done"
     else
         echo -e "[$WARNING] Test-mode, skip configuration"
@@ -157,6 +163,11 @@ else
     exit
 fi
 TIMECHK_AFTER_CONFIG=$SECONDS
+
+##################################
+# Temp exit
+##################################
+# exit 0
 
 # Step 4.0: make
 echo -e "[$WARNING] Takes a while to build..."
