@@ -1,0 +1,23 @@
+#Beijing Jiaotong University
+zypper addrepo -f https://mirror.bjtu.edu.cn/opensuse/distribution/leap/15.2/repo/oss/ bjtu.opensuse.15.2.oss
+zypper addrepo -f https://mirror.bjtu.edu.cn/opensuse/distribution/leap/15.2/repo/non-oss/ bjtu.opensuse.15.2.non.oss
+zypper addrepo -f https://mirror.bjtu.edu.cn/opensuse/update/leap/15.2/oss/ bjtu.opensuse.15.2.update.oss
+zypper addrepo -f https://mirror.bjtu.edu.cn/opensuse/update/leap/15.2/oss_debug/ bjtu.opensuse.15.2.update.oss.debug
+zypper addrepo -f https://mirror.bjtu.edu.cn/opensuse/update/leap/15.2/non-oss/ bjtu.opensuse.15.2.update.non.oss
+zypper addrepo -f https://mirror.bjtu.edu.cn/opensuse/update/leap/15.2/non-oss_debug/ bjtu.opensuse.15.2.update.non.oss.debug
+
+#Tencent
+zypper addrepo -f https://mirrors.cloud.tencent.com/opensuse/distribution/leap/15.2/repo/oss/ tencent.opensuse.15.2.oss
+zypper addrepo -f https://mirrors.cloud.tencent.com/opensuse/distribution/leap/15.2/repo/non-oss/ tencent.opensuse.15.2.non.oss
+zypper addrepo -f https://mirrors.cloud.tencent.com/opensuse/update/leap/15.2/oss/ tencent.opensuse.15.2.update.oss
+zypper addrepo -f https://mirrors.cloud.tencent.com/opensuse/update/leap/15.2/oss_debug/ tencent.opensuse.15.2.update.oss.debug
+zypper addrepo -f https://mirrors.cloud.tencent.com/opensuse/update/leap/15.2/non-oss/ tencent.opensuse.15.2.update.non.oss
+zypper addrepo -f https://mirrors.cloud.tencent.com/opensuse/update/leap/15.2/non-oss_debug/ tencent.opensuse.15.2.update.non.oss.debug
+
+#Tsinghua
+zypper addrepo -f https://mirrors.tuna.tsinghua.edu.cn/opensuse/distribution/leap/15.2/repo/oss/ tsinghua.opensuse.15.2.oss
+zypper addrepo -f https://mirrors.tuna.tsinghua.edu.cn/opensuse/distribution/leap/15.2/repo/non-oss/ tsinghua.opensuse.15.2.non.oss
+zypper addrepo -f https://mirrors.tuna.tsinghua.edu.cn/opensuse/update/leap/15.2/oss/ tsinghua.opensuse.15.2.update.oss
+zypper addrepo -f https://mirrors.tuna.tsinghua.edu.cn/opensuse/update/leap/15.2/oss_debug/ tsinghua.opensuse.15.2.update.oss.debug
+zypper addrepo -f https://mirrors.tuna.tsinghua.edu.cn/opensuse/update/leap/15.2/non-oss/ tsinghua.opensuse.15.2.update.non.oss
+zypper addrepo -f https://mirrors.tuna.tsinghua.edu.cn/opensuse/update/leap/15.2/non-oss_debug/ tsinghua.opensuse.15.2.update.non.oss.debug

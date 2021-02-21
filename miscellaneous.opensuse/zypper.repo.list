@@ -1,0 +1,19 @@
+Repository priorities are without effect. All enabled repositories share the same priority.
+
+#  | Alias                        | Name                               | Enabled | GPG Check | Refresh | URI
+---+------------------------------+------------------------------------+---------+-----------+---------+-------------------------------------------------------------------------------------
+ 1 | openSUSE-15.2-Non-Oss        | openSUSE-15.2-Non-Oss              | Yes     | (r ) Yes  | Yes     | http://mirrors.aliyun.com/opensuse/distribution/leap/15.2/repo/non-oss/
+ 2 | openSUSE-15.2-Oss            | openSUSE-15.2-Oss                  | Yes     | (r ) Yes  | Yes     | http://mirrors.aliyun.com/opensuse/distribution/leap/15.2/repo/oss/
+ 3 | openSUSE-15.2-Update-Non-Oss | openSUSE-15.2-Update-Non-Oss       | Yes     | (r ) Yes  | Yes     | http://mirrors.aliyun.com/opensuse/update/leap/15.2/non-oss/
+ 4 | openSUSE-15.2-Update-Oss     | openSUSE-15.2-Update-Oss           | Yes     | (r ) Yes  | Yes     | http://mirrors.aliyun.com/opensuse/update/leap/15.2/oss/
+ 5 | openSUSE-Leap-15.2-1         | openSUSE-Leap-15.2-1               | No      | ----      | ----    | cd:/?devices=/dev/disk/by-id/ata-VMware_Virtual_IDE_CDROM_Drive_10000000000000000001
+ 6 | repo-debug                   | Debug Repository                   | Yes     | (r ) Yes  | Yes     | http://download.opensuse.org/debug/distribution/leap/15.2/repo/oss/
+ 7 | repo-debug-non-oss           | Debug Repository (Non-OSS)         | No      | ----      | ----    | http://download.opensuse.org/debug/distribution/leap/15.2/repo/non-oss/
+ 8 | repo-debug-update            | Update Repository (Debug)          | Yes     | (r ) Yes  | Yes     | http://download.opensuse.org/debug/update/leap/15.2/oss
+ 9 | repo-debug-update-non-oss    | Update Repository (Debug, Non-OSS) | No      | ----      | ----    | http://download.opensuse.org/debug/update/leap/15.2/non-oss/
+10 | repo-non-oss                 | Non-OSS Repository                 | Yes     | (r ) Yes  | Yes     | http://download.opensuse.org/distribution/leap/15.2/repo/non-oss/
+11 | repo-oss                     | Main Repository                    | Yes     | (r ) Yes  | Yes     | http://download.opensuse.org/distribution/leap/15.2/repo/oss/
+12 | repo-source                  | Source Repository                  | Yes     | (r ) Yes  | Yes     | http://download.opensuse.org/source/distribution/leap/15.2/repo/oss/
+13 | repo-source-non-oss          | Source Repository (Non-OSS)        | No      | ----      | ----    | http://download.opensuse.org/source/distribution/leap/15.2/repo/non-oss/
+14 | repo-update                  | Main Update Repository             | Yes     | (r ) Yes  | Yes     | http://download.opensuse.org/update/leap/15.2/oss
+15 | repo-update-non-oss          | Update Repository (Non-Oss)        | Yes     | (r ) Yes  | Yes     | http://download.opensuse.org/update/leap/15.2/non-oss/

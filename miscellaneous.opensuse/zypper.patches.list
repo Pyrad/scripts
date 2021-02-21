@@ -1,0 +1,572 @@
+Loading repository data...
+Reading installed packages...
+Repository                            | Name               | Category    | Severity  | Interactive | Status     | Summary
+--------------------------------------+--------------------+-------------+-----------+-------------+------------+---------------------------------------------------------------------------------------
+openSUSE-15.2-Update-Non-Oss          | openSUSE-2019-2154 | security    | moderate  | ---         | not needed | Security update for opera
+Update Repository (Non-Oss)           | openSUSE-2019-2154 | security    | moderate  | ---         | not needed | Security update for opera
+tencent.opensuse.15.2.update.non.oss  | openSUSE-2019-2154 | security    | moderate  | ---         | not needed | Security update for opera
+tsinghua.opensuse.15.2.update.non.oss | openSUSE-2019-2154 | security    | moderate  | ---         | not needed | Security update for opera
+Main Update Repository                | openSUSE-2020-1001 | security    | moderate  | ---         | not needed | Security update for rubygem-puma
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-1001 | security    | moderate  | ---         | not needed | Security update for rubygem-puma
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-1001 | security    | moderate  | ---         | not needed | Security update for rubygem-puma
+Main Update Repository                | openSUSE-2020-1002 | security    | important | ---         | not needed | Security update for python-ipaddress
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-1002 | security    | important | ---         | not needed | Security update for python-ipaddress
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-1002 | security    | important | ---         | not needed | Security update for python-ipaddress
+Main Update Repository                | openSUSE-2020-1004 | recommended | moderate  | ---         | not needed | Recommended update for lxd
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-1004 | recommended | moderate  | ---         | not needed | Recommended update for lxd
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-1004 | recommended | moderate  | ---         | not needed | Recommended update for lxd
+Main Update Repository                | openSUSE-2020-1005 | security    | moderate  | ---         | not needed | Security update for pdns-recursor
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-1005 | security    | moderate  | ---         | not needed | Security update for pdns-recursor
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-1005 | security    | moderate  | ---         | not needed | Security update for pdns-recursor
+Main Update Repository                | openSUSE-2020-1006 | recommended | moderate  | ---         | not needed | Recommended update for resource-agents
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-1006 | recommended | moderate  | ---         | not needed | Recommended update for resource-agents
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-1006 | recommended | moderate  | ---         | not needed | Recommended update for resource-agents
+Main Update Repository                | openSUSE-2020-1007 | security    | moderate  | ---         | not needed | Security update for ntp
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-1007 | security    | moderate  | ---         | not needed | Security update for ntp
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-1007 | security    | moderate  | ---         | not needed | Security update for ntp
+Main Update Repository                | openSUSE-2020-1008 | recommended | moderate  | ---         | not needed | Recommended update for keepassxc
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-1008 | recommended | moderate  | ---         | not needed | Recommended update for keepassxc
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-1008 | recommended | moderate  | ---         | not needed | Recommended update for keepassxc
+Main Update Repository                | openSUSE-2020-1009 | recommended | moderate  | ---         | needed     | Recommended update for dracut
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-1009 | recommended | moderate  | ---         | needed     | Recommended update for dracut
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-1009 | recommended | moderate  | ---         | needed     | Recommended update for dracut
+Main Update Repository                | openSUSE-2020-1010 | recommended | important | ---         | needed     | Recommended update for yast2-installation
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-1010 | recommended | important | ---         | needed     | Recommended update for yast2-installation
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-1010 | recommended | important | ---         | needed     | Recommended update for yast2-installation
+Main Update Repository                | openSUSE-2020-1011 | security    | important | ---         | not needed | Security update for singularity
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-1011 | security    | important | ---         | not needed | Security update for singularity
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-1011 | security    | important | ---         | not needed | Security update for singularity
+Main Update Repository                | openSUSE-2020-1012 | recommended | moderate  | ---         | not needed | Recommended update for pan
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-1012 | recommended | moderate  | ---         | not needed | Recommended update for pan
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-1012 | recommended | moderate  | ---         | not needed | Recommended update for pan
+Main Update Repository                | openSUSE-2020-1014 | security    | important | ---         | not needed | Security update for google-compute-engine
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-1014 | security    | important | ---         | not needed | Security update for google-compute-engine
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-1014 | security    | important | ---         | not needed | Security update for google-compute-engine
+Main Update Repository                | openSUSE-2020-1015 | security    | moderate  | ---         | needed     | Security update for openexr
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-1015 | security    | moderate  | ---         | needed     | Security update for openexr
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-1015 | security    | moderate  | ---         | needed     | Security update for openexr
+Main Update Repository                | openSUSE-2020-1016 | security    | moderate  | ---         | not needed | Security update for mumble
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-1016 | security    | moderate  | ---         | not needed | Security update for mumble
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-1016 | security    | moderate  | ---         | not needed | Security update for mumble
+Main Update Repository                | openSUSE-2020-1018 | recommended | low       | ---         | not needed | Recommended update for python-numpy
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-1018 | recommended | low       | ---         | not needed | Recommended update for python-numpy
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-1018 | recommended | low       | ---         | not needed | Recommended update for python-numpy
+Main Update Repository                | openSUSE-2020-1019 | recommended | moderate  | restart     | needed     | Recommended update for libsolv, libzypp, zypper
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-1019 | recommended | moderate  | restart     | needed     | Recommended update for libsolv, libzypp, zypper
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-1019 | recommended | moderate  | restart     | needed     | Recommended update for libsolv, libzypp, zypper
+Main Update Repository                | openSUSE-2020-1020 | security    | important | ---         | not needed | Security update for chromium
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-1020 | security    | important | ---         | not needed | Security update for chromium
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-1020 | security    | important | ---         | not needed | Security update for chromium
+Main Update Repository                | openSUSE-2020-1022 | security    | moderate  | ---         | not needed | Security update for ant
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-1022 | security    | moderate  | ---         | not needed | Security update for ant
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-1022 | security    | moderate  | ---         | not needed | Security update for ant
+Main Update Repository                | openSUSE-2020-1023 | security    | important | ---         | needed     | Security update for ldb, samba
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-1023 | security    | important | ---         | needed     | Security update for ldb, samba
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-1023 | security    | important | ---         | needed     | Security update for ldb, samba
+Main Update Repository                | openSUSE-2020-1024 | recommended | moderate  | ---         | needed     | Recommended update for NetworkManager-branding
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-1024 | recommended | moderate  | ---         | needed     | Recommended update for NetworkManager-branding
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-1024 | recommended | moderate  | ---         | needed     | Recommended update for NetworkManager-branding
+Main Update Repository                | openSUSE-2020-1025 | security    | important | ---         | not needed | Security update for LibVNCServer
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-1025 | security    | important | ---         | not needed | Security update for LibVNCServer
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-1025 | security    | important | ---         | not needed | Security update for LibVNCServer
+Main Update Repository                | openSUSE-2020-1026 | recommended | important | ---         | needed     | Recommended update for parted
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-1026 | recommended | important | ---         | needed     | Recommended update for parted
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-1026 | recommended | important | ---         | needed     | Recommended update for parted
+Main Update Repository                | openSUSE-2020-1027 | security    | moderate  | ---         | needed     | Security update for openconnect
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-1027 | security    | moderate  | ---         | needed     | Security update for openconnect
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-1027 | security    | moderate  | ---         | needed     | Security update for openconnect
+Main Update Repository                | openSUSE-2020-1028 | recommended | moderate  | ---         | needed     | Recommended update for dracut
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-1028 | recommended | moderate  | ---         | needed     | Recommended update for dracut
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-1028 | recommended | moderate  | ---         | needed     | Recommended update for dracut
+Main Update Repository                | openSUSE-2020-1029 | recommended | moderate  | ---         | not needed | Recommended update for xournalpp
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-1029 | recommended | moderate  | ---         | not needed | Recommended update for xournalpp
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-1029 | recommended | moderate  | ---         | not needed | Recommended update for xournalpp
+Main Update Repository                | openSUSE-2020-1030 | recommended | moderate  | ---         | needed     | Recommended update for kio
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-1030 | recommended | moderate  | ---         | needed     | Recommended update for kio
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-1030 | recommended | moderate  | ---         | needed     | Recommended update for kio
+Main Update Repository                | openSUSE-2020-1033 | recommended | moderate  | ---         | not needed | Recommended update for Rivet
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-1033 | recommended | moderate  | ---         | not needed | Recommended update for Rivet
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-1033 | recommended | moderate  | ---         | not needed | Recommended update for Rivet
+Main Update Repository                | openSUSE-2020-1034 | security    | moderate  | ---         | needed     | Security update for MozillaFirefox
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-1034 | security    | moderate  | ---         | needed     | Security update for MozillaFirefox
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-1034 | security    | moderate  | ---         | needed     | Security update for MozillaFirefox
+Main Update Repository                | openSUSE-2020-1044 | recommended | moderate  | ---         | not needed | Recommended update for HepMC
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-1044 | recommended | moderate  | ---         | not needed | Recommended update for HepMC
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-1044 | recommended | moderate  | ---         | not needed | Recommended update for HepMC
+Main Update Repository                | openSUSE-2020-1045 | recommended | moderate  | ---         | not needed | Recommended update for HepMC2
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-1045 | recommended | moderate  | ---         | not needed | Recommended update for HepMC2
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-1045 | recommended | moderate  | ---         | not needed | Recommended update for HepMC2
+Main Update Repository                | openSUSE-2020-1046 | recommended | moderate  | ---         | not needed | Recommended update for strawberry
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-1046 | recommended | moderate  | ---         | not needed | Recommended update for strawberry
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-1046 | recommended | moderate  | ---         | not needed | Recommended update for strawberry
+openSUSE-15.2-Update-Non-Oss          | openSUSE-2020-1047 | recommended | moderate  | ---         | not needed | Recommended update for wine-mono
+Update Repository (Non-Oss)           | openSUSE-2020-1047 | recommended | moderate  | ---         | not needed | Recommended update for wine-mono
+tencent.opensuse.15.2.update.non.oss  | openSUSE-2020-1047 | recommended | moderate  | ---         | not needed | Recommended update for wine-mono
+tsinghua.opensuse.15.2.update.non.oss | openSUSE-2020-1047 | recommended | moderate  | ---         | not needed | Recommended update for wine-mono
+Main Update Repository                | openSUSE-2020-1050 | security    | moderate  | ---         | not needed | Security update for cni-plugins
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-1050 | security    | moderate  | ---         | not needed | Security update for cni-plugins
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-1050 | security    | moderate  | ---         | not needed | Security update for cni-plugins
+Main Update Repository                | openSUSE-2020-1053 | recommended | moderate  | ---         | not needed | Recommended update for golang-github-prometheus-node_exporter
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-1053 | recommended | moderate  | ---         | not needed | Recommended update for golang-github-prometheus-node_exporter
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-1053 | recommended | moderate  | ---         | not needed | Recommended update for golang-github-prometheus-node_exporter
+Main Update Repository                | openSUSE-2020-1056 | security    | important | ---         | not needed | Security update for LibVNCServer
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-1056 | security    | important | ---         | not needed | Security update for LibVNCServer
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-1056 | security    | important | ---         | not needed | Security update for LibVNCServer
+Main Update Repository                | openSUSE-2020-1057 | recommended | moderate  | ---         | not needed | Recommended update for wxMaxima
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-1057 | recommended | moderate  | ---         | not needed | Recommended update for wxMaxima
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-1057 | recommended | moderate  | ---         | not needed | Recommended update for wxMaxima
+Main Update Repository                | openSUSE-2020-1058 | recommended | moderate  | ---         | not needed | Recommended update for putty
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-1058 | recommended | moderate  | ---         | not needed | Recommended update for putty
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-1058 | recommended | moderate  | ---         | not needed | Recommended update for putty
+Main Update Repository                | openSUSE-2020-1059 | recommended | moderate  | ---         | not needed | Recommended update for zypper-migration-plugin
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-1059 | recommended | moderate  | ---         | not needed | Recommended update for zypper-migration-plugin
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-1059 | recommended | moderate  | ---         | not needed | Recommended update for zypper-migration-plugin
+Main Update Repository                | openSUSE-2020-1060 | security    | moderate  | ---         | not needed | Security update for cacti, cacti-spine
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-1060 | security    | moderate  | ---         | not needed | Security update for cacti, cacti-spine
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-1060 | security    | moderate  | ---         | not needed | Security update for cacti, cacti-spine
+Main Update Repository                | openSUSE-2020-1062 | security    | important | reboot      | needed     | Security update for the Linux Kernel
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-1062 | security    | important | reboot      | needed     | Security update for the Linux Kernel
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-1062 | security    | important | reboot      | needed     | Security update for the Linux Kernel
+Main Update Repository                | openSUSE-2020-1063 | security    | important | ---         | not needed | Security update for tomcat
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-1063 | security    | important | ---         | not needed | Security update for tomcat
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-1063 | security    | important | ---         | not needed | Security update for tomcat
+Main Update Repository                | openSUSE-2020-1065 | recommended | important | restart     | needed     | Recommended update for libsolv, libzypp, yast2-packager, yast2-pkg-bindings
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-1065 | recommended | important | restart     | needed     | Recommended update for libsolv, libzypp, yast2-packager, yast2-pkg-bindings
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-1065 | recommended | important | restart     | needed     | Recommended update for libsolv, libzypp, yast2-packager, yast2-pkg-bindings
+Main Update Repository                | openSUSE-2020-1066 | recommended | moderate  | ---         | not needed | Recommended update for openvswitch
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-1066 | recommended | moderate  | ---         | not needed | Recommended update for openvswitch
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-1066 | recommended | moderate  | ---         | not needed | Recommended update for openvswitch
+Main Update Repository                | openSUSE-2020-1072 | recommended | important | ---         | not needed | Recommended update for crmsh
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-1072 | recommended | important | ---         | not needed | Recommended update for crmsh
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-1072 | recommended | important | ---         | not needed | Recommended update for crmsh
+Main Update Repository                | openSUSE-2020-1073 | recommended | important | ---         | needed     | Recommended update for efivar
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-1073 | recommended | important | ---         | needed     | Recommended update for efivar
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-1073 | recommended | important | ---         | needed     | Recommended update for efivar
+Main Update Repository                | openSUSE-2020-1075 | recommended | important | ---         | not needed | Recommended update for salt
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-1075 | recommended | important | ---         | not needed | Recommended update for salt
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-1075 | recommended | important | ---         | not needed | Recommended update for salt
+Main Update Repository                | openSUSE-2020-1079 | recommended | moderate  | ---         | not needed | Recommended update for perf
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-1079 | recommended | moderate  | ---         | not needed | Recommended update for perf
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-1079 | recommended | moderate  | ---         | not needed | Recommended update for perf
+Main Update Repository                | openSUSE-2020-1080 | recommended | moderate  | ---         | needed     | Recommended update for yast2-network
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-1080 | recommended | moderate  | ---         | needed     | Recommended update for yast2-network
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-1080 | recommended | moderate  | ---         | needed     | Recommended update for yast2-network
+Main Update Repository                | openSUSE-2020-1081 | recommended | low       | ---         | not needed | Recommended update for go1.10
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-1081 | recommended | low       | ---         | not needed | Recommended update for go1.10
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-1081 | recommended | low       | ---         | not needed | Recommended update for go1.10
+Main Update Repository                | openSUSE-2020-1082 | recommended | moderate  | ---         | needed     | Recommended update for flatpak
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-1082 | recommended | moderate  | ---         | needed     | Recommended update for flatpak
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-1082 | recommended | moderate  | ---         | needed     | Recommended update for flatpak
+Main Update Repository                | openSUSE-2020-1083 | recommended | low       | ---         | not needed | Recommended update for go1.9
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-1083 | recommended | low       | ---         | not needed | Recommended update for go1.9
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-1083 | recommended | low       | ---         | not needed | Recommended update for go1.9
+Main Update Repository                | openSUSE-2020-1084 | recommended | moderate  | ---         | not needed | Recommended update for python-importlib_resources
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-1084 | recommended | moderate  | ---         | not needed | Recommended update for python-importlib_resources
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-1084 | recommended | moderate  | ---         | not needed | Recommended update for python-importlib_resources
+Main Update Repository                | openSUSE-2020-1086 | security    | moderate  | ---         | not needed | Security update for knot
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-1086 | security    | moderate  | ---         | not needed | Security update for knot
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-1086 | security    | moderate  | ---         | not needed | Security update for knot
+Main Update Repository                | openSUSE-2020-1091 | recommended | moderate  | ---         | needed     | Recommended update for apparmor
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-1091 | recommended | moderate  | ---         | needed     | Recommended update for apparmor
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-1091 | recommended | moderate  | ---         | needed     | Recommended update for apparmor
+Main Update Repository                | openSUSE-2020-1092 | recommended | low       | ---         | not needed | Recommended update for go1.11
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-1092 | recommended | low       | ---         | not needed | Recommended update for go1.11
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-1092 | recommended | low       | ---         | not needed | Recommended update for go1.11
+Main Update Repository                | openSUSE-2020-1093 | security    | moderate  | ---         | not needed | Security update for perl-YAML-LibYAML
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-1093 | security    | moderate  | ---         | not needed | Security update for perl-YAML-LibYAML
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-1093 | security    | moderate  | ---         | not needed | Security update for perl-YAML-LibYAML
+Main Update Repository                | openSUSE-2020-1094 | recommended | moderate  | ---         | needed     | Recommended update for alsa
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-1094 | recommended | moderate  | ---         | needed     | Recommended update for alsa
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-1094 | recommended | moderate  | ---         | needed     | Recommended update for alsa
+Main Update Repository                | openSUSE-2020-1095 | security    | important | ---         | not needed | Security update for go1.13
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-1095 | security    | important | ---         | not needed | Security update for go1.13
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-1095 | security    | important | ---         | not needed | Security update for go1.13
+Main Update Repository                | openSUSE-2020-1098 | recommended | moderate  | ---         | needed     | Recommended update for yast2
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-1098 | recommended | moderate  | ---         | needed     | Recommended update for yast2
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-1098 | recommended | moderate  | ---         | needed     | Recommended update for yast2
+Main Update Repository                | openSUSE-2020-1099 | recommended | low       | ---         | not needed | Recommened update for opencl
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-1099 | recommended | low       | ---         | not needed | Recommened update for opencl
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-1099 | recommended | low       | ---         | not needed | Recommened update for opencl
+Main Update Repository                | openSUSE-2020-1103 | recommended | moderate  | ---         | needed     | Recommended update for gdm
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-1103 | recommended | moderate  | ---         | needed     | Recommended update for gdm
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-1103 | recommended | moderate  | ---         | needed     | Recommended update for gdm
+Main Update Repository                | openSUSE-2020-1104 | recommended | moderate  | ---         | not needed | Recommended update for yast2-registration
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-1104 | recommended | moderate  | ---         | not needed | Recommended update for yast2-registration
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-1104 | recommended | moderate  | ---         | not needed | Recommended update for yast2-registration
+Main Update Repository                | openSUSE-2020-1105 | security    | moderate  | ---         | not needed | Security update for SUSE Manager Client Tools
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-1105 | security    | moderate  | ---         | not needed | Security update for SUSE Manager Client Tools
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-1105 | security    | moderate  | ---         | not needed | Security update for SUSE Manager Client Tools
+Main Update Repository                | openSUSE-2020-1108 | security    | important | ---         | not needed | Security update for qemu
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-1108 | security    | important | ---         | not needed | Security update for qemu
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-1108 | security    | important | ---         | not needed | Security update for qemu
+Main Update Repository                | openSUSE-2020-1111 | security    | important | ---         | not needed | Security update for tomcat
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-1111 | security    | important | ---         | not needed | Security update for tomcat
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-1111 | security    | important | ---         | not needed | Security update for tomcat
+Main Update Repository                | openSUSE-2020-1113 | recommended | moderate  | ---         | not needed | Recommended update for go1.12
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-1113 | recommended | moderate  | ---         | not needed | Recommended update for go1.12
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-1113 | recommended | moderate  | ---         | not needed | Recommended update for go1.12
+Main Update Repository                | openSUSE-2020-1115 | recommended | moderate  | ---         | not needed | Recommended update for nodejs12
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-1115 | recommended | moderate  | ---         | not needed | Recommended update for nodejs12
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-1115 | recommended | moderate  | ---         | not needed | Recommended update for nodejs12
+Main Update Repository                | openSUSE-2020-1120 | recommended | moderate  | ---         | not needed | Recommended update for fence-agents
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-1120 | recommended | moderate  | ---         | not needed | Recommended update for fence-agents
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-1120 | recommended | moderate  | ---         | not needed | Recommended update for fence-agents
+Main Update Repository                | openSUSE-2020-1122 | recommended | moderate  | ---         | not needed | Recommended update for mkdud
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-1122 | recommended | moderate  | ---         | not needed | Recommended update for mkdud
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-1122 | recommended | moderate  | ---         | not needed | Recommended update for mkdud
+Main Update Repository                | openSUSE-2020-1126 | recommended | moderate  | ---         | not needed | Recommended update for installation-images
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-1126 | recommended | moderate  | ---         | not needed | Recommended update for installation-images
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-1126 | recommended | moderate  | ---         | not needed | Recommended update for installation-images
+Main Update Repository                | openSUSE-2020-1128 | security    | moderate  | ---         | needed     | Security update for libraw
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-1128 | security    | moderate  | ---         | needed     | Security update for libraw
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-1128 | security    | moderate  | ---         | needed     | Security update for libraw
+Main Update Repository                | openSUSE-2020-1129 | recommended | low       | ---         | not needed | Recommended update for go1.12
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-1129 | recommended | low       | ---         | not needed | Recommended update for go1.12
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-1129 | recommended | low       | ---         | not needed | Recommended update for go1.12
+Main Update Repository                | openSUSE-2020-1131 | recommended | moderate  | ---         | not needed | Recommended update for python-kiwi
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-1131 | recommended | moderate  | ---         | not needed | Recommended update for python-kiwi
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-1131 | recommended | moderate  | ---         | not needed | Recommended update for python-kiwi
+Main Update Repository                | openSUSE-2020-1132 | recommended | moderate  | ---         | needed     | Recommended update for diffutils
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-1132 | recommended | moderate  | ---         | needed     | Recommended update for diffutils
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-1132 | recommended | moderate  | ---         | needed     | Recommended update for diffutils
+Main Update Repository                | openSUSE-2020-1135 | recommended | moderate  | ---         | not needed | Recommended update for android-udev-rules
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-1135 | recommended | moderate  | ---         | not needed | Recommended update for android-udev-rules
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-1135 | recommended | moderate  | ---         | not needed | Recommended update for android-udev-rules
+Main Update Repository                | openSUSE-2020-1136 | recommended | moderate  | ---         | not needed | Recommended update for 389-ds
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-1136 | recommended | moderate  | ---         | not needed | Recommended update for 389-ds
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-1136 | recommended | moderate  | ---         | not needed | Recommended update for 389-ds
+openSUSE-15.2-Update-Non-Oss          | openSUSE-2020-1137 | recommended | moderate  | ---         | not needed | Recommended update for steam
+Update Repository (Non-Oss)           | openSUSE-2020-1137 | recommended | moderate  | ---         | not needed | Recommended update for steam
+tencent.opensuse.15.2.update.non.oss  | openSUSE-2020-1137 | recommended | moderate  | ---         | not needed | Recommended update for steam
+tsinghua.opensuse.15.2.update.non.oss | openSUSE-2020-1137 | recommended | moderate  | ---         | not needed | Recommended update for steam
+Main Update Repository                | openSUSE-2020-1139 | security    | moderate  | ---         | not needed | Security update for claws-mail
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-1139 | security    | moderate  | ---         | not needed | Security update for claws-mail
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-1139 | security    | moderate  | ---         | not needed | Security update for claws-mail
+Main Update Repository                | openSUSE-2020-1140 | recommended | important | ---         | not needed | Recommended update for crmsh
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-1140 | recommended | important | ---         | not needed | Recommended update for crmsh
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-1140 | recommended | important | ---         | not needed | Recommended update for crmsh
+Main Update Repository                | openSUSE-2020-1143 | recommended | moderate  | ---         | needed     | Recommended update for systemd
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-1143 | recommended | moderate  | ---         | needed     | Recommended update for systemd
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-1143 | recommended | moderate  | ---         | needed     | Recommended update for systemd
+Main Update Repository                | openSUSE-2020-1144 | security    | moderate  | ---         | not needed | Security update for targetcli-fb
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-1144 | security    | moderate  | ---         | not needed | Security update for targetcli-fb
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-1144 | security    | moderate  | ---         | not needed | Security update for targetcli-fb
+Main Update Repository                | openSUSE-2020-1146 | security    | important | ---         | needed     | Security update for ghostscript
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-1146 | security    | important | ---         | needed     | Security update for ghostscript
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-1146 | security    | important | ---         | needed     | Security update for ghostscript
+Main Update Repository                | openSUSE-2020-1150 | recommended | moderate  | ---         | not needed | Recommended update for lxd
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-1150 | recommended | moderate  | ---         | not needed | Recommended update for lxd
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-1150 | recommended | moderate  | ---         | not needed | Recommended update for lxd
+Main Update Repository                | openSUSE-2020-1151 | recommended | moderate  | ---         | needed     | Recommended update for icewm, icewm-theme-branding
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-1151 | recommended | moderate  | ---         | needed     | Recommended update for icewm, icewm-theme-branding
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-1151 | recommended | moderate  | ---         | needed     | Recommended update for icewm, icewm-theme-branding
+Main Update Repository                | openSUSE-2020-1152 | recommended | moderate  | ---         | not needed | Recommended update for python-kiwi
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-1152 | recommended | moderate  | ---         | not needed | Recommended update for python-kiwi
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-1152 | recommended | moderate  | ---         | not needed | Recommended update for python-kiwi
+Main Update Repository                | openSUSE-2020-1154 | security    | low       | ---         | not needed | Security update of chromium
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-1154 | security    | low       | ---         | not needed | Security update of chromium
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-1154 | security    | low       | ---         | not needed | Security update of chromium
+Main Update Repository                | openSUSE-2020-1155 | security    | important | ---         | needed     | Security update for MozillaFirefox
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-1155 | security    | important | ---         | needed     | Security update for MozillaFirefox
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-1155 | security    | important | ---         | needed     | Security update for MozillaFirefox
+Main Update Repository                | openSUSE-2020-1156 | security    | moderate  | ---         | not needed | Security update for python-rtslib-fb
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-1156 | security    | moderate  | ---         | not needed | Security update for python-rtslib-fb
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-1156 | security    | moderate  | ---         | not needed | Security update for python-rtslib-fb
+Main Update Repository                | openSUSE-2020-1157 | recommended | low       | ---         | not needed | Recommended update for crmsh
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-1157 | recommended | low       | ---         | not needed | Recommended update for crmsh
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-1157 | recommended | low       | ---         | not needed | Recommended update for crmsh
+Main Update Repository                | openSUSE-2020-1158 | recommended | low       | ---         | not needed | Recommended update for ovmf
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-1158 | recommended | low       | ---         | not needed | Recommended update for ovmf
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-1158 | recommended | low       | ---         | not needed | Recommended update for ovmf
+Main Update Repository                | openSUSE-2020-1163 | recommended | moderate  | ---         | needed     | Recommended update for opus
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-1163 | recommended | moderate  | ---         | needed     | Recommended update for opus
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-1163 | recommended | moderate  | ---         | needed     | Recommended update for opus
+Main Update Repository                | openSUSE-2020-1164 | security    | important | ---         | needed     | Security update for libX11
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-1164 | security    | important | ---         | needed     | Security update for libX11
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-1164 | security    | important | ---         | needed     | Security update for libX11
+Main Update Repository                | openSUSE-2020-1165 | recommended | moderate  | ---         | not needed | Recommended update for ocfs2-tools
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-1165 | recommended | moderate  | ---         | not needed | Recommended update for ocfs2-tools
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-1165 | recommended | moderate  | ---         | not needed | Recommended update for ocfs2-tools
+Main Update Repository                | openSUSE-2020-1166 | recommended | moderate  | ---         | not needed | Recommended update for gnome-initial-setup
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-1166 | recommended | moderate  | ---         | not needed | Recommended update for gnome-initial-setup
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-1166 | recommended | moderate  | ---         | not needed | Recommended update for gnome-initial-setup
+Main Update Repository                | openSUSE-2020-1167 | recommended | moderate  | ---         | not needed | Recommended update for cacti, cacti-spine
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-1167 | recommended | moderate  | ---         | not needed | Recommended update for cacti, cacti-spine
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-1167 | recommended | moderate  | ---         | not needed | Recommended update for cacti, cacti-spine
+Main Update Repository                | openSUSE-2020-1169 | security    | important | ---         | needed     | Security update for grub2
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-1169 | security    | important | ---         | needed     | Security update for grub2
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-1169 | security    | important | ---         | needed     | Security update for grub2
+openSUSE-15.2-Update-Non-Oss          | openSUSE-2020-1172 | security    | moderate  | ---         | not needed | Security update for opera
+Update Repository (Non-Oss)           | openSUSE-2020-1172 | security    | moderate  | ---         | not needed | Security update for opera
+tencent.opensuse.15.2.update.non.oss  | openSUSE-2020-1172 | security    | moderate  | ---         | not needed | Security update for opera
+tsinghua.opensuse.15.2.update.non.oss | openSUSE-2020-1172 | security    | moderate  | ---         | not needed | Security update for opera
+Main Update Repository                | openSUSE-2020-1182 | security    | important | ---         | needed     | Security update for libX11
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-1182 | security    | important | ---         | needed     | Security update for libX11
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-1182 | security    | important | ---         | needed     | Security update for libX11
+Main Update Repository                | openSUSE-2020-1183 | security    | moderate  | ---         | needed     | Security update for ark
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-1183 | security    | moderate  | ---         | needed     | Security update for ark
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-1183 | security    | moderate  | ---         | needed     | Security update for ark
+Main Update Repository                | openSUSE-2020-1189 | security    | important | ---         | needed     | Security update for MozillaFirefox
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-1189 | security    | important | ---         | needed     | Security update for MozillaFirefox
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-1189 | security    | important | ---         | needed     | Security update for MozillaFirefox
+Main Update Repository                | openSUSE-2020-1190 | security    | important | ---         | needed     | Security update for xen
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-1190 | security    | important | ---         | needed     | Security update for xen
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-1190 | security    | important | ---         | needed     | Security update for xen
+Main Update Repository                | openSUSE-2020-1191 | security    | important | ---         | needed     | Security update for java-11-openjdk
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-1191 | security    | important | ---         | needed     | Security update for java-11-openjdk
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-1191 | security    | important | ---         | needed     | Security update for java-11-openjdk
+Main Update Repository                | openSUSE-2020-1194 | security    | moderate  | ---         | not needed | Security update for go1.13
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-1194 | security    | moderate  | ---         | not needed | Security update for go1.13
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-1194 | security    | moderate  | ---         | not needed | Security update for go1.13
+Main Update Repository                | openSUSE-2020-1195 | recommended | moderate  | ---         | not needed | Recommended update for php7
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-1195 | recommended | moderate  | ---         | not needed | Recommended update for php7
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-1195 | recommended | moderate  | ---         | not needed | Recommended update for php7
+Main Update Repository                | openSUSE-2020-1199 | security    | moderate  | ---         | not needed | Security update for wireshark
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-1199 | security    | moderate  | ---         | not needed | Security update for wireshark
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-1199 | security    | moderate  | ---         | not needed | Security update for wireshark
+Main Update Repository                | openSUSE-2020-1200 | security    | important | ---         | not needed | Security update for xrdp
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-1200 | security    | important | ---         | not needed | Security update for xrdp
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-1200 | security    | important | ---         | not needed | Security update for xrdp
+Main Update Repository                | openSUSE-2020-1201 | recommended | moderate  | ---         | not needed | Recommended update for gnome-control-center
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-1201 | recommended | moderate  | ---         | not needed | Recommended update for gnome-control-center
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-1201 | recommended | moderate  | ---         | not needed | Recommended update for gnome-control-center
+Main Update Repository                | openSUSE-2020-1202 | recommended | moderate  | ---         | needed     | Recommended update for libstorage-ng
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-1202 | recommended | moderate  | ---         | needed     | Recommended update for libstorage-ng
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-1202 | recommended | moderate  | ---         | needed     | Recommended update for libstorage-ng
+Main Update Repository                | openSUSE-2020-1203 | recommended | important | ---         | not needed | Recommended update for python-azure-agent
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-1203 | recommended | important | ---         | not needed | Recommended update for python-azure-agent
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-1203 | recommended | important | ---         | not needed | Recommended update for python-azure-agent
+Main Update Repository                | openSUSE-2020-1204 | security    | moderate  | ---         | needed     | Security update for perl-XML-Twig
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-1204 | security    | moderate  | ---         | needed     | Security update for perl-XML-Twig
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-1204 | security    | moderate  | ---         | needed     | Security update for perl-XML-Twig
+Main Update Repository                | openSUSE-2020-1205 | security    | important | ---         | not needed | Security update for MozillaThunderbird
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-1205 | security    | important | ---         | not needed | Security update for MozillaThunderbird
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-1205 | security    | important | ---         | not needed | Security update for MozillaThunderbird
+Main Update Repository                | openSUSE-2020-1206 | security    | important | ---         | not needed | Security update for chromium
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-1206 | security    | important | ---         | not needed | Security update for chromium
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-1206 | security    | important | ---         | not needed | Security update for chromium
+Main Update Repository                | openSUSE-2020-1208 | security    | moderate  | ---         | not needed | Security update for firejail
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-1208 | security    | moderate  | ---         | not needed | Security update for firejail
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-1208 | security    | moderate  | ---         | not needed | Security update for firejail
+Main Update Repository                | openSUSE-2020-1209 | security    | moderate  | ---         | not needed | Security update for hylafax+
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-1209 | security    | moderate  | ---         | not needed | Security update for hylafax+
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-1209 | security    | moderate  | ---         | not needed | Security update for hylafax+
+Main Update Repository                | openSUSE-2020-1217 | recommended | moderate  | ---         | not needed | Recommended update for supportutils-plugin-suse-public-cloud and python3-azuremetadata
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-1217 | recommended | moderate  | ---         | not needed | Recommended update for supportutils-plugin-suse-public-cloud and python3-azuremetadata
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-1217 | recommended | moderate  | ---         | not needed | Recommended update for supportutils-plugin-suse-public-cloud and python3-azuremetadata
+Main Update Repository                | openSUSE-2020-1218 | recommended | moderate  | ---         | not needed | Recommended update for osc
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-1218 | recommended | moderate  | ---         | not needed | Recommended update for osc
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-1218 | recommended | moderate  | ---         | not needed | Recommended update for osc
+Main Update Repository                | openSUSE-2020-1219 | recommended | moderate  | ---         | not needed | Recommended update for hawk2
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-1219 | recommended | moderate  | ---         | not needed | Recommended update for hawk2
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-1219 | recommended | moderate  | ---         | not needed | Recommended update for hawk2
+Main Update Repository                | openSUSE-2020-1221 | recommended | important | ---         | needed     | Recommended update for grub2
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-1221 | recommended | important | ---         | needed     | Recommended update for grub2
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-1221 | recommended | important | ---         | needed     | Recommended update for grub2
+Main Update Repository                | openSUSE-2020-859  | recommended | moderate  | ---         | not needed | Recommended update for festival
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-859  | recommended | moderate  | ---         | not needed | Recommended update for festival
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-859  | recommended | moderate  | ---         | not needed | Recommended update for festival
+Main Update Repository                | openSUSE-2020-860  | recommended | moderate  | ---         | not needed | Recommended update for jq
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-860  | recommended | moderate  | ---         | not needed | Recommended update for jq
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-860  | recommended | moderate  | ---         | not needed | Recommended update for jq
+Main Update Repository                | openSUSE-2020-861  | security    | moderate  | ---         | not needed | Security update for rubygem-bundler
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-861  | security    | moderate  | ---         | not needed | Security update for rubygem-bundler
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-861  | security    | moderate  | ---         | not needed | Security update for rubygem-bundler
+Main Update Repository                | openSUSE-2020-862  | recommended | moderate  | ---         | not needed | Recommended update for susefirewall2-to-firewalld
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-862  | recommended | moderate  | ---         | not needed | Recommended update for susefirewall2-to-firewalld
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-862  | recommended | moderate  | ---         | not needed | Recommended update for susefirewall2-to-firewalld
+Main Update Repository                | openSUSE-2020-863  | recommended | moderate  | ---         | applied    | Recommended update for git
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-863  | recommended | moderate  | ---         | applied    | Recommended update for git
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-863  | recommended | moderate  | ---         | applied    | Recommended update for git
+Main Update Repository                | openSUSE-2020-871  | recommended | moderate  | ---         | not needed | Recommended update for sar2
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-871  | recommended | moderate  | ---         | not needed | Recommended update for sar2
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-871  | recommended | moderate  | ---         | not needed | Recommended update for sar2
+Main Update Repository                | openSUSE-2020-872  | security    | moderate  | ---         | applied    | Security update for bluez
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-872  | security    | moderate  | ---         | applied    | Security update for bluez
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-872  | security    | moderate  | ---         | applied    | Security update for bluez
+Main Update Repository                | openSUSE-2020-873  | recommended | moderate  | ---         | not needed | Recommended update for python-paramiko
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-873  | recommended | moderate  | ---         | not needed | Recommended update for python-paramiko
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-873  | recommended | moderate  | ---         | not needed | Recommended update for python-paramiko
+Main Update Repository                | openSUSE-2020-874  | recommended | moderate  | ---         | not needed | Recommended update for golang-packaging
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-874  | recommended | moderate  | ---         | not needed | Recommended update for golang-packaging
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-874  | recommended | moderate  | ---         | not needed | Recommended update for golang-packaging
+Main Update Repository                | openSUSE-2020-876  | security    | moderate  | ---         | applied    | Security update for graphviz
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-876  | security    | moderate  | ---         | applied    | Security update for graphviz
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-876  | security    | moderate  | ---         | applied    | Security update for graphviz
+Main Update Repository                | openSUSE-2020-878  | recommended | moderate  | ---         | applied    | Recommended update for xkeyboard-config
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-878  | recommended | moderate  | ---         | applied    | Recommended update for xkeyboard-config
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-878  | recommended | moderate  | ---         | applied    | Recommended update for xkeyboard-config
+Main Update Repository                | openSUSE-2020-879  | recommended | moderate  | ---         | not needed | Recommended update for growpart
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-879  | recommended | moderate  | ---         | not needed | Recommended update for growpart
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-879  | recommended | moderate  | ---         | not needed | Recommended update for growpart
+Main Update Repository                | openSUSE-2020-880  | security    | low       | ---         | not needed | Security update for mercurial
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-880  | security    | low       | ---         | not needed | Security update for mercurial
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-880  | security    | low       | ---         | not needed | Security update for mercurial
+Main Update Repository                | openSUSE-2020-881  | recommended | moderate  | ---         | not needed | Recommended update for python-pyroute2
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-881  | recommended | moderate  | ---         | not needed | Recommended update for python-pyroute2
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-881  | recommended | moderate  | ---         | not needed | Recommended update for python-pyroute2
+Main Update Repository                | openSUSE-2020-882  | recommended | moderate  | ---         | not needed | Recommended update for python-M2Crypto
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-882  | recommended | moderate  | ---         | not needed | Recommended update for python-M2Crypto
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-882  | recommended | moderate  | ---         | not needed | Recommended update for python-M2Crypto
+Main Update Repository                | openSUSE-2020-883  | security    | important | ---         | applied    | Security update for curl
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-883  | security    | important | ---         | applied    | Security update for curl
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-883  | security    | important | ---         | applied    | Security update for curl
+Main Update Repository                | openSUSE-2020-884  | recommended | moderate  | ---         | not needed | Recommended update for nodejs10
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-884  | recommended | moderate  | ---         | not needed | Recommended update for nodejs10
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-884  | recommended | moderate  | ---         | not needed | Recommended update for nodejs10
+Main Update Repository                | openSUSE-2020-885  | recommended | moderate  | ---         | not needed | Recommended update for profanity
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-885  | recommended | moderate  | ---         | not needed | Recommended update for profanity
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-885  | recommended | moderate  | ---         | not needed | Recommended update for profanity
+Main Update Repository                | openSUSE-2020-891  | recommended | moderate  | ---         | not needed | Recommended update for nodejs8
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-891  | recommended | moderate  | ---         | not needed | Recommended update for nodejs8
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-891  | recommended | moderate  | ---         | not needed | Recommended update for nodejs8
+Main Update Repository                | openSUSE-2020-892  | security    | moderate  | ---         | not needed | Security update for grafana, grafana-piechart-panel, grafana-status-panel
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-892  | security    | moderate  | ---         | not needed | Security update for grafana, grafana-piechart-panel, grafana-status-panel
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-892  | security    | moderate  | ---         | not needed | Security update for grafana, grafana-piechart-panel, grafana-status-panel
+Main Update Repository                | openSUSE-2020-893  | security    | important | ---         | not needed | Security update for chromium
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-893  | security    | important | ---         | not needed | Security update for chromium
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-893  | security    | important | ---         | not needed | Security update for chromium
+Main Update Repository                | openSUSE-2020-905  | recommended | moderate  | ---         | applied    | Recommended update for krb5
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-905  | recommended | moderate  | ---         | applied    | Recommended update for krb5
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-905  | recommended | moderate  | ---         | applied    | Recommended update for krb5
+Main Update Repository                | openSUSE-2020-906  | security    | moderate  | ---         | applied    | Security update for graphviz
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-906  | security    | moderate  | ---         | applied    | Security update for graphviz
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-906  | security    | moderate  | ---         | applied    | Security update for graphviz
+Main Update Repository                | openSUSE-2020-913  | security    | important | ---         | not needed | Security update for unbound
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-913  | security    | important | ---         | not needed | Security update for unbound
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-913  | security    | important | ---         | not needed | Security update for unbound
+Main Update Repository                | openSUSE-2020-914  | security    | important | ---         | not needed | Security update for squid
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-914  | security    | important | ---         | not needed | Security update for squid
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-914  | security    | important | ---         | not needed | Security update for squid
+Main Update Repository                | openSUSE-2020-915  | security    | important | ---         | applied    | Security update for mutt
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-915  | security    | important | ---         | applied    | Security update for mutt
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-915  | security    | important | ---         | applied    | Security update for mutt
+Main Update Repository                | openSUSE-2020-916  | recommended | moderate  | ---         | not needed | Recommended update for python3-gcemetadata
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-916  | recommended | moderate  | ---         | not needed | Recommended update for python3-gcemetadata
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-916  | recommended | moderate  | ---         | not needed | Recommended update for python3-gcemetadata
+openSUSE-15.2-Update-Non-Oss          | openSUSE-2020-917  | security    | important | ---         | not needed | Security update for opera
+Update Repository (Non-Oss)           | openSUSE-2020-917  | security    | important | ---         | not needed | Security update for opera
+tencent.opensuse.15.2.update.non.oss  | openSUSE-2020-917  | security    | important | ---         | not needed | Security update for opera
+tsinghua.opensuse.15.2.update.non.oss | openSUSE-2020-917  | security    | important | ---         | not needed | Security update for opera
+Main Update Repository                | openSUSE-2020-918  | recommended | moderate  | ---         | applied    | Recommended update for krb5
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-918  | recommended | moderate  | ---         | applied    | Recommended update for krb5
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-918  | recommended | moderate  | ---         | applied    | Recommended update for krb5
+Main Update Repository                | openSUSE-2020-920  | recommended | moderate  | ---         | not needed | Recommended update for fmt
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-920  | recommended | moderate  | ---         | not needed | Recommended update for fmt
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-920  | recommended | moderate  | ---         | not needed | Recommended update for fmt
+Main Update Repository                | openSUSE-2020-921  | recommended | important | ---         | applied    | Recommended update for lvm2
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-921  | recommended | important | ---         | applied    | Recommended update for lvm2
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-921  | recommended | important | ---         | applied    | Recommended update for lvm2
+Main Update Repository                | openSUSE-2020-922  | recommended | moderate  | ---         | not needed | Recommended update for python-typing_extensions
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-922  | recommended | moderate  | ---         | not needed | Recommended update for python-typing_extensions
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-922  | recommended | moderate  | ---         | not needed | Recommended update for python-typing_extensions
+Main Update Repository                | openSUSE-2020-924  | recommended | moderate  | ---         | not needed | Recommended update for smtube
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-924  | recommended | moderate  | ---         | not needed | Recommended update for smtube
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-924  | recommended | moderate  | ---         | not needed | Recommended update for smtube
+openSUSE-15.2-Update-Non-Oss          | openSUSE-2020-932  | recommended | moderate  | ---         | not needed | Recommended update for steam
+Update Repository (Non-Oss)           | openSUSE-2020-932  | recommended | moderate  | ---         | not needed | Recommended update for steam
+tencent.opensuse.15.2.update.non.oss  | openSUSE-2020-932  | recommended | moderate  | ---         | not needed | Recommended update for steam
+tsinghua.opensuse.15.2.update.non.oss | openSUSE-2020-932  | recommended | moderate  | ---         | not needed | Recommended update for steam
+Main Update Repository                | openSUSE-2020-935  | security    | important | reboot      | needed     | Security update for the Linux Kernel
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-935  | security    | important | reboot      | needed     | Security update for the Linux Kernel
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-935  | security    | important | reboot      | needed     | Security update for the Linux Kernel
+Main Update Repository                | openSUSE-2020-936  | recommended | moderate  | ---         | not needed | Recommended update for lyx
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-936  | recommended | moderate  | ---         | not needed | Recommended update for lyx
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-936  | recommended | moderate  | ---         | not needed | Recommended update for lyx
+Main Update Repository                | openSUSE-2020-937  | security    | moderate  | ---         | not needed | Security update for coturn
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-937  | security    | moderate  | ---         | not needed | Security update for coturn
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-937  | security    | moderate  | ---         | not needed | Security update for coturn
+Main Update Repository                | openSUSE-2020-938  | recommended | moderate  | ---         | not needed | Recommended update for profanity
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-938  | recommended | moderate  | ---         | not needed | Recommended update for profanity
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-938  | recommended | moderate  | ---         | not needed | Recommended update for profanity
+Main Update Repository                | openSUSE-2020-939  | security    | important | ---         | not needed | Security update for chocolate-doom
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-939  | security    | important | ---         | not needed | Security update for chocolate-doom
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-939  | security    | important | ---         | not needed | Security update for chocolate-doom
+Main Update Repository                | openSUSE-2020-940  | security    | important | ---         | applied    | Security update for python3
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-940  | security    | important | ---         | applied    | Security update for python3
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-940  | security    | important | ---         | applied    | Security update for python3
+Main Update Repository                | openSUSE-2020-941  | recommended | moderate  | ---         | not needed | Recommended update for python-md2workflow
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-941  | recommended | moderate  | ---         | not needed | Recommended update for python-md2workflow
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-941  | recommended | moderate  | ---         | not needed | Recommended update for python-md2workflow
+Main Update Repository                | openSUSE-2020-942  | recommended | moderate  | ---         | not needed | Recommended update for gajim, python-nbxmpp
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-942  | recommended | moderate  | ---         | not needed | Recommended update for gajim, python-nbxmpp
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-942  | recommended | moderate  | ---         | not needed | Recommended update for gajim, python-nbxmpp
+Main Update Repository                | openSUSE-2020-943  | recommended | moderate  | ---         | not needed | Recommended update for strawberry
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-943  | recommended | moderate  | ---         | not needed | Recommended update for strawberry
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-943  | recommended | moderate  | ---         | not needed | Recommended update for strawberry
+Main Update Repository                | openSUSE-2020-944  | security    | moderate  | ---         | not needed | Security update for live555
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-944  | security    | moderate  | ---         | not needed | Security update for live555
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-944  | security    | moderate  | ---         | not needed | Security update for live555
+Main Update Repository                | openSUSE-2020-945  | security    | moderate  | ---         | not needed | Security update for rust, rust-cbindgen
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-945  | security    | moderate  | ---         | not needed | Security update for rust, rust-cbindgen
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-945  | security    | moderate  | ---         | not needed | Security update for rust, rust-cbindgen
+openSUSE-15.2-Update-Non-Oss          | openSUSE-2020-950  | security    | important | ---         | not needed | Security update for opera
+Update Repository (Non-Oss)           | openSUSE-2020-950  | security    | important | ---         | not needed | Security update for opera
+tencent.opensuse.15.2.update.non.oss  | openSUSE-2020-950  | security    | important | ---         | not needed | Security update for opera
+tsinghua.opensuse.15.2.update.non.oss | openSUSE-2020-950  | security    | important | ---         | not needed | Security update for opera
+Main Update Repository                | openSUSE-2020-951  | recommended | moderate  | ---         | not needed | Recommended update for python-py3c
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-951  | recommended | moderate  | ---         | not needed | Recommended update for python-py3c
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-951  | recommended | moderate  | ---         | not needed | Recommended update for python-py3c
+Main Update Repository                | openSUSE-2020-954  | security    | moderate  | ---         | not needed | Security update for nasm
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-954  | security    | moderate  | ---         | not needed | Security update for nasm
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-954  | security    | moderate  | ---         | not needed | Security update for nasm
+Main Update Repository                | openSUSE-2020-955  | security    | moderate  | ---         | needed     | Security update for mozilla-nss
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-955  | security    | moderate  | ---         | needed     | Security update for mozilla-nss
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-955  | security    | moderate  | ---         | needed     | Security update for mozilla-nss
+Main Update Repository                | openSUSE-2020-971  | recommended | moderate  | ---         | not needed | Recommended update for hylafax+
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-971  | recommended | moderate  | ---         | not needed | Recommended update for hylafax+
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-971  | recommended | moderate  | ---         | not needed | Recommended update for hylafax+
+Main Update Repository                | openSUSE-2020-972  | recommended | moderate  | ---         | not needed | Recommended update for usbguard
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-972  | recommended | moderate  | ---         | not needed | Recommended update for usbguard
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-972  | recommended | moderate  | ---         | not needed | Recommended update for usbguard
+Main Update Repository                | openSUSE-2020-973  | recommended | moderate  | ---         | not needed | Recommended update for kubernetes, kubernetes1.17, kubernetes1.18
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-973  | recommended | moderate  | ---         | not needed | Recommended update for kubernetes, kubernetes1.17, kubernetes1.18
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-973  | recommended | moderate  | ---         | not needed | Recommended update for kubernetes, kubernetes1.17, kubernetes1.18
+Main Update Repository                | openSUSE-2020-974  | recommended | important | ---         | needed     | Recommended update for mdadm
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-974  | recommended | important | ---         | needed     | Recommended update for mdadm
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-974  | recommended | important | ---         | needed     | Recommended update for mdadm
+Main Update Repository                | openSUSE-2020-975  | recommended | moderate  | ---         | needed     | Recommended update for fontforge, ghostscript-fonts, ttf-converter, xorg-x11-fonts
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-975  | recommended | moderate  | ---         | needed     | Recommended update for fontforge, ghostscript-fonts, ttf-converter, xorg-x11-fonts
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-975  | recommended | moderate  | ---         | needed     | Recommended update for fontforge, ghostscript-fonts, ttf-converter, xorg-x11-fonts
+Main Update Repository                | openSUSE-2020-976  | security    | important | ---         | needed     | Security update for openldap2
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-976  | security    | important | ---         | needed     | Security update for openldap2
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-976  | security    | important | ---         | needed     | Security update for openldap2
+Main Update Repository                | openSUSE-2020-977  | recommended | moderate  | ---         | not needed | Recommended update for imap
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-977  | recommended | moderate  | ---         | not needed | Recommended update for imap
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-977  | recommended | moderate  | ---         | not needed | Recommended update for imap
+Main Update Repository                | openSUSE-2020-978  | security    | important | ---         | not needed | Security update for LibVNCServer
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-978  | security    | important | ---         | not needed | Security update for LibVNCServer
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-978  | security    | important | ---         | not needed | Security update for LibVNCServer
+Main Update Repository                | openSUSE-2020-979  | recommended | moderate  | ---         | not needed | Recommended update for live-add-yast-repos
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-979  | recommended | moderate  | ---         | not needed | Recommended update for live-add-yast-repos
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-979  | recommended | moderate  | ---         | not needed | Recommended update for live-add-yast-repos
+Main Update Repository                | openSUSE-2020-980  | recommended | moderate  | ---         | needed     | Recommended update for gcc9
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-980  | recommended | moderate  | ---         | needed     | Recommended update for gcc9
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-980  | recommended | moderate  | ---         | needed     | Recommended update for gcc9
+Main Update Repository                | openSUSE-2020-981  | recommended | moderate  | ---         | not needed | Recommended update for k4dirstat
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-981  | recommended | moderate  | ---         | not needed | Recommended update for k4dirstat
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-981  | recommended | moderate  | ---         | not needed | Recommended update for k4dirstat
+Main Update Repository                | openSUSE-2020-982  | security    | important | ---         | not needed | Security update for MozillaThunderbird
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-982  | security    | important | ---         | not needed | Security update for MozillaThunderbird
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-982  | security    | important | ---         | not needed | Security update for MozillaThunderbird
+Main Update Repository                | openSUSE-2020-983  | security    | important | ---         | needed     | Security update for MozillaFirefox
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-983  | security    | important | ---         | needed     | Security update for MozillaFirefox
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-983  | security    | important | ---         | needed     | Security update for MozillaFirefox
+Main Update Repository                | openSUSE-2020-985  | security    | important | ---         | needed     | Security update for xen
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-985  | security    | important | ---         | needed     | Security update for xen
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-985  | security    | important | ---         | needed     | Security update for xen
+Main Update Repository                | openSUSE-2020-986  | recommended | moderate  | ---         | not needed | Recommended update for salt
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-986  | recommended | moderate  | ---         | not needed | Recommended update for salt
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-986  | recommended | moderate  | ---         | not needed | Recommended update for salt
+Main Update Repository                | openSUSE-2020-991  | recommended | moderate  | ---         | needed     | Recommended update for kio
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-991  | recommended | moderate  | ---         | needed     | Recommended update for kio
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-991  | recommended | moderate  | ---         | needed     | Recommended update for kio
+Main Update Repository                | openSUSE-2020-992  | recommended | moderate  | ---         | not needed | Recommended update for msr-safe
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-992  | recommended | moderate  | ---         | not needed | Recommended update for msr-safe
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-992  | recommended | moderate  | ---         | not needed | Recommended update for msr-safe
+Main Update Repository                | openSUSE-2020-994  | security    | important | ---         | not needed | Security update for slirp4netns
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-994  | security    | important | ---         | not needed | Security update for slirp4netns
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-994  | security    | important | ---         | not needed | Security update for slirp4netns
+Main Update Repository                | openSUSE-2020-995  | recommended | moderate  | ---         | needed     | Recommended update for open-vm-tools
+tencent.opensuse.15.2.update.oss      | openSUSE-2020-995  | recommended | moderate  | ---         | needed     | Recommended update for open-vm-tools
+tsinghua.opensuse.15.2.update.oss     | openSUSE-2020-995  | recommended | moderate  | ---         | needed     | Recommended update for open-vm-tools
