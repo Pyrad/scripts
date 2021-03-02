@@ -296,6 +296,20 @@ zypper install feh
 # Note: this package in ubuntu is called libgtk-3-dev
 zypper install gtk3-devel
 
+###################################################
+### When trying to compile python, if ssl is missing, 
+### below error happens, in this case, install 'libopenssl-1_1-devel',
+### which is similar to 'libssl' in ubuntu
+###
+### "ImportError: No module named _ssl"
+###################################################
+zypper install libopenssl-1_1-devel
+
+# Lacking '_lzma'
+zypper install xz-devel
+# Lacking '_sqlite'
+zypper install sqlite3-devel
+
 ######################################################
 # 2 web page showing how to plot binary tree with graphviz
 ######################################################
