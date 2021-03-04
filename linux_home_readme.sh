@@ -310,6 +310,13 @@ zypper install xz-devel
 # Lacking '_sqlite'
 zypper install sqlite3-devel
 
+# Even after openssl installed, if PYTHONPATH is not set,
+# ModuleNotFound '_socket' would occur, in this case, PYTHONPATH
+# should be set as followed,
+export PYTHONPATH=<PYTHON_DIR>/lib/python3.8/site-packages:<PYTHON_DIR>/lib64/python3.8/lib-dynload
+# For example,
+export PYTHONPATH=/home/pyrad/temp/tmpprocs/Python-3.8.1/lib/python3.8/site-packages:/home/pyrad/temp/tmpprocs/Python-3.8.1/lib64/python3.8/lib-dynload
+
 ######################################################
 # 2 web page showing how to plot binary tree with graphviz
 ######################################################
