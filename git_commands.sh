@@ -45,3 +45,28 @@ git clean -f <path>
 git clean -df
 ### Tells which files will be removed, just give the information but not remove indeed
 git clean -n
+
+
+### After a new repo has been created on Github page, and it is cloned to a local directory
+### when to check in for the first time, the following message might show
+######################################################
+#  Pyrad@SSEA MINGW64 /d/GithubClone/HomePageMaker (master)
+#  $ git status
+#  On branch master
+#  Your branch is based on 'origin/master', but the upstream is gone.
+#    (use "git branch --unset-upstream" to fixup)
+######################################################
+### so execute the following command to reset
+git branch --unset-upstream
+### And then push it for the 1st time to the remote repository
+git push --set-upstream origin master
+
+
+
+
+
+
+
+
+
+
