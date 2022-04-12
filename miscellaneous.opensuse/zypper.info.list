@@ -1,0 +1,22 @@
+Loading repository data...
+Reading installed packages...
+Usage:
+info (if) [OPTIONS] <NAME> ...
+
+Show detailed information for specified packages. By default the packages which match exactly the
+given names are shown. To get also packages partially matching use option '--match-substrings' or
+use wildcards (*?) in name.
+
+  Command options:
+
+-s, --match-substrings      Print information for packages partially matching name. Default: false
+-t, --type <TYPE>           Type of package (package, patch, pattern, product).
+    --provides              Show provides. Default: false
+    --requires              Show requires and prerequires. Default: false
+    --conflicts             Show conflicts. Default: false
+    --obsoletes             Show obsoletes. Default: false
+    --recommends            Show recommends. Default: false
+    --supplements           Show supplements. Default: false
+    --suggests              Show suggests. Default: false
+-r, --repo <ALIAS|#|URI>    Work only with the specified repository.
+

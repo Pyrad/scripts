@@ -1,0 +1,37 @@
+Repository priorities are without effect. All enabled repositories share the same priority.
+
+#  | Alias                                       | Name                                        | Enabled | GPG Check | Refresh
+---+---------------------------------------------+---------------------------------------------+---------+-----------+--------
+ 1 | bjtu.opensuse.15.2.non.oss                  | bjtu.opensuse.15.2.non.oss                  | Yes     | (r ) Yes  | Yes
+ 2 | bjtu.opensuse.15.2.oss                      | bjtu.opensuse.15.2.oss                      | Yes     | (r ) Yes  | Yes
+ 3 | bjtu.opensuse.15.2.update.non.oss           | bjtu.opensuse.15.2.update.non.oss           | Yes     | (r ) Yes  | Yes
+ 4 | bjtu.opensuse.15.2.update.non.oss.debug     | bjtu.opensuse.15.2.update.non.oss.debug     | Yes     | (r ) Yes  | Yes
+ 5 | bjtu.opensuse.15.2.update.oss               | bjtu.opensuse.15.2.update.oss               | Yes     | (r ) Yes  | Yes
+ 6 | bjtu.opensuse.15.2.update.oss.debug         | bjtu.opensuse.15.2.update.oss.debug         | Yes     | (r ) Yes  | Yes
+ 7 | openSUSE-15.2-Non-Oss                       | openSUSE-15.2-Non-Oss                       | Yes     | (r ) Yes  | Yes
+ 8 | openSUSE-15.2-Oss                           | openSUSE-15.2-Oss                           | Yes     | (r ) Yes  | Yes
+ 9 | openSUSE-15.2-Update-Non-Oss                | openSUSE-15.2-Update-Non-Oss                | Yes     | (r ) Yes  | Yes
+10 | openSUSE-15.2-Update-Oss-Aliyun             | openSUSE-15.2-Update-Oss-Aliyun             | No      | ----      | ----
+11 | openSUSE-Leap-15.2-1                        | openSUSE-Leap-15.2-1                        | No      | ----      | ----
+12 | repo-debug                                  | Debug Repository                            | Yes     | (r ) Yes  | Yes
+13 | repo-debug-non-oss                          | Debug Repository (Non-OSS)                  | No      | ----      | ----
+14 | repo-debug-update                           | Update Repository (Debug)                   | Yes     | (r ) Yes  | Yes
+15 | repo-debug-update-non-oss                   | Update Repository (Debug, Non-OSS)          | No      | ----      | ----
+16 | repo-non-oss                                | Non-OSS Repository                          | Yes     | (r ) Yes  | Yes
+17 | repo-oss                                    | Main Repository                             | Yes     | (r ) Yes  | Yes
+18 | repo-source                                 | Source Repository                           | Yes     | (r ) Yes  | Yes
+19 | repo-source-non-oss                         | Source Repository (Non-OSS)                 | No      | ----      | ----
+20 | repo-update                                 | Main Update Repository                      | Yes     | (r ) Yes  | Yes
+21 | repo-update-non-oss                         | Update Repository (Non-Oss)                 | Yes     | (r ) Yes  | Yes
+22 | tencent.opensuse.15.2.non.oss               | tencent.opensuse.15.2.non.oss               | Yes     | (r ) Yes  | Yes
+23 | tencent.opensuse.15.2.oss                   | tencent.opensuse.15.2.oss                   | Yes     | (r ) Yes  | Yes
+24 | tencent.opensuse.15.2.update.non.oss        | tencent.opensuse.15.2.update.non.oss        | Yes     | (r ) Yes  | Yes
+25 | tencent.opensuse.15.2.update.non.oss.debug  | tencent.opensuse.15.2.update.non.oss.debug  | Yes     | (r ) Yes  | Yes
+26 | tencent.opensuse.15.2.update.oss            | tencent.opensuse.15.2.update.oss            | Yes     | (r ) Yes  | Yes
+27 | tencent.opensuse.15.2.update.oss.debug      | tencent.opensuse.15.2.update.oss.debug      | Yes     | (r ) Yes  | Yes
+28 | tsinghua.opensuse.15.2.non.oss              | tsinghua.opensuse.15.2.non.oss              | Yes     | (r ) Yes  | Yes
+29 | tsinghua.opensuse.15.2.oss                  | tsinghua.opensuse.15.2.oss                  | Yes     | (r ) Yes  | Yes
+30 | tsinghua.opensuse.15.2.update.non.oss       | tsinghua.opensuse.15.2.update.non.oss       | Yes     | (r ) Yes  | Yes
+31 | tsinghua.opensuse.15.2.update.non.oss.debug | tsinghua.opensuse.15.2.update.non.oss.debug | Yes     | (r ) Yes  | Yes
+32 | tsinghua.opensuse.15.2.update.oss           | tsinghua.opensuse.15.2.update.oss           | Yes     | (r ) Yes  | Yes
+33 | tsinghua.opensuse.15.2.update.oss.debug     | tsinghua.opensuse.15.2.update.oss.debug     | Yes     | (r ) Yes  | Yes

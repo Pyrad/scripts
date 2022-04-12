@@ -1,0 +1,928 @@
+"source $VIMRUNTIME/vimrc_example.vim
+"source $VIMRUNTIME/mswin.vim
+"behave mswin
+
+" ------------------------------------------------------
+" Vim-plug management
+" ------------------------------------------------------
+function s:setup_init()
+    let s:use_cocnvim = 1
+    let s:use_youcompletemme = 0
+endfunction " End of function setup_init
+" ------------------------------------------------------
+" Vim-plug management
+" ------------------------------------------------------
+function s:setup_vimplug()
+    call plug#begin('~/.vim/plugged')
+    Plug 'vim-airline/vim-airline'
+    Plug 'vim-airline/vim-airline-themes'
+    Plug 'ctrlpvim/ctrlp.vim'
+    Plug 'majutsushi/tagbar'
+    Plug 'easymotion/vim-easymotion'
+    Plug 'crusoexia/vim-monokai'
+    Plug 'octol/vim-cpp-enhanced-highlight'
+    Plug 'scrooloose/nerdtree'
+    Plug 'inkarkat/vim-ingo-library'
+    Plug 'inkarkat/vim-mark'
+
+    if has("gui_running")
+        Plug 'altercation/vim-colors-solarized'
+    endif
+
+    if s:use_cocnvim == 1
+        Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    elseif s:use_youcompletemme == 1
+        Plug 'ycm-core/YouCompleteMe'
+    else
+        " No completer if neither is specified
+    endif
+    call plug#end()
+endfunction " End of function setup_vimplug
+
+" ------------------------------------------------------
+" Vundle setup/adjustment
+" ------------------------------------------------------
+function s:setup_vundle()
+    set nocompatible              " be iMproved, required
+    filetype off                  " required
+    
+    " set the runtime path to include Vundle and initialize
+    set rtp+=~/.vim/bundle/Vundle.vim
+    "set rtp+=$VIM/vimfiles/bundle/Vundle.vim
+    call vundle#begin()
+    "call vundle#begin('$VIM/vimfiles/bundle/')
+    " alternatively, pass a path where Vundle should install plugins
+    "call vundle#begin('~/some/path/here')
+    
+    ""   " let Vundle manage Vundle, required
+    ""   Plugin 'VundleVim/Vundle.vim'
+    ""   
+    ""   Plugin 'vim-airline/vim-airline'
+    ""   Plugin 'vim-airline/vim-airline-themes'
+    ""   "Plugin 'scrooloose/nerdtree'
+    ""   Plugin 'ctrlpvim/ctrlp.vim'
+    ""   Plugin 'majutsushi/tagbar'
+    ""   Plugin 'Lokaltog/vim-easymotion'
+    ""   ""Plugin 'altercation/vim-colors-solarized'
+    ""   Plugin 'tpope/vim-surround'
+    ""   "Plugin 'inkarkat/vim-mark'
+    ""   "Plugin 'haya14busa/incsearch.vim'
+    ""   " Plugin 'taglist.vim'
+    ""   " Plugin 'tpope/vim-commentary'
+    ""   " YouCompleteMe plugin
+    ""   ""Plugin 'Valloric/YouCompleteMe'
+    ""   "Plugin 'ycm-core/YouCompleteMe'
+    
+    " All of your Plugins must be added before the following line
+    call vundle#end()            " required
+    filetype plugin indent on    " required
+    " To ignore plugin indent changes, instead use:
+    "filetype plugin on
+    "
+    " Brief help
+    " :PluginList       - lists configured plugins
+    " :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+    " :PluginSearch foo - searches for foo; append `!` to refresh local cache
+    " :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+    "
+    " see :h vundle for more details or wiki for FAQ
+    " Put your non-Plugin stuff after this line
+    " ------------------------------------------------------
+    "
+endfunction " End of function s:setup_vundle
+
+
+" ------------------------------------------------------
+" General setups
+" ------------------------------------------------------
+function s:setup_general()
+
+    set diffexpr=MyDiff()
+    
+    " Sets how many lines of history VIM has to remember
+    set history=700
+    
+    " Enable filetype plugins
+    filetype plugin on
+    filetype indent on
+    
+    " Set to auto read when a file is changed from the outside
+    set autoread
+    
+    " With a map leader it's possible to do extra key combinations
+    " like <leader>w saves the current file
+    let mapleader = ","
+    let g:mapleader = ","
+    
+    " Fast saving
+    nmap <leader>w :w!<cr>
+    
+    " No cursor blink 
+    " gcr --> gui cursor
+    set gcr=n-v:block-blinkon0
+    
+    """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+    " => VIM user interface
+    """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+    " Set 7 lines to the cursor - when moving vertically using j/k
+    set so=7
+    
+    " Turn on the WiLd menu
+    set wildmenu
+    
+    " Ignore compiled files
+    set wildignore=*.o,*~,*.pyc
+    
+    "Always show current position
+    set ruler
+    
+    " Height of the command bar
+    set cmdheight=2
+    
+    " A buffer becomes hidden when it is abandoned
+    set hid
+    
+    " Configure backspace so it acts as it should act
+    set backspace=eol,start,indent
+    set whichwrap+=<,>,h,l
+    
+    " Ignore case when searching
+    set ignorecase
+    
+    " When searching try to be smart about cases 
+    set smartcase
+    
+    " Highlight search results
+    set hlsearch
+    
+    " Makes search act like search in modern browsers
+    set incsearch
+    
+    " Don't redraw while executing macros (good performance config)
+    set lazyredraw
+    
+    " For regular expressions turn magic on
+    set magic
+    
+    " Show matching brackets when text indicator is over them
+    set showmatch
+    " How many tenths of a second to blink when matching brackets
+    set mat=2
+    
+    " No annoying sound on errors
+    set noerrorbells
+    set novisualbell
+    set t_vb=
+    set tm=500
+    
+    
+    """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+    """ => Colors and Fonts
+    """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+    """ Enable syntax highlighting
+    syntax enable
+    """"
+    ""colorscheme desert
+    ""set background=dark
+    ""
+    """ Set extra options when running in GUI mode
+    ""if has("gui_running")
+    ""    set guioptions-=T
+    ""    set guioptions+=e
+    ""    set t_Co=256
+    ""    "set guitablabel=%M\ %t
+    ""endif
+    ""
+    """ Set utf8 as standard encoding and en_US as the standard language
+    ""set encoding=utf8
+    ""
+    """ Use Unix as the standard file type
+    ""set ffs=unix,dos,mac
+    
+    
+    """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+    " => Files, backups and undo
+    """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+    " Turn backup off, since most stuff is in SVN, git et.c anyway...
+    set nobackup
+    set nowb
+    set noswapfile
+    
+    
+    """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+    " => Text, tab and indent related
+    """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+    " Use spaces instead of tabs
+    set expandtab
+    
+    " Be smart when using tabs ;)
+    set smarttab
+    
+    " 1 tab == 4 spaces
+    set shiftwidth=4
+    set tabstop=4
+    
+    " Linebreak on 500 characters
+    set lbr
+    set tw=500
+    
+    set ai "Auto indent
+    set si "Smart indent
+    set wrap "Wrap lines
+    
+    
+    """"""""""""""""""""""""""""""
+    " => Visual mode related
+    """"""""""""""""""""""""""""""
+    " Visual mode pressing * or # searches for the current selection
+    " Super useful! From an idea by Michael Naumann
+    vnoremap <silent> * :call VisualSelection('f')<CR>
+    vnoremap <silent> # :call VisualSelection('b')<CR>
+    
+    
+    """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+    " => Moving around, tabs, windows and buffers
+    """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+    " Treat long lines as break lines (useful when moving around in them)
+    map j gj
+    map k gk
+    
+    " Map <Space> to / (search) and Ctrl-<Space> to ? (backwards search)
+    map <space> /
+    map <c-space> ?
+    
+    " Disable highlight when <leader><cr> is pressed
+    map <silent> <leader><cr> :noh<cr>
+    
+    " Smart way to move between windows
+    map <C-j> <C-W>j
+    map <C-k> <C-W>k
+    map <C-h> <C-W>h
+    map <C-l> <C-W>l
+    
+    " Close the current buffer
+    map <leader>bd :Bclose<cr>
+    
+    " Close all the buffers
+    map <leader>ba :1,1000 bd!<cr>
+    
+    " Useful mappings for managing tabs
+    map <leader>tn :tabnew<cr>
+    map <leader>to :tabonly<cr>
+    map <leader>tc :tabclose<cr>
+    map <leader>tm :tabmove
+    
+    " Opens a new tab with the current buffer's path
+    " Super useful when editing files in the same directory
+    " map <leader>te :tabedit <c-r>=expand("%:p:h")<cr>/
+    ""map <leader>e :tabedit 
+    
+    " Short key for opening a file by using command ':e'
+    map <leader>e :edit 
+    
+    " Switch CWD to the directory of the open buffer
+    map <leader>cd :cd %:p:h<cr>:pwd<cr>
+    
+    " Specify the behavior when switching between buffers 
+    ""try
+    ""  set switchbuf=useopen,usetab,newtab
+    ""  set stal=2
+    ""catch
+    ""endtry
+    
+    " Return to last edit position when opening files (You want this!)
+    autocmd BufReadPost *
+         \ if line("'\"") > 0 && line("'\"") <= line("$") |
+         \   exe "normal! g`\"" |
+         \ endif
+    " Remember info about open buffers on close
+    set viminfo^=%
+    
+    
+    """"""""""""""""""""""""""""""
+    " => Status line
+    """"""""""""""""""""""""""""""
+    " Always show the status line
+    " laststatus == 1 : no status line when there's only one window. Would display status line for more than one window. @cailong
+    " laststatus == 2 : always add status line. @cailong
+    " set laststatus=2
+    
+    " Format the status line
+    " set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ [POS=%04l,%04v][%p%%]
+    
+    
+    """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+    " => Editing mappings
+    """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+    " Remap VIM 0 to first non-blank character
+    map 0 ^
+    
+    " Move a line of text using ALT+[jk] or Comamnd+[jk] on mac
+    nmap <M-j> mz:m+<cr>`z
+    nmap <M-k> mz:m-2<cr>`z
+    vmap <M-j> :m'>+<cr>`<my`>mzgv`yo`z
+    vmap <M-k> :m'<-2<cr>`>my`<mzgv`yo`z
+    
+    ""if has("mac") || has("macunix")
+    ""  nmap <D-j> <M-j>
+    ""  nmap <D-k> <M-k>
+    ""  vmap <D-j> <M-j>
+    ""  vmap <D-k> <M-k>
+    ""endif
+    
+    " see function DeleteTrailingWS below
+    autocmd BufWrite *.py :call DeleteTrailingWS()
+    autocmd BufWrite *.coffee :call DeleteTrailingWS()
+    
+    
+    """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+    " => vimgrep searching and cope displaying
+    """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+    " When you press gv you vimgrep after the selected text
+    vnoremap <silent> gv :call VisualSelection('gv')<CR>
+    
+    " Open vimgrep and put the cursor in the right position
+    map <leader>g :vimgrep // **/*.<left><left><left><left><left><left><left>
+    
+    " Vimgreps in the current file
+    map <leader><space> :vimgrep // <C-R>%<C-A><right><right><right><right><right><right><right><right><right>
+    
+    " When you press <leader>r you can search and replace the selected text
+    " Temporarily disable it due to conflict with vim-mark (2021.09.02)
+    ""vnoremap <silent> <leader>r :call VisualSelection('replace')<CR>
+    
+    " Do :help cope if you are unsure what cope is. It's super useful!
+    "
+    " When you search with vimgrep, display your results in cope by doing:
+    "   <leader>cc
+    "
+    " To go to the next search result do:
+    "   <leader>n
+    "
+    " To go to the previous search results do:
+    "   <leader>p
+    "
+    map <leader>cc :botright cope<cr>
+    map <leader>co ggVGy:tabnew<cr>:set syntax=qf<cr>pgg
+    " Temporarily disable it due to conflict with vim-mark (2021.09.02)
+    ""map <leader>n :cn<cr>
+    map <leader>p :cp<cr>
+    
+    
+    """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+    " => Spell checking
+    """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+    " Pressing ,ss will toggle and untoggle spell checking
+    map <leader>ss :setlocal spell!<cr>
+    
+    " Shortcuts using <leader>
+    map <leader>sn ]s
+    map <leader>sp [s
+    map <leader>sa zg
+    map <leader>s? z=
+    
+    
+    """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+    " => Misc
+    """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+    " Remove the Windows ^M - when the encodings gets messed up
+    " Temporarily disable it due to conflict with vim-mark (2021.09.02)
+    ""noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
+    
+    " Quickly open a buffer for scripbble
+    map <leader>q :e ~/buffer<cr>
+    
+    " Toggle paste mode on and off
+    map <leader>pp :setlocal paste!<cr>
+    
+    " Don't close window, when deleting a buffer
+    command! Bclose call <SID>BufcloseCloseIt()
+    
+    "---------------------------------------------------------------
+    "cailong's own settings
+    "---------------------------------------------------------------
+    " Show line numbers
+    set nu
+    " Use C style indent"
+    set cin
+    " A new line will have same indent with the last line,
+    " and indent will be cancelled if '}' (right brace) is
+    " encountered
+    set smartindent
+    " A new line will have same indent with the last line
+    set autoindent
+
+    " GUI font
+    ""set guifont=DejaVu\ Sans\ Mono\ 10
+    ""set guifont=Mono\ 10
+    ""set guifont=Monospace\ 18
+    ""set guifont=Source\ Code\ Pro\ for\ Powerline\ Regular\ 16
+    ""set guifont=Consolas:h14:cANSI
+    ""set guifont=Inconsolata\ for\ Powerline\ 22
+    set guifont=Monospace\ 22
+
+    "Don't wrap lines
+    set nowrap
+    
+    " Backspace could delete auto-indent, EOF, and character at beginning of a line
+    set backspace=indent,eol,start
+    
+    "In INSERT MODE, You could use Ctrl+j/k/h/l to move around as well. Just as j/h/k/l do in VISUAL MODE
+    inoremap <C-h> <Left>
+    inoremap <C-j> <Down>
+    inoremap <C-k> <Up>
+    inoremap <C-l> <Right>
+    "In INSERT MODE, you could use Ctrl+w/b to move a word forward/back. Just as w/b do in VISUAL MODE
+    inoremap <C-b> <C-o>b
+    inoremap <C-w> <C-o>w
+    "In INSERT MODE, you could use Ctrl+f/e to move the cursor jump to the beginning/end of a line. Just as <Home>/<End> do in VISUAL MODE
+    inoremap <C-e>  <C-o><End>
+    inoremap <C-f>  <C-o><Home>
+    "In INSERT MODE, you could use Ctrl+d/x to Backspace or Delete, just as they do in VISUAL MODE
+    inoremap <C-d> <BS>
+    inoremap <C-x> <Del>
+    
+    "In INSERT MODE, you could use Shift+Enter to escape from a pair of bracket and jump to next line
+    :inoremap <S-ENTER> <c-r>=SkipPair()<CR>
+    :inoremap ( ()<ESC>i
+    :inoremap ) <c-r>=ClosePair(')')<CR>
+    :inoremap { <c-r>=CloseBrace()<CR>
+    :inoremap } <c-r>=ClosePair('}')<CR>
+    :inoremap [ []<ESC>i
+    :inoremap ] <c-r>=ClosePair(']')<CR>
+    
+    "In INSERT MODE, semicolon is used to end a line. So double press it to enter ";" and jump to next line
+    :inoremap ;; <ESC>A;<CR>
+    
+    
+    inoremap " ""<ESC>i
+    
+    ""if has("gui_running")
+    ""  " GUI is running or is about to start.
+    ""  " Set window size(by longc)
+    ""  ""set lines=50 columns=150
+    ""  set lines=33 columns=100
+    ""  " Set window position(by longc)
+    ""  ""winpos 500 50 
+    ""  winpos 400 40 
+    ""else
+    ""  " This is console Vim
+    ""endif
+
+endfunction " End of function s:setup_general
+
+
+
+" --------------------------------------------------------------------------------
+"
+" Function definitions
+"
+" --------------------------------------------------------------------------------
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Helper functions
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+function! CmdLine(str)
+    exe "menu Foo.Bar :" . a:str
+    emenu Foo.Bar
+    unmenu Foo
+endfunction
+
+function! VisualSelection(direction) range
+    let l:saved_reg = @"
+    execute "normal! vgvy"
+
+    let l:pattern = escape(@", '\\/.*$^~[]')
+    let l:pattern = substitute(l:pattern, "\n$", "", "")
+
+    if a:direction == 'b'
+        execute "normal ?" . l:pattern . "^M"
+    elseif a:direction == 'gv'
+        call CmdLine("vimgrep " . '/'. l:pattern . '/' . ' **/*.')
+    elseif a:direction == 'replace'
+        call CmdLine("%s" . '/'. l:pattern . '/')
+    elseif a:direction == 'f'
+        execute "normal /" . l:pattern . "^M"
+    endif
+
+    let @/ = l:pattern
+    let @" = l:saved_reg
+endfunction
+
+" Returns true if paste mode is enabled
+function! HasPaste()
+    if &paste
+        return 'PASTE MODE  '
+    endif
+    return ''
+endfunction
+
+" Don't close window, when deleting a buffer
+function! <SID>BufcloseCloseIt()
+   let l:currentBufNum = bufnr("%")
+   let l:alternateBufNum = bufnr("#")
+
+   if buflisted(l:alternateBufNum)
+     buffer #
+   else
+     bnext
+   endif
+
+   if bufnr("%") == l:currentBufNum
+     new
+   endif
+
+   if buflisted(l:currentBufNum)
+     execute("bdelete! ".l:currentBufNum)
+   endif
+endfunction
+
+function ClosePair(char)
+   if getline('.')[col('.') - 1] == a:char
+      return "\<Right>"
+   else
+      return a:char
+   endif
+endf
+
+function Semicolon()
+   "echo getline('.')[col('.')]
+   if getline('.')[col('.')] == ')'
+      return "<ESC>A;"
+   elseif getline('.')[col('.')] == '}'
+      return "\<ESC>A;"
+   elseif getline('.')[col('.')] == ']'
+      return "\<ESC>A;"
+   else
+      return ";"
+   endif
+endf
+
+function SkipPair()
+   if getline('.')[col('.') - 1] == ')'
+      return "\<ESC>o"
+   else
+      normal j
+      let curline = line('.')
+      let nxtline = curline
+      while curline == nxtline
+         if getline('.')[col('.') - 1] == '}'
+            normal j
+            let nxtline = nxtline + 1
+            let curline = line('.')
+            continue
+         else
+            return "\<ESC>i"
+         endif
+        
+      endwhile
+      return "\<ESC>o"
+   endif
+endf
+
+function CloseBrace()
+   if getline('.')[col('.') - 2] == '='
+      return "{}\<ESC>i"
+   elseif getline('.')[col('.') - 3] == '='
+      return "{}\<ESC>i"
+   elseif getline('.')[col('.') - 1] == '{'
+      return "{}\<ESC>i"
+   elseif getline('.')[col('.') - 2] == '{'
+      return "{}\<ESC>i"
+   elseif getline('.')[col('.') - 2] == ','
+      return "{}\<ESC>i"
+   elseif getline('.')[col('.') - 3] == ','
+      return "{}\<ESC>i"
+   else
+      return "{\<ENTER>}\<ESC>O"
+   endif
+endf
+
+" ------------------------------------------------------
+" Delete trailing white space on save, useful for Python
+" and CoffeeScript ;)
+" ------------------------------------------------------
+func! DeleteTrailingWS()
+  exe "normal mz"
+  %s/\s\+$//ge
+  exe "normal `z"
+endfunc
+
+" ------------------------------------------------------
+" [FUNC EXPLANATION HERE]
+" ------------------------------------------------------
+function MyDiff()
+  let opt = '-a --binary '
+  if &diffopt =~ 'icase' | let opt = opt . '-i ' | endif
+  if &diffopt =~ 'iwhite' | let opt = opt . '-b ' | endif
+  let arg1 = v:fname_in
+  if arg1 =~ ' ' | let arg1 = '"' . arg1 . '"' | endif
+  let arg2 = v:fname_new
+  if arg2 =~ ' ' | let arg2 = '"' . arg2 . '"' | endif
+  let arg3 = v:fname_out
+  if arg3 =~ ' ' | let arg3 = '"' . arg3 . '"' | endif
+  if $VIMRUNTIME =~ ' '
+    if &sh =~ '\<cmd'
+      if empty(&shellxquote)
+        let l:shxq_sav = ''
+        set shellxquote&
+      endif
+      let cmd = '"' . $VIMRUNTIME . '\diff"'
+    else
+      let cmd = substitute($VIMRUNTIME, ' ', '" ', '') . '\diff"'
+    endif
+  else
+    let cmd = $VIMRUNTIME . '\diff'
+  endif
+  silent execute '!' . cmd . ' ' . opt . arg1 . ' ' . arg2 . ' > ' . arg3
+  if exists('l:shxq_sav')
+    let &shellxquote=l:shxq_sav
+  endif
+endfunction
+
+""" ------------------------------------------------------
+""" Airline setup/adjustment
+""" ------------------------------------------------------
+function s:setup_airline()
+    set encoding=utf-8
+    ""set langmenu=zh_CN.UTF-8
+    set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1 
+    set fileencoding=utf-8
+    ""set ambiwidth=double
+    source $VIMRUNTIME/delmenu.vim
+    source $VIMRUNTIME/menu.vim
+    
+    let g:airline_powerline_fonts = 1
+    if !exists('g:airline_symbols')
+        let g:airline_symbols = {}
+    endif
+    let g:airline#extensions#tabline#enabled = 1
+    ""let g:airline#extensions#tabline#buffer_nr_show = 1
+    let g:airline#extensions#whitespace#enabled = 0
+    let g:airline#extensions#whitespace#symbol = '!'
+    
+    set laststatus=2
+    if has("gui_running")
+        ""set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 11
+        ""set guifont=Inconsolata\ for\ Powerline\ 22
+        set guifont=Monospace\ 22
+        " powerline symbols
+        let g:airline_left_sep = ''
+        let g:airline_left_alt_sep = ''
+        let g:airline_right_sep = ''
+        let g:airline_right_alt_sep = ''
+        let g:airline_symbols.branch = ''
+        let g:airline_symbols.readonly = ''
+        let g:airline_symbols.linenr = '☰'
+        let g:airline_symbols.maxlinenr = ''
+        let g:airline_symbols.dirty='⚡'
+        let g:airline_theme='dark'
+    else
+        " powerline symbols
+        let g:airline_left_sep = ' '
+        let g:airline_left_alt_sep = ' '
+        let g:airline_right_sep = ' '
+        let g:airline_right_alt_sep = ' '
+        let g:airline_symbols.branch = ' '
+        let g:airline_symbols.readonly = '[RO]'
+        let g:airline_symbols.linenr = 'L'
+        let g:airline_symbols.maxlinenr = ' '
+        " Use default airline theme
+        let g:airline_theme='dark'
+    endif
+    
+    ""configure how numbers are displayed in tab mode. >
+    let g:airline#extensions#tabline#tab_nr_type = 1 " tab number
+    ""enable/disable displaying tab number in tabs mode. >
+    let g:airline#extensions#tabline#show_tab_nr = 1
+    let g:airline#extensions#tabline#buffers_label = 'BUFFERS'
+    
+    let g:airline#extensions#tabline#buffer_idx_mode = 1
+    
+    " Hotkey to loop around GUI tabs
+    " Next buffer tab
+    ""nmap <TAB> :bNext<CR>
+    nmap <TAB> <Plug>AirlineSelectNextTab
+
+    " Previous buffer tab
+    ""nmap <C-TAB> :bprevious<CR>
+    nmap <C-TAB> <Plug>AirlineSelectPrevTab
+
+endfunction " End of function s:setup_airline
+
+
+" ------------------------------------------------------
+" Nerd Tree Settings
+" ------------------------------------------------------
+function s:setup_nerdtree()
+    let NERDChristmasTree=0
+    let NERDTreeWinSize=40
+    let NERDTreeChDirMode=2
+    let NERDTreeIgnore=['\~$', '\.pyc$', '\.swp$']
+    let NERDTreeShowBookmarks=1
+    let NERDTreeWinPos="left"
+    nmap <F5> :NERDTreeToggle<CR>
+    " Help Info
+    " o - open/close file(dir), should move to file name
+    " t - open in tab
+    " s - open and split vertically
+    " i - open and split horizontically
+    " p - parent/upper dir
+    " P - root dir
+    " K - first node in this dir
+endfunction " End of function s:setup_nerdtree
+
+
+" ------------------------------------------------------
+" CtrlP
+" ------------------------------------------------------
+function s:setup_ctrlp()
+" let g:ctrlp_map = '<C-P>'
+" let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:10,result:20'
+let g:ctrlp_working_path_mode = 'rw'
+endfunction " End of function s:setup_ctrlp
+
+" ------------------------------------------------------
+" taglist
+" ------------------------------------------------------
+" function s:setup_taglist()
+"     let Tlist_Ctags_Cmd='ctags'
+"     let Tlist_Show_One_File=1
+"     let Tlist_WinWidt=28
+"     let Tlist_Exit_OnlyWindow=1
+"     let Tlist_Use_Left_Windo=1
+"     ""Toggle on/off the function list of source file
+"     ""<CR> means Enter, equal to <Enter>
+"     map <F2> :TlistToggle<CR>
+" endfunction " End of function s:setup_taglist
+
+""" ------------------------------------------------------
+""" tagbar
+""" ------------------------------------------------------
+function s:setup_tagbar()
+    nmap <F2> :TagbarToggle<CR>
+    ""let g:tagbar_ctags_bin = '~/proc/ctags5.8/bin/ctags'
+    let g:tagbar_ctags_bin = '/usr/bin/ctags'
+    let g:tagbar_width = 30
+    let g:tagbar_left = 1
+    " Set sort order to 0, it will list the tags in the
+    " order where they appear in the source file, other
+    " than alphabetic order
+    let g:tagbar_sort = 0
+    ""map <F3> :Tagbar<CR>
+endfunction " End of function s:setup_tagbar
+
+" ------------------------------------------------------
+" Easymotion usage
+" ------------------------------------------------------
+function s:setup_easymotion()
+    " 1. Jump to a position located around current cursor
+    "    [Shortkeys]
+    "       <leader><leader>w  --> 'w'ord
+    "       <leader><leader>b  --> 'b'ack
+    " 2. Search and jump
+    "    [Shortkeys]
+    "       <leader><leader>s  --> 's'earch
+    " 3. Jump by lines
+    "    [Shortkeys]
+    "       <leader><leader>j <Plug>(easymotion-j)
+    "       <leader><leader>k <Plug>(easymotion-k)
+    " 4. Jump in lines
+    "    [Shortkeys] -> user defined key maps
+    "   map <leader><leader>h <Plug>(easymotion-h)
+    "   map <leader><leader>l <Plug>(easymotion-l)
+    " 5. Repeat last motion
+    "    [Shortkeys] -> user defined key maps
+    "   map <leader><leader>. <Plug>(easymotion-repeat)
+
+    let g:EasyMotion_smartcase = 1
+    " let g:EasyMotion_startofline = 0 " keep cursor column when JK motion
+    ""map <leader><leader>j <Plug>(easymotion-j)
+    ""map <leader><leader>k <Plug>(easymotion-k)
+    ""map <leader><leader>h <Plug>(easymotion-linebackward)
+    ""map <leader><leader>l <Plug>(easymotion-lineforward)
+    ""map <leader><leader>. <Plug>(easymotion-repeat)
+    ""map <leader><leader>/ <Plugin>(easymotion-sn)
+    ""omap <leader><leader>/ <Plugin>(easymotion-tn)
+    ""map n <Plug>(easymotion-next)
+    ""map N <Plug>(easymotion-prev)
+endfunction " End of function s:setup_easymotion
+
+" ------------------------------------------------------
+" Incsearch
+" ------------------------------------------------------
+function s:setup_incsearch()
+    " " This will highlight all matched patterns when searching
+    " " This replace the vim's default behavior for key '/'
+    " map / <Plug>(incsearch-forward)
+    " map ? <Plug>(incsearch-backward)
+    " map g/ <Plug>(incsearch-stay)
+endfunction " End of function s:setup_incsearch
+
+
+" ------------------------------------------------------
+" vim-color-scheme
+" ------------------------------------------------------
+function s:setup_vimcolorscheme()
+    syntax enable
+    if has("gui_running")
+        ""set background=dark
+        set background=light
+        colorscheme solarized
+    endif
+endfunction " End of function s:setup_vimcolorscheme
+
+
+" ------------------------------------------------------
+" YouCompleteMe
+" ------------------------------------------------------
+function s:setup_youcompleteme()
+    "	let g:ycm_global_ycm_extra_conf = 'D:/procs/vim/_ycm_extra_conf.py'
+    "	let g:ycm_server_python_interpreter = 'D:/procs/python27/python.exe'
+    "	let g:ycm_confirm_extra_conf = 0
+    "	let g:ycm_seed_identifiers_with_syntax = 1  
+    "	let g:ycm_autoclose_preview_window_after_completion = 1  
+    "	let g:ycm_key_invoke_completion = '<S-Space>'  
+    "	let g:ycm_collect_identifiers_from_tags_files=1  
+    "	set completeopt=longest,menu  
+
+    let g:ycm_global_ycm_extra_conf = '/home/pyrad/.vim/bundle/YouCompleteMe/.ycm_extra_conf.py'
+    let g:ycm_server_python_interpreter = '/usr/bin/python3'
+    
+    let g:ycm_enable_diagnostic_signs = 0
+    set completeopt=menu,menuone
+    let g:ycm_add_preview_to_completeopt = 0
+    let g:ycm_show_diagnostics_ui = 0
+    let g:ycm_min_num_of_chars_for_completeion = 3
+    let g:ycm_min_num_identifier_candidate_chars = 2
+    let g:ycm_max_num_candidates = 15
+    let g:ycm_key_invoke_completion = '<c-z>'
+    nnoremap <leader>gl :YouCompleter  GoToDeclaration<CR>
+    nnoremap <leader>gf :YouCompleter  GoToDefintion<CR>
+    nnoremap <leader>gg :YouCompleter  GoToDefintionElseDeclaration<CR>
+    let g:ycm_semantic_triggers = {
+                \   'c' : ['->', '  ', '.', ' ', '(', '[,', '&'],
+                \   'cpp,objcpp' : ['->', '.', ' ', '(', '[,', '&', '::'],
+                \   'perl' : ['->', '::', ' '],
+                \   'cs,java,javascript,d,vim,python,perl6,scala,vb,elixir,go' : ['.'],
+                \   'ruby' : ['.', '::'],
+                \   'lua' : ['.', ':'],
+                \ }
+    
+    let g:ycm_filetype_whitelist = {
+                \ "c":1,      "cpp":1,  "objc":1,
+                \ "sh":1,     "zsh":1,  "zimbu":1,
+                \ "python":1, "perl":1, "ruby":1,
+                \ }
+    
+    noremap <c-z> <NOP>
+endfunction " End of function s:setup_youcompleteme
+
+" ------------------------------------------------------
+" Window size & positon setup
+" ------------------------------------------------------
+function s:setup_winsizepos()
+    if !has("gui_running")
+        return
+    endif
+
+    " GUI is running or is about to start.
+    " Set window size(by longc)
+    ""set lines=50 columns=150
+    ""set lines=33 columns=100
+    set lines=25 columns=82
+    " Set window position(by longc)
+    " See help --> :h winpos
+    ""winpos 500 50 
+    ""winpos 400 40 
+    ""winpos 300 30 
+    winpos 572 36
+endfunction " End of function s:setup_winsizepos
+
+
+" ------------------------------------------------------
+" This function implements main flow to call other
+" utility functions
+" ------------------------------------------------------
+function s:main_proc()
+    call s:setup_init()
+    call s:setup_vimplug()
+    call s:setup_general()
+    call s:setup_airline()
+    call s:setup_nerdtree()
+    call s:setup_ctrlp()
+    call s:setup_tagbar()
+    call s:setup_easymotion()
+    "" call s:setup_incsearch()
+    call s:setup_vimcolorscheme()
+    "" call s:setup_youcompleteme()
+    call s:setup_winsizepos()
+endfunction " End of function s:main_proc
+
+" ------------------------------------------------------
+" Call the main proc function as the only one
+" entry for setup
+" ------------------------------------------------------
+call s:main_proc()
+
