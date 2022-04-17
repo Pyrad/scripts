@@ -118,5 +118,8 @@ git branch --unset-upstream
 git push --set-upstream origin master
 
 ## Change to ssh instead of http protocal for the repo
-git remote set-url origin git@github.com:<REPO_NAME>.git
+git remote set-url origin git@github.com:<UserName>/<REPO_NAME>.git
+# Example
+e.g.
+git remote set-url origin git@github.com:Pyrad/scripts.git
 
