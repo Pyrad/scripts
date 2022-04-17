@@ -117,4 +117,6 @@ git branch --unset-upstream
 ### And then push it for the 1st time to the remote repository
 git push --set-upstream origin master
 
+## Change to ssh instead of http protocal for the repo
+git remote set-url origin git@github.com:<REPO_NAME>.git
 
