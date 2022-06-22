@@ -226,3 +226,12 @@ if [[ ! -z $LANG ]] && [[ $LANG == "zh_CN.UTF-8" ]]; then
 	export LANG="C.UTF-8"
 fi
 
+# Change default editor to vim, which need to be installed first
+export EDITOR=vim
+
+# To specify headers and libs of cxx boost libraries
+# Note that the boost libs should be compiled and installed on windows
+export BOOST_INC_HOME="/d/procs/boost_1_79_0"
+export BOOST_LIB_HOME="/d/procs/boost_1_79_0/lib"
+
+
