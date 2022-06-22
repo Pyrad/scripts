@@ -218,3 +218,11 @@ alias cdworkgitee='cd /d/Gitee'
 alias g='git'
 alias gs='git status'
 alias gd='git difftool -t meld --no-prompt'
+
+
+# If current is Chinese language, reset it to English
+
+if [[ ! -z $LANG ]] && [[ $LANG == "zh_CN.UTF-8" ]]; then
+	export LANG="C.UTF-8"
+fi
+
