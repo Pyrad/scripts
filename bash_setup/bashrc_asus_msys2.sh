@@ -74,6 +74,7 @@ alias gd='git difftool -t meld --no-prompt'
 
 ### Default editor & git editor
 export -n EDITOR='vim'
+export -n VISUAL='vim'
 export -n GIT_EDITOR='vim'
 
 
