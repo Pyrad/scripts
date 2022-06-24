@@ -72,8 +72,9 @@ alias gd='git difftool -t meld --no-prompt'
 #alias gd='git difftool -t p4merge --no-prompt'
 
 
-### Default editor
+### Default editor & git editor
 export -n EDITOR='vim'
+export -n GIT_EDITOR='vim'
 
 
 
