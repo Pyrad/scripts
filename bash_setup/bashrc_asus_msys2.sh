@@ -78,5 +78,3 @@ export -n VISUAL='vim'
 export -n GIT_EDITOR='vim'
 
 
-
-
