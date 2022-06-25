@@ -108,6 +108,9 @@ alias gd='git difftool -t meld --no-prompt'
 alias ll='ls -l'	# long list
 alias la='ls -A'	# all but . and ..
 alias l='ls -CF'	#
+alias v='vim'
+alias vi='vim'
+
 
 
 ### Default editor
