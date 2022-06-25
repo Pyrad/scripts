@@ -27,11 +27,24 @@ eval "`dircolors -b /etc/DIR_COLORS`"
 alias ls='ls --color=auto'
 [[ $DEBUG_FLAG -eq 1 ]] && echo "Setting colors for command ls"
 
+#####################################################################
 ### A function to choose OhMyPosh theme
 ### based on today is which day of the year
+### Paramters
+### 	This function accepts 2 arguments at most
+### 	1st argument is the directory name of the OhMyPosh themes
+### 	2nd argument is whether to use default theme name instead
+### 	So if there are 2 argument, just use the default name and return
+### Return
+###		Return a list of 3 values
+###		filename, its index and the file list length
+#####################################################################
 function choose_omp_theme() {
-	[[ $# -eq 0 ]] && return
+	DEFAULT_F="paradox.omp.json"
+	[[ $# -eq 0 ]] && echo "$DEFAULT_F" && return
 	OMP_THEME_DIR="$1"
+	[[ ! -d $OMP_THEME_DIR ]] && echo "$DEFAULT_F 0 0" && return
+	[[ $# -eq 2 ]] && echo "$DEFAULT_F 0 0" && return
 	# The return value from find is a single string
 	flist_string=`find $OMP_THEME_DIR -type f -name "*.json"`
 	# Convert that string into an array
