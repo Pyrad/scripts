@@ -27,13 +27,35 @@ eval "`dircolors -b /etc/DIR_COLORS`"
 alias ls='ls --color=auto'
 [[ $DEBUG_FLAG -eq 1 ]] && echo "Setting colors for command ls"
 
+### A function to choose OhMyPosh theme
+### based on today is which day of the year
+function choose_omp_theme() {
+	[[ $# -eq 0 ]] && return
+	OMP_THEME_DIR="$1"
+	# The return value from find is a single string
+	flist_string=`find $OMP_THEME_DIR -type f -name "*.json"`
+	# Convert that string into an array
+	flist=($flist_string)
+	declare -i nday
+	declare -i num
+	declare -i flistlen
+	flistlen=${#flist[@]}
+	nday=`date +%j`
+	num=`expr $nday % $flistlen`
+	fname=`basename ${flist[$num]}`
+	#Return a list of 3 values
+	#filename, its index and the file list length
+	echo "$fname $num $flistlen"
+}
 ### Setup for oh-my-posh
 if [[ ! -z $OS ]] && [[ $OS == "Windows_NT" ]] && [[ ! -z $OSTYPE ]] && [[ $OSTYPE == "msys" ]]; then
 	OHMYPOSH_DIR="/d/procs/ohMyPosh/"
 	OHMYPOSH_CMD="${OHMYPOSH_DIR}/bin/oh-my-posh"
 	THEME_DIR="${OHMYPOSH_DIR}/themes"
-	THEME_NAME="paradox.omp.json"
-	[[ -f $OHMYPOSH_CMD ]] && eval "$(${OHMYPOSH_CMD} --init --shell bash --config ${THEME_DIR}/${THEME_NAME})"
+	chooseInfoStr=$(choose_omp_theme $THEME_DIR)
+	clist=($chooseInfoStr)
+	THEME_NAME_ABS="${THEME_DIR}/${clist[0]}"
+	[[ -f $OHMYPOSH_CMD ]] && eval "$(${OHMYPOSH_CMD} --init --shell bash --config $THEME_NAME_ABS)"
 	[[ $DEBUG_FLAG -eq 1 ]] && echo "Setting oh-my-posh prompt"
 else
 	[[ $DEBUG_FLAG -eq 1 ]] && echo "Skipped setting oh-my-posh prompt"
@@ -70,12 +92,16 @@ alias g='git'
 alias gs='git status'
 alias gd='git difftool -t meld --no-prompt'
 #alias gd='git difftool -t p4merge --no-prompt'
+alias ll='ls -l'	# long list
+alias la='ls -A'	# all but . and ..
+alias l='ls -CF'	#
 
 
-### Default editor & git editor
+### Default editor
 export -n EDITOR='vim'
 export -n VISUAL='vim'
 export -n GIT_EDITOR='vim'
+
 
 
 
