@@ -96,6 +96,18 @@ else
 	fi
 fi
 
+### which alias to a wrapper function
+which () {
+ (alias; declare -f) | /usr/bin/which --tty-only --read-alias --read-functions --show-tilde --show-dot $@
+}
+export -f which
+
+### Split PATH env (equals to command "set")
+function __check_path_env() {
+    echo $PATH | awk -F: '{for (i=0;++i<NF;) print $i}'
+}
+alias check_path='__check_path_env'
+
 ### Alias
 MeldPath='/d/procs/Meld'
 export PATH="$PATH:$MeldPath"
