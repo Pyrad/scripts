@@ -1,5 +1,11 @@
 #!/bin/sh -
 
+######################################################################
+# This file has 2 functions to display colors in shell
+# Function 1: print_bash_colors_0
+# Function 2: print_bash_colors
+######################################################################
+
 
 ######################################################################
 # Function print_bash_colors_0 comes from others, keep it here as a 
