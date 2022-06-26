@@ -61,7 +61,7 @@ function choose_omp_theme() {
 	echo "$fname $num $flistlen"
 }
 ### Setup for oh-my-posh
-if [[ ! -z $OS ]] && [[ $OS == "Windows_NT" ]] && [[ ! -z $OSTYPE ]] && [[ $OSTYPE == "msys" ]]; then
+if [[ ! -z $TERM_PROGRAM ]] && [[ $TERM_PROGRAM == "Tabby" ]] && [[ ! -z $OS ]] && [[ $OS == "Windows_NT" ]] && [[ ! -z $OSTYPE ]] && [[ $OSTYPE == "msys" ]]; then
 	OHMYPOSH_DIR="/d/procs/ohMyPosh/"
 	OHMYPOSH_CMD="${OHMYPOSH_DIR}/bin/oh-my-posh"
 	THEME_DIR="${OHMYPOSH_DIR}/themes"
@@ -69,7 +69,7 @@ if [[ ! -z $OS ]] && [[ $OS == "Windows_NT" ]] && [[ ! -z $OSTYPE ]] && [[ $OSTY
 	clist=($chooseInfoStr)
 	THEME_NAME_ABS="${THEME_DIR}/${clist[0]}"
 	[[ -f $OHMYPOSH_CMD ]] && eval "$(${OHMYPOSH_CMD} --init --shell bash --config $THEME_NAME_ABS)"
-	[[ $DEBUG_FLAG -eq 1 ]] && echo "Setting oh-my-posh prompt"
+	[[ $DEBUG_FLAG -eq 1 ]] && echo "Setting oh-my-posh prompt (theme name: ${clist[0]})"
 else
 	[[ $DEBUG_FLAG -eq 1 ]] && echo "Skipped setting oh-my-posh prompt"
 fi
@@ -110,7 +110,7 @@ alias la='ls -A'	# all but . and ..
 alias l='ls -CF'	#
 alias v='vim'
 alias vi='vim'
-
+alias cgdb='/home/Pyrad/procs/cgdb/bin/cgdb'
 
 
 ### Default editor
