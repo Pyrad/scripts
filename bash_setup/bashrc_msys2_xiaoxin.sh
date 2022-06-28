@@ -11,8 +11,8 @@ DEBUG_FLAG=0
 ### The path to oh-my-posh
 OHMYPOSH_DIR="/d/procs/ohMyPosh/"
 ### Boost libraries
-export BOOST_INC_HOME="/d/procs/boost_1_70_0"
-export BOOST_LIB_HOME="/d/procs/boost_1_70_0/stage/lib"
+export BOOST_INC_HOME="/d/procs/boost_1_79_0"
+export BOOST_LIB_HOME="/d/procs/boost_1_79_0/lib"
 ### Gitee and GitHub directories
 MY_GITHUB_DIR='/d/Pyrad/GitHub'
 MY_GITEE_DIR='/d/Pyrad/Gitee'
