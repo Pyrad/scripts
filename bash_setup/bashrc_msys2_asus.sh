@@ -6,7 +6,7 @@ DEBUG_FLAG=0
 
 ### If not running interactively, don't do anything
 [[ $DEBUG_FLAG -eq 1 ]] && [[ "$-" != *i* ]] && echo "Not interactive shell, return"
-#[[ "$-" != *i* ]] && return
+[[ "$-" != *i* ]] && return
 
 ### If current is Chinese language, reset it to English
 IS_CN_LANG=0
@@ -61,7 +61,10 @@ function choose_omp_theme() {
 	echo "$fname $num $flistlen"
 }
 ### Setup for oh-my-posh
-if [[ ! -z $TERM_PROGRAM ]] && [[ $TERM_PROGRAM == "Tabby" ]] && [[ ! -z $OS ]] && [[ $OS == "Windows_NT" ]] && [[ ! -z $OSTYPE ]] && [[ $OSTYPE == "msys" ]]; then
+# Set OMP_ON to Non-Empty string to turn it ON
+# Set OMP_ON to empty string to turn it OFF
+OMP_ON=""
+if [[ ! -z $OMP_ON ]] && [[ ! -z $TERM_PROGRAM ]] && [[ $TERM_PROGRAM == "Tabby" ]] && [[ ! -z $OS ]] && [[ $OS == "Windows_NT" ]] && [[ ! -z $OSTYPE ]] && [[ $OSTYPE == "msys" ]]; then
 	OHMYPOSH_DIR="/d/procs/ohMyPosh/"
 	OHMYPOSH_CMD="${OHMYPOSH_DIR}/bin/oh-my-posh"
 	THEME_DIR="${OHMYPOSH_DIR}/themes"
