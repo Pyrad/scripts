@@ -589,6 +589,25 @@ function MyDiff()
 endfunction
 
 """ ------------------------------------------------------
+""" Setup for the coc-nvim
+""" type ":h coc-nvim" for more detials
+""" ------------------------------------------------------
+function s:setup_coc_nvim()
+	""Configure the directory which will be used to look for
+	""user's coc-settings.json, default:
+	"" Windows: ~/AppData/Local/nvim
+	"" Other: ~/.config/nvim`
+    let g:coc_config_home = 'D:/procs/VimVersion9/vimfiles/coc_nvim_files/config_home'
+
+	""Configure the directory which will be used to for data
+	""files(extensions, mru and so on), default:
+	""Windows: ~/AppData/Local/coc
+	""Other: ~/.config/coc`
+    let g:coc_data_home = 'D:/procs/VimVersion9/vimfiles/coc_nvim_files/data_home'
+
+endfunction
+
+""" ------------------------------------------------------
 """ Airline setup/adjustment
 """ ------------------------------------------------------
 function s:setup_airline()
