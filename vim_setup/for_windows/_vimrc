@@ -22,6 +22,7 @@ function s:setup_vimplug()
     Plug 'crusoexia/vim-monokai'
     Plug 'octol/vim-cpp-enhanced-highlight'
     Plug 'scrooloose/nerdtree'
+    "" vim-mark depends on ingo lib, so install them both
     Plug 'inkarkat/vim-ingo-library'
     Plug 'inkarkat/vim-mark'
 
