@@ -2,41 +2,72 @@
 "source $VIMRUNTIME/mswin.vim
 "behave mswin
 
+"" Here are some global variables which is
+"" path-dependent for this machine
+let s:myplugvim = "$VIM/vimfiles/vimplug/plug.vim"
+let s:myplugvimextfolder='D:/procs/Vim9Compiled/vimfiles/vimplug'
+let s:mypythonthreedll='D:/procs/python38/python38.dll'
+let s:mypythonthreehome='D:/procs/python38'
+let s:mypython3_host_prog='D:/procs/python38/python.exe'
+let s:myctags_for_tagbar= 'D:/procs/ctags59/ctags.exe'
+
+" ------------------------------------------------------
+" Python3
+" ------------------------------------------------------
+function s:setup_python3_dyn()
+    ""set pythonthreedll='C:/Python36/python36.dll'
+    ""let &pythonthreedll='C:/Python36/python36.dll'
+    ""let &pythonthreehome='C:/Python36'
+    let &pythonthreedll=s:mypythonthreedll
+    let &pythonthreehome=s:mypythonthreehome
+endfunction " End of function setup_python3_dyn
+
+
 " ------------------------------------------------------
 " Vim-plug management
 " ------------------------------------------------------
 function s:setup_init()
-    let s:use_cocnvim = 0
+    let s:use_cocnvim = 1
     let s:use_youcompletemme = 0
 endfunction " End of function setup_init
 " ------------------------------------------------------
 " Vim-plug management
 " ------------------------------------------------------
 function s:setup_vimplug()
-    call plug#begin('D:/procs/Vim/vimfiles/plugged')
-    Plug 'vim-airline/vim-airline'
-    Plug 'vim-airline/vim-airline-themes'
-    Plug 'ctrlpvim/ctrlp.vim'
-    Plug 'majutsushi/tagbar'
-    Plug 'easymotion/vim-easymotion'
-    Plug 'crusoexia/vim-monokai'
-    Plug 'octol/vim-cpp-enhanced-highlight'
-    Plug 'scrooloose/nerdtree'
-    "" vim-mark depends on ingo lib, so install them both
-    Plug 'inkarkat/vim-ingo-library'
-    Plug 'inkarkat/vim-mark'
+    ""set rtp+=$VIM/vimfiles/vimplug/plug.vim
+    ""set rtp+=s:myplugvim
+    
+    ""call plug#begin('D:/procs/VimVersion9/vimfiles/vimplug')
+    call plug#begin(s:myplugvimextfolder)
+        Plug 'vim-airline/vim-airline'
+        Plug 'vim-airline/vim-airline-themes'
+        Plug 'ctrlpvim/ctrlp.vim'
+        Plug 'majutsushi/tagbar'
+        Plug 'easymotion/vim-easymotion'
+        ""Plug 'crusoexia/vim-monokai'
+        Plug 'octol/vim-cpp-enhanced-highlight'
+        Plug 'scrooloose/nerdtree'
+        Plug 'inkarkat/vim-ingo-library'
+        Plug 'inkarkat/vim-mark'
+        Plug 'SirVer/ultisnips'
 
-    if has("gui_running")
-        Plug 'altercation/vim-colors-solarized'
-    endif
-	
-    if s:use_cocnvim == 1
-        Plug 'neoclide/coc.nvim', {'branch': 'release'}
-    elseif s:use_youcompletemme == 1
-        Plug 'ycm-core/YouCompleteMe'
-    else
-        " No completer if neither is specified
-    endif
+        Plug 'tpope/vim-surround'
+
+        if has("gui_running")
+            Plug 'altercation/vim-colors-solarized'
+        endif
+
+        if s:use_cocnvim == 1
+            Plug 'neoclide/coc.nvim', {'branch': 'release'}
+        endif
+	    
+        ""if s:use_cocnvim == 1
+        ""    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+        ""elseif s:use_youcompletemme == 1
+        ""    Plug 'ycm-core/YouCompleteMe'
+        ""else
+        ""    " No completer if neither is specified
+        ""endif
     call plug#end()
 endfunction " End of function setup_vimplug
 
@@ -45,6 +76,8 @@ endfunction " End of function setup_vimplug
 " General setups
 " ------------------------------------------------------
 function s:setup_general()
+    ""switch back to using the English menus
+    set langmenu=none
 
     set diffexpr=MyDiff()
     
@@ -591,7 +624,15 @@ endfunction
 
 """ ------------------------------------------------------
 """ Setup for the coc-nvim
-""" type ":h coc-nvim" for more detials
+""" ------------------------------------------------------
+function s:setup_python3()
+    ""let g:python3_host_prog="C:/Python36/python.exe"
+    let g:python3_host_prog=s:mypython3_host_prog
+endfunction
+
+
+""" ------------------------------------------------------
+""" Setup for the coc-nvim
 """ ------------------------------------------------------
 function s:setup_coc_nvim()
 	""Configure the directory which will be used to look for
@@ -614,6 +655,7 @@ endfunction
 function s:setup_airline()
     set encoding=utf-8
     ""set langmenu=zh_CN.UTF-8
+    ""set langmenu=zh_CN.UTF-8
     set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1 
     set fileencoding=utf-8
     ""set ambiwidth=double
@@ -634,7 +676,9 @@ function s:setup_airline()
         ""set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 11
         ""set guifont=Inconsolata\ for\ Powerline\ 22
         ""set guifont=Monospace\ 22
-        set guifont=DejaVu_Sans_Mono_for_Powerline:h14:cANSI
+        ""set guifont=DejaVu_Sans_Mono_for_Powerline:h14:cANSI
+        ""set guifont=Inconsolata_for_Powerline:h18:cANSI
+        set guifont=Inconsolata_for_Powerline:h18:cANSI
         " powerline symbols
         let g:airline_left_sep = ''
         let g:airline_left_alt_sep = ''
@@ -732,7 +776,9 @@ endfunction " End of function s:setup_ctrlp
 function s:setup_tagbar()
     nmap <F2> :TagbarToggle<CR>
     ""let g:tagbar_ctags_bin = '~/proc/ctags5.8/bin/ctags'
-    let g:tagbar_ctags_bin = '/usr/bin/ctags'
+    ""let g:tagbar_ctags_bin = '/usr/bin/ctags'
+    ""let g:tagbar_ctags_bin = 'D:/procs/ctags59/ctags.exe'
+    let g:tagbar_ctags_bin = s:myctags_for_tagbar
     let g:tagbar_width = 30
     let g:tagbar_left = 1
     " Set sort order to 0, it will list the tags in the
@@ -870,6 +916,15 @@ function s:setup_winsizepos()
     winpos 572 36
 endfunction " End of function s:setup_winsizepos
 
+function s:setup_font()
+    if !has("gui_running")
+        return
+    endif
+
+    ""set guifont=Inconsolata_for_Powerline:h18:cANSI
+	
+endfunction " End of function s:setup_font
+
 
 " ------------------------------------------------------
 " This function implements main flow to call other
@@ -884,10 +939,14 @@ function s:main_proc()
     call s:setup_ctrlp()
     call s:setup_tagbar()
     call s:setup_easymotion()
+    call s:setup_coc_nvim()
     "" call s:setup_incsearch()
-    call s:setup_vimcolorscheme()
+    "call s:setup_vimcolorscheme()
     "" call s:setup_youcompleteme()
     call s:setup_winsizepos()
+	""call s:setup_font()
+    call s:setup_python3()
+    call s:setup_python3_dyn()
 endfunction " End of function s:main_proc
 
 " ------------------------------------------------------
