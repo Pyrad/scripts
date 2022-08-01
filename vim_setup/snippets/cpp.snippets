@@ -1,0 +1,76 @@
+###########################################################################
+#			    My owned snippets for C/C++
+#			    Pyrad
+#			    2022-08-01 21:26
+###########################################################################
+
+### Class with brief introduction as doxygen comments
+snippet myClass "class .. (class)"
+/**
+ * @brief:
+ *
+ */
+class ${1:`!p snip.rv = snip.basename or "name"`}
+{
+public:
+	${1/(\w+).*/$1/} (${2:arguments});
+	virtual ~${1/(\w+).*/$1/} ();
+
+private:
+	${0:/* data */}
+};
+endsnippet
+
+### Doxygen comments for a function
+snippet myFuncDoc "Function doxygen comments"
+/**
+ * @brief
+ * 
+ * @param[in]
+ * @param[out]
+ *
+ * @return
+ */
+endsnippet
+
+### Doxygen comments for a clas
+snippet myClassDoc "Class doxygen comments"
+/**
+ * @brief
+ * 
+ */
+endsnippet
+
+### Print a line as the begin of a function
+snippet myFuncBeginMsg "Flag BEGIN of a function"
+fprintf(stdout, "----- BEGIN of function %s -----\n", __FUNCTION__);
+endsnippet
+
+### Print a line as the end of a function
+snippet myFuncEndMsg "Flag END of a function"
+fprintf(stdout, "----- END of function %s -----\n\n", __FUNCTION__);
+endsnippet
+
+### Function doxygen comments
+snippet /*f "Doxygen comment for a function"
+/**
+ * @brief
+ * 
+ * @param[in]
+ * @param[out]
+ *
+ * @return
+ *
+ * @note
+ */
+endsnippet
+
+### Class doxygen comments
+snippet /*c "Doxygen comment for a class"
+/**
+ * @brief
+ * 
+ */
+endsnippet
+
+# vim:ft=snippets:
