@@ -73,4 +73,39 @@ snippet /*c "Doxygen comment for a class"
  */
 endsnippet
 
+### Function with doxygen comments
+snippet /**f "Function with doxygen" b
+/**
+ * @brief: ${4:brief}
+ *
+ * @param: `!p write_docstring_args(t[3],snip)`
+ *
+ * @return: `!p snip.rv = t[1]`
+ */
+${1:ReturnType} ${2:FunctionName}(${3:param})
+{
+	${0:FunctionBody}
+}
+endsnippet
+
+### Class with doxygen comments
+snippet /**c "Class with doxygen" b
+/**
+ * @brief: 
+ *
+ */
+class ${1:ClassName} {
+public:
+	$1() :  { }
+	virtual ~$1() { }
+
+private:
+	${2:MemberType} ${3:MemberName};
+};
+endsnippet
+
+
+
+
+
 # vim:ft=snippets:
