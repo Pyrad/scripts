@@ -39,63 +39,13 @@ function s:setup_vimplug()
     call plug#end()
 endfunction " End of function setup_vimplug
 
-" ------------------------------------------------------
-" Vundle setup/adjustment
-" ------------------------------------------------------
-function s:setup_vundle()
-    set nocompatible              " be iMproved, required
-    filetype off                  " required
-    
-    " set the runtime path to include Vundle and initialize
-    set rtp+=~/.vim/bundle/Vundle.vim
-    "set rtp+=$VIM/vimfiles/bundle/Vundle.vim
-    call vundle#begin()
-    "call vundle#begin('$VIM/vimfiles/bundle/')
-    " alternatively, pass a path where Vundle should install plugins
-    "call vundle#begin('~/some/path/here')
-    
-    ""   " let Vundle manage Vundle, required
-    ""   Plugin 'VundleVim/Vundle.vim'
-    ""   
-    ""   Plugin 'vim-airline/vim-airline'
-    ""   Plugin 'vim-airline/vim-airline-themes'
-    ""   "Plugin 'scrooloose/nerdtree'
-    ""   Plugin 'ctrlpvim/ctrlp.vim'
-    ""   Plugin 'majutsushi/tagbar'
-    ""   Plugin 'Lokaltog/vim-easymotion'
-    ""   ""Plugin 'altercation/vim-colors-solarized'
-    ""   Plugin 'tpope/vim-surround'
-    ""   "Plugin 'inkarkat/vim-mark'
-    ""   "Plugin 'haya14busa/incsearch.vim'
-    ""   " Plugin 'taglist.vim'
-    ""   " Plugin 'tpope/vim-commentary'
-    ""   " YouCompleteMe plugin
-    ""   ""Plugin 'Valloric/YouCompleteMe'
-    ""   "Plugin 'ycm-core/YouCompleteMe'
-    
-    " All of your Plugins must be added before the following line
-    call vundle#end()            " required
-    filetype plugin indent on    " required
-    " To ignore plugin indent changes, instead use:
-    "filetype plugin on
-    "
-    " Brief help
-    " :PluginList       - lists configured plugins
-    " :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-    " :PluginSearch foo - searches for foo; append `!` to refresh local cache
-    " :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-    "
-    " see :h vundle for more details or wiki for FAQ
-    " Put your non-Plugin stuff after this line
-    " ------------------------------------------------------
-    "
-endfunction " End of function s:setup_vundle
-
 
 " ------------------------------------------------------
 " General setups
 " ------------------------------------------------------
 function s:setup_general()
+    ""switch back to using the English menus
+    set langmenu=none
 
     set diffexpr=MyDiff()
     
