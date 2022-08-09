@@ -44,7 +44,6 @@ function s:setup_vimplug()
         Plug 'ctrlpvim/ctrlp.vim'
         Plug 'majutsushi/tagbar'
         Plug 'easymotion/vim-easymotion'
-        ""Plug 'crusoexia/vim-monokai'
         Plug 'octol/vim-cpp-enhanced-highlight'
         Plug 'scrooloose/nerdtree'
         Plug 'inkarkat/vim-ingo-library'
@@ -56,18 +55,9 @@ function s:setup_vimplug()
         if has("gui_running")
             Plug 'altercation/vim-colors-solarized'
         endif
-
         if s:use_cocnvim == 1
             Plug 'neoclide/coc.nvim', {'branch': 'release'}
         endif
-	    
-        ""if s:use_cocnvim == 1
-        ""    Plug 'neoclide/coc.nvim', {'branch': 'release'}
-        ""elseif s:use_youcompletemme == 1
-        ""    Plug 'ycm-core/YouCompleteMe'
-        ""else
-        ""    " No completer if neither is specified
-        ""endif
     call plug#end()
 endfunction " End of function setup_vimplug
 
