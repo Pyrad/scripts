@@ -2,6 +2,35 @@
 "source $VIMRUNTIME/mswin.vim
 "behave mswin
 
+"" Here are some global variables which is
+"" path-dependent for this machine
+if has('win32')
+    let s:myplugvim = "$VIM/vimfiles/vimplug/plug.vim"
+    let s:myplugvimextfolder='D:/procs/Vim9Compiled/vimfiles/vimplug'
+    let s:mypythonthreedll='D:/procs/python38/python38.dll'
+    let s:mypythonthreehome='D:/procs/python38'
+    let s:mypython3_host_prog='D:/procs/python38/python.exe'
+    let s:myctags_for_tagbar= 'D:/procs/ctags59/ctags.exe'
+else
+    let s:myplugvim = ""
+    let s:myplugvimextfolder = '~/.vim/plugged'
+    let s:mypythonthreedll = ''
+    let s:mypythonthreehome = ''
+    let s:mypython3_host_prog = ''
+    let s:myctags_for_tagbar = ''
+endif
+
+" ------------------------------------------------------
+" Python3
+" ------------------------------------------------------
+function s:setup_python3_dyn()
+    ""set pythonthreedll='C:/Python36/python36.dll'
+    ""let &pythonthreedll='C:/Python36/python36.dll'
+    ""let &pythonthreehome='C:/Python36'
+    let &pythonthreedll=s:mypythonthreedll
+    let &pythonthreehome=s:mypythonthreehome
+endfunction " End of function setup_python3_dyn
+
 " ------------------------------------------------------
 " Vim-plug management
 " ------------------------------------------------------
@@ -13,29 +42,29 @@ endfunction " End of function setup_init
 " Vim-plug management
 " ------------------------------------------------------
 function s:setup_vimplug()
-    call plug#begin('~/.vim/plugged')
-    Plug 'vim-airline/vim-airline'
-    Plug 'vim-airline/vim-airline-themes'
-    Plug 'ctrlpvim/ctrlp.vim'
-    Plug 'majutsushi/tagbar'
-    Plug 'easymotion/vim-easymotion'
-    Plug 'crusoexia/vim-monokai'
-    Plug 'octol/vim-cpp-enhanced-highlight'
-    Plug 'scrooloose/nerdtree'
-    Plug 'inkarkat/vim-ingo-library'
-    Plug 'inkarkat/vim-mark'
-
+    ""set rtp+=$VIM/vimfiles/vimplug/plug.vim
+    ""set rtp+=s:myplugvim
+    ""call plug#begin('D:/procs/VimVersion9/vimfiles/vimplug')
+    call plug#begin(s:myplugvimextfolder)
     if has("gui_running")
         Plug 'altercation/vim-colors-solarized'
     endif
-
+    Plug 'ctrlpvim/ctrlp.vim'
+    Plug 'easymotion/vim-easymotion'
+    Plug 'honza/vim-snippets'
+    Plug 'inkarkat/vim-ingo-library'
+    Plug 'inkarkat/vim-mark'
+    Plug 'majutsushi/tagbar'
     if s:use_cocnvim == 1
         Plug 'neoclide/coc.nvim', {'branch': 'release'}
-    elseif s:use_youcompletemme == 1
-        Plug 'ycm-core/YouCompleteMe'
-    else
-        " No completer if neither is specified
     endif
+    Plug 'octol/vim-cpp-enhanced-highlight'
+    Plug 'scrooloose/nerdtree'
+    Plug 'SirVer/ultisnips'
+    Plug 'tpope/vim-surround'
+    Plug 'vim-airline/vim-airline-themes'
+    Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' }
+    Plug 'vim-airline/vim-airline'
     call plug#end()
 endfunction " End of function setup_vimplug
 
