@@ -4,13 +4,20 @@
 
 "" Here are some global variables which is
 "" path-dependent for this machine
-if has('win32')
+let s:cur_is_win32 = has('win32')
+let s:cur_is_gui = has("gui_running")
+
+if s:cur_is_win32
     let s:myplugvim = "$VIM/vimfiles/vimplug/plug.vim"
     let s:myplugvimextfolder='D:/procs/Vim9Compiled/vimfiles/vimplug'
     let s:mypythonthreedll='D:/procs/python38/python38.dll'
     let s:mypythonthreehome='D:/procs/python38'
     let s:mypython3_host_prog='D:/procs/python38/python.exe'
     let s:myctags_for_tagbar= 'D:/procs/ctags59/ctags.exe'
+    let s:mycoc_config_home = 'D:/procs/VimVersion9/vimfiles/coc_nvim_files/config_home'
+    let s:mycoc_data_home = 'D:/procs/VimVersion9/vimfiles/coc_nvim_files/data_home'
+    let s:myWinLineNum = 35
+    let s:myWinColumnNum = 92
 else
     let s:myplugvim = ""
     let s:myplugvimextfolder = '~/.vim/plugged'
@@ -18,6 +25,10 @@ else
     let s:mypythonthreehome = ''
     let s:mypython3_host_prog = ''
     let s:myctags_for_tagbar = ''
+    let s:mycoc_config_home = ''
+    let s:mycoc_data_home = ''
+    let s:myWinLineNum = 35
+    let s:myWinColumnNum = 92
 endif
 
 " ------------------------------------------------------
@@ -46,7 +57,7 @@ function s:setup_vimplug()
     ""set rtp+=s:myplugvim
     ""call plug#begin('D:/procs/VimVersion9/vimfiles/vimplug')
     call plug#begin(s:myplugvimextfolder)
-    if has("gui_running")
+    if s:cur_is_gui
         Plug 'altercation/vim-colors-solarized'
     endif
     Plug 'ctrlpvim/ctrlp.vim'
@@ -165,7 +176,7 @@ function s:setup_general()
     ""set background=dark
     ""
     """ Set extra options when running in GUI mode
-    ""if has("gui_running")
+    ""if s:cur_is_gui
     ""    set guioptions-=T
     ""    set guioptions+=e
     ""    set t_Co=256
@@ -436,7 +447,7 @@ function s:setup_general()
     
     inoremap " ""<ESC>i
     
-    ""if has("gui_running")
+    ""if s:cur_is_gui
     ""  " GUI is running or is about to start.
     ""  " Set window size(by longc)
     ""  ""set lines=50 columns=150
@@ -620,6 +631,33 @@ function MyDiff()
 endfunction
 
 """ ------------------------------------------------------
+""" Setup for the coc-nvim
+""" ------------------------------------------------------
+function s:setup_python3()
+    ""let g:python3_host_prog="C:/Python36/python.exe"
+    let g:python3_host_prog=s:mypython3_host_prog
+endfunction
+
+
+""" ------------------------------------------------------
+""" Setup for the coc-nvim
+""" ------------------------------------------------------
+function s:setup_coc_nvim()
+	""Configure the directory which will be used to look for
+	""user's coc-settings.json, default:
+	"" Windows: ~/AppData/Local/nvim
+	"" Other: ~/.config/nvim`
+    let g:coc_config_home = s:mycoc_config_home
+
+	""Configure the directory which will be used to for data
+	""files(extensions, mru and so on), default:
+	""Windows: ~/AppData/Local/coc
+	""Other: ~/.config/coc`
+    let g:coc_data_home = s:mycoc_data_home
+
+endfunction
+
+""" ------------------------------------------------------
 """ Airline setup/adjustment
 """ ------------------------------------------------------
 function s:setup_airline()
@@ -641,7 +679,7 @@ function s:setup_airline()
     let g:airline#extensions#whitespace#symbol = '!'
     
     set laststatus=2
-    if has("gui_running")
+    if s:cur_is_gui
         ""set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 11
         ""set guifont=Inconsolata\ for\ Powerline\ 22
         ""set guifont=Monospace\ 22
@@ -745,7 +783,9 @@ endfunction " End of function s:setup_ctrlp
 function s:setup_tagbar()
     nmap <F2> :TagbarToggle<CR>
     ""let g:tagbar_ctags_bin = '~/proc/ctags5.8/bin/ctags'
-    let g:tagbar_ctags_bin = '/usr/bin/ctags'
+    ""let g:tagbar_ctags_bin = '/usr/bin/ctags'
+    ""let g:tagbar_ctags_bin = 'D:/procs/ctags59/ctags.exe'
+    let g:tagbar_ctags_bin = s:myctags_for_tagbar
     let g:tagbar_width = 30
     let g:tagbar_left = 1
     " Set sort order to 0, it will list the tags in the
@@ -808,7 +848,7 @@ endfunction " End of function s:setup_incsearch
 " ------------------------------------------------------
 function s:setup_vimcolorscheme()
     syntax enable
-    if has("gui_running")
+    if s:cur_is_gui
         ""set background=dark
         set background=light
         colorscheme solarized
@@ -865,7 +905,7 @@ endfunction " End of function s:setup_youcompleteme
 " Window size & positon setup
 " ------------------------------------------------------
 function s:setup_winsizepos()
-    if !has("gui_running")
+    if !s:cur_is_gui
         return
     endif
 
@@ -873,7 +913,8 @@ function s:setup_winsizepos()
     " Set window size(by longc)
     ""set lines=50 columns=150
     ""set lines=33 columns=100
-    set lines=25 columns=82
+    ""set lines=25 columns=82
+    set lines=35 columns=92
     " Set window position(by longc)
     " See help --> :h winpos
     ""winpos 500 50 
@@ -881,6 +922,15 @@ function s:setup_winsizepos()
     ""winpos 300 30 
     winpos 572 36
 endfunction " End of function s:setup_winsizepos
+
+function s:setup_font()
+    if !s:cur_is_gui
+        return
+    endif
+
+    ""set guifont=Inconsolata_for_Powerline:h18:cANSI
+	
+endfunction " End of function s:setup_font
 
 
 " ------------------------------------------------------
@@ -896,10 +946,14 @@ function s:main_proc()
     call s:setup_ctrlp()
     call s:setup_tagbar()
     call s:setup_easymotion()
+    call s:setup_coc_nvim()
     "" call s:setup_incsearch()
     call s:setup_vimcolorscheme()
     "" call s:setup_youcompleteme()
     call s:setup_winsizepos()
+	""call s:setup_font()
+    call s:setup_python3()
+    call s:setup_python3_dyn()
 endfunction " End of function s:main_proc
 
 " ------------------------------------------------------
