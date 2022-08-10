@@ -32,12 +32,12 @@ else
 endif
 
 " ------------------------------------------------------
-" Python3
+" Python3 settings, only useful for window platform
 " ------------------------------------------------------
 function s:setup_python3_dyn()
-    ""set pythonthreedll='C:/Python36/python36.dll'
-    ""let &pythonthreedll='C:/Python36/python36.dll'
-    ""let &pythonthreehome='C:/Python36'
+    if !s:cur_is_win32
+        return
+    endif
     let &pythonthreedll=s:mypythonthreedll
     let &pythonthreehome=s:mypythonthreehome
 endfunction " End of function setup_python3_dyn
@@ -49,6 +49,7 @@ function s:setup_init()
     let s:use_cocnvim = 1
     let s:use_youcompletemme = 0
 endfunction " End of function setup_init
+
 " ------------------------------------------------------
 " Vim-plug management
 " ------------------------------------------------------
@@ -84,83 +85,41 @@ endfunction " End of function setup_vimplug
 " General setups
 " ------------------------------------------------------
 function s:setup_general()
-    ""switch back to using the English menus
-    set langmenu=none
-
+    set langmenu=none           " switch back to using the English menus
     set diffexpr=MyDiff()
-    
-    " Sets how many lines of history VIM has to remember
-    set history=700
-    
-    " Enable filetype plugins
-    filetype plugin on
+    set history=700             " Sets how many lines of history VIM has to remember
+    filetype plugin on          " Enable filetype plugins
     filetype indent on
-    
-    " Set to auto read when a file is changed from the outside
-    set autoread
-    
-    " With a map leader it's possible to do extra key combinations
-    " like <leader>w saves the current file
-    let mapleader = ","
-    let g:mapleader = ","
-    
-    " Fast saving
+    set autoread                " Set to auto read when a file is changed from the outside
+    let mapleader = ","         " With a map leader it's possible to do extra key combinations
+    let g:mapleader = ","       " like <leader>w saves the current file
+    "" Fast saving
     nmap <leader>w :w!<cr>
-    
-    " No cursor blink 
-    " gcr --> gui cursor
-    set gcr=n-v:block-blinkon0
+    set gcr=n-v:block-blinkon0  " No cursor blink 
+                                " gcr --> gui cursor
     
     """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
     " => VIM user interface
     """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-    " Set 7 lines to the cursor - when moving vertically using j/k
-    set so=7
-    
-    " Turn on the WiLd menu
-    set wildmenu
-    
-    " Ignore compiled files
-    set wildignore=*.o,*~,*.pyc
-    
-    "Always show current position
-    set ruler
-    
-    " Height of the command bar
-    set cmdheight=2
-    
-    " A buffer becomes hidden when it is abandoned
-    set hid
-    
-    " Configure backspace so it acts as it should act
-    set backspace=eol,start,indent
+    set so=7                        " Set 7 lines to the cursor - when moving vertically using j/k
+    set wildmenu                    " Turn on the WiLd menu
+    set wildignore=*.o,*~,*.pyc     " Ignore compiled files
+    set ruler                       " Always show current position
+    set cmdheight=2                 " Height of the command bar
+    set hid                         " A buffer becomes hidden when it is abandoned
+    set backspace=eol,start,indent  " Configure backspace so it acts as it should act
+                                    " i.e., backspace could delete auto-indent, EOF,
+                                    " and character at beginning of a line
     set whichwrap+=<,>,h,l
-    
-    " Ignore case when searching
-    set ignorecase
-    
-    " When searching try to be smart about cases 
-    set smartcase
-    
-    " Highlight search results
-    set hlsearch
-    
-    " Makes search act like search in modern browsers
-    set incsearch
-    
-    " Don't redraw while executing macros (good performance config)
-    set lazyredraw
-    
-    " For regular expressions turn magic on
-    set magic
-    
-    " Show matching brackets when text indicator is over them
-    set showmatch
-    " How many tenths of a second to blink when matching brackets
-    set mat=2
-    
-    " No annoying sound on errors
-    set noerrorbells
+    set ignorecase                  " Ignore case when searching
+    set smartcase                   " When searching try to be smart about cases 
+    set hlsearch                    " Highlight search results
+    set incsearch                   " Makes search act like search in modern browsers
+    set lazyredraw                  " Don't redraw while executing macros (good performance config)
+    set magic                       " For regular expressions turn magic on
+    set showmatch                   " Show matching brackets when text indicator is over them
+    set mat=2                       " How many tenths of a second to blink when matching brackets
+    set noerrorbells                " No annoying sound on errors
     set novisualbell
     set t_vb=
     set tm=500
@@ -183,43 +142,32 @@ function s:setup_general()
     ""    "set guitablabel=%M\ %t
     ""endif
     ""
-    """ Set utf8 as standard encoding and en_US as the standard language
-    ""set encoding=utf8
-    ""
     """ Use Unix as the standard file type
     ""set ffs=unix,dos,mac
-    
     
     """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
     " => Files, backups and undo
     """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-    " Turn backup off, since most stuff is in SVN, git et.c anyway...
-    set nobackup
+    set nobackup    " Turn backup off, since most stuff is in SVN, git et.c anyway...
     set nowb
     set noswapfile
-    
     
     """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
     " => Text, tab and indent related
     """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-    " Use spaces instead of tabs
-    set expandtab
-    
-    " Be smart when using tabs ;)
-    set smarttab
-    
-    " 1 tab == 4 spaces
-    set shiftwidth=4
+    set expandtab       " Use spaces instead of tabs
+    set smarttab        " Be smart when using tabs ;)
+    set shiftwidth=4    " 1 tab == 4 spaces
     set tabstop=4
-    
-    " Linebreak on 500 characters
-    set lbr
+    set lbr             " Linebreak on 500 characters
     set tw=500
-    
-    set ai "Auto indent
-    set si "Smart indent
-    set wrap "Wrap lines
-    
+    set ai              " Auto indent, i.e., set autoindent
+                        " A new line will have same indent with the last line
+    set si              " Smart indent, i.e., set smartindent
+                        " A new line will have same indent with the last line,
+                        " and indent will be cancelled if '}' (right brace) is
+                        " encountered
+    set wrap            " Wrap lines
     
     """"""""""""""""""""""""""""""
     " => Visual mode related
@@ -228,7 +176,6 @@ function s:setup_general()
     " Super useful! From an idea by Michael Naumann
     vnoremap <silent> * :call VisualSelection('f')<CR>
     vnoremap <silent> # :call VisualSelection('b')<CR>
-    
     
     """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
     " => Moving around, tabs, windows and buffers
@@ -292,14 +239,13 @@ function s:setup_general()
     """"""""""""""""""""""""""""""
     " => Status line
     """"""""""""""""""""""""""""""
-    " Always show the status line
+    " --> Always show the status line
     " laststatus == 1 : no status line when there's only one window. Would display status line for more than one window. @cailong
     " laststatus == 2 : always add status line. @cailong
     " set laststatus=2
     
-    " Format the status line
+    " --> Format the status line (Basic statusline settings)
     " set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ [POS=%04l,%04v][%p%%]
-    
     
     """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
     " => Editing mappings
@@ -313,17 +259,9 @@ function s:setup_general()
     vmap <M-j> :m'>+<cr>`<my`>mzgv`yo`z
     vmap <M-k> :m'<-2<cr>`>my`<mzgv`yo`z
     
-    ""if has("mac") || has("macunix")
-    ""  nmap <D-j> <M-j>
-    ""  nmap <D-k> <M-k>
-    ""  vmap <D-j> <M-j>
-    ""  vmap <D-k> <M-k>
-    ""endif
-    
     " see function DeleteTrailingWS below
     autocmd BufWrite *.py :call DeleteTrailingWS()
     autocmd BufWrite *.coffee :call DeleteTrailingWS()
-    
     
     """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
     " => vimgrep searching and cope displaying
@@ -391,31 +329,9 @@ function s:setup_general()
     "---------------------------------------------------------------
     "cailong's own settings
     "---------------------------------------------------------------
-    " Show line numbers
-    set nu
-    " Use C style indent"
-    set cin
-    " A new line will have same indent with the last line,
-    " and indent will be cancelled if '}' (right brace) is
-    " encountered
-    set smartindent
-    " A new line will have same indent with the last line
-    set autoindent
-
-    " GUI font
-    ""set guifont=DejaVu\ Sans\ Mono\ 10
-    ""set guifont=Mono\ 10
-    ""set guifont=Monospace\ 18
-    ""set guifont=Source\ Code\ Pro\ for\ Powerline\ Regular\ 16
-    ""set guifont=Consolas:h14:cANSI
-    ""set guifont=Inconsolata\ for\ Powerline\ 22
-    set guifont=Monospace\ 22
-
-    "Don't wrap lines
-    set nowrap
-    
-    " Backspace could delete auto-indent, EOF, and character at beginning of a line
-    set backspace=indent,eol,start
+    set nu " Show line numbers
+    set cin " Use C style indent"
+    set nowrap "Don't wrap lines
     
     "In INSERT MODE, You could use Ctrl+j/k/h/l to move around as well. Just as j/h/k/l do in VISUAL MODE
     inoremap <C-h> <Left>
@@ -444,21 +360,7 @@ function s:setup_general()
     "In INSERT MODE, semicolon is used to end a line. So double press it to enter ";" and jump to next line
     :inoremap ;; <ESC>A;<CR>
     
-    
     inoremap " ""<ESC>i
-    
-    ""if s:cur_is_gui
-    ""  " GUI is running or is about to start.
-    ""  " Set window size(by longc)
-    ""  ""set lines=50 columns=150
-    ""  set lines=33 columns=100
-    ""  " Set window position(by longc)
-    ""  ""winpos 500 50 
-    ""  winpos 400 40 
-    ""else
-    ""  " This is console Vim
-    ""endif
-
 endfunction " End of function s:setup_general
 
 
@@ -631,13 +533,12 @@ function MyDiff()
 endfunction
 
 """ ------------------------------------------------------
-""" Setup for the coc-nvim
+""" Setup for the python3 binary
 """ ------------------------------------------------------
 function s:setup_python3()
-    ""let g:python3_host_prog="C:/Python36/python.exe"
+    " --> Specify a different Python binary for coc-nvim
     let g:python3_host_prog=s:mypython3_host_prog
 endfunction
-
 
 """ ------------------------------------------------------
 """ Setup for the coc-nvim
@@ -680,11 +581,6 @@ function s:setup_airline()
     
     set laststatus=2
     if s:cur_is_gui
-        ""set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 11
-        ""set guifont=Inconsolata\ for\ Powerline\ 22
-        ""set guifont=Monospace\ 22
-        ""set guifont=DejaVu_Sans_Mono_for_Powerline:h14:cANSI
-        ""set guifont=Inconsolata_for_Powerline:h18:cANSI
         set guifont=Inconsolata_for_Powerline:h18:cANSI
         " powerline symbols
         let g:airline_left_sep = ''
@@ -752,38 +648,14 @@ function s:setup_nerdtree()
     " K - first node in this dir
 endfunction " End of function s:setup_nerdtree
 
-
-" ------------------------------------------------------
-" CtrlP
-" ------------------------------------------------------
-function s:setup_ctrlp()
-" let g:ctrlp_map = '<C-P>'
-" let g:ctrlp_cmd = 'CtrlP'
-let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:10,result:20'
-let g:ctrlp_working_path_mode = 'rw'
-endfunction " End of function s:setup_ctrlp
-
-" ------------------------------------------------------
-" taglist
-" ------------------------------------------------------
-" function s:setup_taglist()
-"     let Tlist_Ctags_Cmd='ctags'
-"     let Tlist_Show_One_File=1
-"     let Tlist_WinWidt=28
-"     let Tlist_Exit_OnlyWindow=1
-"     let Tlist_Use_Left_Windo=1
-"     ""Toggle on/off the function list of source file
-"     ""<CR> means Enter, equal to <Enter>
-"     map <F2> :TlistToggle<CR>
-" endfunction " End of function s:setup_taglist
-
 """ ------------------------------------------------------
 """ tagbar
 """ ------------------------------------------------------
 function s:setup_tagbar()
     nmap <F2> :TagbarToggle<CR>
-    ""let g:tagbar_ctags_bin = '~/proc/ctags5.8/bin/ctags'
-    ""let g:tagbar_ctags_bin = '/usr/bin/ctags'
+    " --> Linux style
+    " let g:tagbar_ctags_bin = '~/proc/ctags5.8/bin/ctags'
+    " --> Windows style
     ""let g:tagbar_ctags_bin = 'D:/procs/ctags59/ctags.exe'
     let g:tagbar_ctags_bin = s:myctags_for_tagbar
     let g:tagbar_width = 30
@@ -832,18 +704,6 @@ function s:setup_easymotion()
 endfunction " End of function s:setup_easymotion
 
 " ------------------------------------------------------
-" Incsearch
-" ------------------------------------------------------
-function s:setup_incsearch()
-    " " This will highlight all matched patterns when searching
-    " " This replace the vim's default behavior for key '/'
-    " map / <Plug>(incsearch-forward)
-    " map ? <Plug>(incsearch-backward)
-    " map g/ <Plug>(incsearch-stay)
-endfunction " End of function s:setup_incsearch
-
-
-" ------------------------------------------------------
 " vim-color-scheme
 " ------------------------------------------------------
 function s:setup_vimcolorscheme()
@@ -854,7 +714,6 @@ function s:setup_vimcolorscheme()
         colorscheme solarized
     endif
 endfunction " End of function s:setup_vimcolorscheme
-
 
 " ------------------------------------------------------
 " YouCompleteMe
@@ -928,10 +787,13 @@ function s:setup_font()
         return
     endif
 
-    ""set guifont=Inconsolata_for_Powerline:h18:cANSI
+    " --> Setting style on Windows platform
+    " set guifont=Inconsolata_for_Powerline:h18:cANSI
+    " --> Setting style on Linux platform
+    " set guifont=Inconsolata\ for\ Powerline\ 22
+    set guifont=Inconsolata_for_Powerline:h18:cANSI
 	
 endfunction " End of function s:setup_font
-
 
 " ------------------------------------------------------
 " This function implements main flow to call other
@@ -943,11 +805,9 @@ function s:main_proc()
     call s:setup_general()
     call s:setup_airline()
     call s:setup_nerdtree()
-    call s:setup_ctrlp()
     call s:setup_tagbar()
     call s:setup_easymotion()
     call s:setup_coc_nvim()
-    "" call s:setup_incsearch()
     call s:setup_vimcolorscheme()
     "" call s:setup_youcompleteme()
     call s:setup_winsizepos()
