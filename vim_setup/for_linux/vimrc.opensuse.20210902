@@ -644,7 +644,10 @@ function s:setup_airline()
     if has("gui_running")
         ""set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 11
         ""set guifont=Inconsolata\ for\ Powerline\ 22
-        set guifont=Monospace\ 22
+        ""set guifont=Monospace\ 22
+        ""set guifont=DejaVu_Sans_Mono_for_Powerline:h14:cANSI
+        ""set guifont=Inconsolata_for_Powerline:h18:cANSI
+        set guifont=Inconsolata_for_Powerline:h18:cANSI
         " powerline symbols
         let g:airline_left_sep = ''
         let g:airline_left_alt_sep = ''
