@@ -364,11 +364,8 @@ function s:setup_general()
 endfunction " End of function s:setup_general
 
 
-
 " --------------------------------------------------------------------------------
-"
 " Function definitions
-"
 " --------------------------------------------------------------------------------
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -692,15 +689,6 @@ function s:setup_easymotion()
 
     let g:EasyMotion_smartcase = 1
     " let g:EasyMotion_startofline = 0 " keep cursor column when JK motion
-    ""map <leader><leader>j <Plug>(easymotion-j)
-    ""map <leader><leader>k <Plug>(easymotion-k)
-    ""map <leader><leader>h <Plug>(easymotion-linebackward)
-    ""map <leader><leader>l <Plug>(easymotion-lineforward)
-    ""map <leader><leader>. <Plug>(easymotion-repeat)
-    ""map <leader><leader>/ <Plugin>(easymotion-sn)
-    ""omap <leader><leader>/ <Plugin>(easymotion-tn)
-    ""map n <Plug>(easymotion-next)
-    ""map N <Plug>(easymotion-prev)
 endfunction " End of function s:setup_easymotion
 
 " ------------------------------------------------------
