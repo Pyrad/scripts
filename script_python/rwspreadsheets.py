@@ -1,9 +1,17 @@
 import pandas as pd
 import sys
 import os
+import time
+import datetime
 
 #from openpyxl import load_workbook
 import openpyxl
+
+
+"""
+Ref links:
+https://stackoverflow.com/questions/45103927/appending-rows-in-excel-xlswriter
+"""
 
 def write_spreadsheet_by_columns():
     # A dict
@@ -112,11 +120,78 @@ def append_rows_to_existing_spreadsheet():
 
     wb.save(spfname)
 
+def create_city_resale_spreadsheet_with_header(spfname, sheet_name="CityResaleNum"):
+
+    if not isinstance(spfname, str):
+        return False
+
+    # If file exists, assume this function should not be called
+    if os.path.isfile(spfname) is True:
+        return False
+
+    dt_cols = ["Date", "Time", "Weekday", "Week"]
+    city_cols = [ "Beijing", "Guangzhou", "Suzhou", "Hangzhou",
+                  "Nanjing", "Xian", "Chengdu", "Chongqing",
+                  "Tianjin", "Hefei", "Fuzhou", "Xiamen",
+                  "Changsha", "Shanghai", "Shenzhen", "Wuhan",]
+
+    # Header columns, first 4 are date, time, weekday, week, the rest are city names
+    # Current there are 16 cities
+    header_columns = dt_cols.copy()
+    header_columns.extend(city_cols)
+
+    df = pd.DataFrame(columns=header_columns)
+    try:
+        df.to_excel(spfname, sheet_name=sheet_name, index=False)
+    except PermissionError as perr:
+        print(f"PermissionError: errono = {perr.errno}")
+        print(f"PermissionError: strerror = {perr.strerror}")
+        print(f"PermissionError: filename = \'{perr.filename}\'")
+    except Exception as e:
+        print(e.what())
+
+    return os.path.isfile(spfname)
+
+def get_date_time_value_list():
+    #dtime = datetime.date.fromtimestamp(datetime.datetime.now())
+    dtime = datetime.datetime.now()
+    # Date string
+    date_str = dtime.strftime("%Y-%m-%d")
+    # Time string
+    time_str = dtime.strftime("%H:%M:%S")
+    # Week day for today
+    day_str = dtime.strftime("%A")
+    # Which week
+    week_str = dtime.strftime("%W") # %U also works
+
+    return [date_str, time_str, day_str, week_str]
+
+def append_1_row_to_spreadsheet(spfname, sheet_name="CityResaleNum"):
+
+    if not isinstance(spfname, str):
+        return False
+
+    if os.path.isfile(spfname) is False:
+        if create_city_resale_spreadsheet_with_header(spfname, sheet_name) is False:
+            return False
+
+    #row_val = get_date_time_value_list().extend([13]*16)
+    row_val = get_date_time_value_list()
+    row_val.extend([13]*16)
+    print(row_val)
+
+    # Use openpyxl directly to append rows to an existing spreadsheet
+    wb = openpyxl.load_workbook(spfname)
+    ws = wb.worksheets[0]
+    ws.append(row_val)
+    wb.save(spfname)
+
 
 
 if __name__ == "__main__":
     #write_spreadsheet_by_columns()
     #write_spreadsheet_by_rows()
-    append_rows_to_existing_spreadsheet()
+    #append_rows_to_existing_spreadsheet()
+    append_1_row_to_spreadsheet("city_resale_16.xlsx")
 
 
