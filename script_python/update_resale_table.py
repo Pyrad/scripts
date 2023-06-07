@@ -83,17 +83,17 @@ class ResaleTableRefresh:
                     if not curline.startswith("\\mathrm"):
                         continue
                     st = TableState.st_time
-                    print(f"TableState.st_date len(clist) = {len(clist)}")
+                    #print(f"TableState.st_date len(clist) = {len(clist)}")
                     colstr = self.curtime.strftime("\\mathrm{%m-%d}")
                     if colstr in clist:
                         ncol = clist.index(colstr)
-                        print(f"Found date column is {ncol}")
+                        #print(f"Found date column is {ncol}")
                         self.table_data_date_time.append(curline)
                 elif st == TableState.st_time:
                     if not curline.startswith("\\mathrm"):
                         continue
                     st = TableState.st_city_num
-                    print(f"TableState.st_time len(clist) = {len(clist)}")
+                    #print(f"TableState.st_time len(clist) = {len(clist)}")
                     if ncol >= 0:
                         curtimestr = self.curtime.strftime("\\mathrm{%H:%M}")
                         clist[ncol] = curtimestr
@@ -106,7 +106,7 @@ class ResaleTableRefresh:
                     if hline_cnt == 3:
                         st = TableState.st_city_num_unkown
                         continue
-                    print(f"TableState.st_city_num len(clist) = {len(clist)}, clist[0] = {clist[0]}, {clist[0] in self.city_names}")
+                    #print(f"TableState.st_city_num len(clist) = {len(clist)}, clist[0] = {clist[0]}, {clist[0] in self.city_names}")
                     if ncol >= 0:
                         curnumstr = self.cdata.get(self.get_en_city_name(clist[ncol]), 0)
                         clist[ncol] = str(curnumstr)
@@ -115,7 +115,7 @@ class ResaleTableRefresh:
                     if curline.startswith("\\hline"):
                         st = TableState.st_end
                         continue
-                    print(f"TableState.st_city_num_unkown len(clist) = {len(clist)}, clist[0] = {clist[0]}, {clist[0] in self.city_names}")
+                    #print(f"TableState.st_city_num_unkown len(clist) = {len(clist)}, clist[0] = {clist[0]}, {clist[0] in self.city_names}")
                     if ncol >= 0:
                         curnumstr = self.cdata.get(self.get_en_city_name(clist[ncol]), 0)
                         clist[ncol] = str(curnumstr)
