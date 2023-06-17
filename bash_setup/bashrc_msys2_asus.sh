@@ -8,6 +8,34 @@ DEBUG_FLAG=0
 [[ $DEBUG_FLAG -eq 1 ]] && [[ "$-" != *i* ]] && echo "Not interactive shell, return"
 [[ "$-" != *i* ]] && return
 
+
+################################################################################
+# After mingw64/mingw-w64-x86_64-meld3 is installed, the following messages
+# come up, thus set XDG_DATA_DIRS and XDG_DATA_HOME
+################################################################################
+# Note that 'D:/procs/msys64/mingw64/share' is not in the search path
+# set by the XDG_DATA_HOME and XDG_DATA_DIRS
+# environment variables, so applications may not
+# be able to find it until you set them. The
+# directories currently searched are:
+#
+# - D:\procs\msys64\home\Pyrad\.local\share
+# - D:\procs\msys64\mingw64\share\
+# - D:\procs\msys64\usr\local\share\
+# - D:\procs\msys64\usr\share\
+
+if [[ -z "$XDG_DATA_HOME" ]]; then
+      export XDG_DATA_HOME="/mingw64/share"
+else
+      export XDG_DATA_HOME="$XDG_DATA_HOME:/mingw64/share"
+fi
+if [[ -z "$XDG_DATA_DIRS" ]]; then
+      export XDG_DATA_DIRS="/mingw64/share"
+else
+      export XDG_DATA_DIRS="$XDG_DATA_DIRS:/mingw64/share"
+fi
+
+
 ### If current is Chinese language, reset it to English
 IS_CN_LANG=0
 [[ ! -z $LANG ]] && [[ $LANG == "zh_CN.UTF-8" || $LANG == "zh_CN" ]] && IS_CN_LANG=1
@@ -119,6 +147,7 @@ alias cdworkgitee='cd /d/Gitee'
 alias g='git'
 alias gs='git status'
 alias gd='git difftool -t meld --no-prompt'
+alias gp='git pull'
 #alias gd='git difftool -t p4merge --no-prompt'
 alias ll='ls -l'	# long list
 alias la='ls -A'	# all but . and ..
@@ -132,7 +161,6 @@ alias cgdb='/home/Pyrad/procs/cgdb/bin/cgdb'
 export -n EDITOR='vim'
 export -n VISUAL='vim'
 export -n GIT_EDITOR='vim'
-
 
 
 
