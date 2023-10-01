@@ -162,5 +162,26 @@ export -n EDITOR='vim'
 export -n VISUAL='vim'
 export -n GIT_EDITOR='vim'
 
+######################################################
+### In order to distinguish different host machines,
+### introduce an environmental variable, thus it can
+### be checked to decide which lib/path/tool/.. to use
+### This is especially useful when building "cpp11"
+### project
+### Currently this variable will be defined as the following,
+### Host machine
+### 1.  Variable Name: DISTINGUISH_NICKNAME
+###    Variable Value: Asus_Win7_MSYS2
+###      Host machine: MSYS2 on Windows 7, ASUS desktop
+### 2.  Variable Name: DISTINGUISH_NICKNAME
+###    Variable Value: Asus_Win7_VBox_Ubuntu_20_04_LTS
+###      Host machine: Ubuntu 20.04 LTS installed on VirtualBox, Windows 7, Asus desktop
+### 3.  Variable Name: DISTINGUISH_NICKNAME
+###    Variable Value: Asus_Win7_VBox_OpenSUSE
+###      Host machine: OpenSUSE installed on VirtualBox, Windows 7, Asus desktop
+######################################################
+export DISTINGUISH_NICKNAME="Asus_Win7_MSYS2"
+#export DISTINGUISH_NICKNAME="Asus_Win7_VBox_Ubuntu_20_04_LTS"
+#export DISTINGUISH_NICKNAME="Asus_Win7_VBox_OpenSUSE"
 
 
