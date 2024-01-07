@@ -170,18 +170,18 @@ export -n GIT_EDITOR='vim'
 ### project
 ### Currently this variable will be defined as the following,
 ### Host machine
-### 1.  Variable Name: DISTINGUISHED_NICKNAME
+### 1.  Variable Name: DEV_NICKNAME
 ###    Variable Value: Asus_Win7_MSYS2
 ###      Host machine: MSYS2 on Windows 7, ASUS desktop
-### 2.  Variable Name: DISTINGUISHED_NICKNAME
+### 2.  Variable Name: DEV_NICKNAME
 ###    Variable Value: Asus_Win7_VBox_Ubuntu_20_04_LTS
 ###      Host machine: Ubuntu 20.04 LTS installed on VirtualBox, Windows 7, Asus desktop
-### 3.  Variable Name: DISTINGUISHED_NICKNAME
+### 3.  Variable Name: DEV_NICKNAME
 ###    Variable Value: Asus_Win7_VBox_OpenSUSE
 ###      Host machine: OpenSUSE installed on VirtualBox, Windows 7, Asus desktop
 ######################################################
-export DISTINGUISHED_NICKNAME="Asus_Win7_MSYS2"
-#export DISTINGUISHED_NICKNAME="Asus_Win7_VBox_Ubuntu_20_04_LTS"
-#export DISTINGUISHED_NICKNAME="Asus_Win7_VBox_OpenSUSE"
+export DEV_NICKNAME="Asus_Win7_MSYS2"
+#export DEV_NICKNAME="Asus_Win7_VBox_Ubuntu_20_04_LTS"
+#export DEV_NICKNAME="Asus_Win7_VBox_OpenSUSE"
 
 
