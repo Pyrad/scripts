@@ -1,21 +1,36 @@
-#!/bin/sh -
+#!/bin/bash -
 
 TIMECHK0=$SECONDS
 ########################################
 #### The following must be specified
 ########################################
 #### Base path where all programs are installed into
-PREFIX_BASE='/home/pyrad/temp/tmpprocs'
+PREFIX_BASE='/home/pyrad/proc'
+
 #### Where is the tarball?
-TARBALL='/home/pyrad/temp/tmpswap/tk8.6.10-src.tar.gz'
+TARBALL='/home/pyrad/swap/tk8.6.17-src.tar.gz'
+
 #### Install to where?
-INSTALL_DIR_NAME="tk8.6.10"
+INSTALL_DIR_NAME="tk8.6.17"
+
 #### Test mode? If it is, configure, make and
 #### make install will be skipped to avoid wasting
 #### time for test
 TESTMODE=0
+
 #### wait time for reminder
 WAIT_SEC=2
+
+#### How many cores to use for compile?
+n_cpu=4
+
+#### Set CFLAGS and LDFLAGS, mainly for rpath
+export CFLAGS="-I/home/pyrad/proc/$INSTALL_DIR_NAME/include"
+export LDFLAGS="-L/home/pyrad/proc/$INSTALL_DIR_NAME/lib -Wl,-rpath,/home/pyrad/proc/$INSTALL_DIR_NAME/lib"
+
+########################################
+#### End setting variables before compile
+########################################
 
 # Path of tarball
 TARBALL_PATH=`dirname $TARBALL`
@@ -48,8 +63,9 @@ if [[ ! -e $TARBALL ]]; then
 fi
 
 # Step 1.0: Check the folder name in tarball
-TCL_FOLDER=`tar -tf $TARBALL_NAME | head -n 1`
-echo -e "[${INFO}] TCL_FOLDER is $TCL_FOLDER"
+TK_FOLDER=`tar -tf $TARBALL_NAME | head -n 1`
+TK_FOLDER=${TK_FOLDER%/}
+echo -e "[${INFO}] TK_FOLDER is $TK_FOLDER"
 # Step 1.1: Check whether the folder for installation exists in PREFIX_BASE
 #           If it doesn't exist, create it
 INSTALL_TO_PATH="${PREFIX_BASE}/${INSTALL_DIR_NAME}"
@@ -65,7 +81,7 @@ echo -e "[${INFO}] Tcl binary will be installed into $INSTALL_TO_PATH"
 # Step 2.0: Before decompressed, check whether it has 
 #           already been decompressed or not?
 # Step 2.1: decompress the tarball of python source
-BUILD_PATH="${TARBALL_PATH}/${TCL_FOLDER}/unix"
+BUILD_PATH="${TARBALL_PATH}/${TK_FOLDER}/unix"
 echo -e "[${INFO}] Check if build folder exists: $BUILD_PATH"
 if [[ -d $BUILD_PATH ]]; then
     echo -e "[${INFO}] Tarball has already been decompressed"
