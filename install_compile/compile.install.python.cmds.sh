@@ -1,28 +1,59 @@
-#!/bin/sh -
+#!/bin/bash -
 
 TIMECHK0=$SECONDS
 ########################################
 #### The following must be specified
 ########################################
 #### Prerequisites: tcl & tk
-TCL_HOME='/home/pyrad/procs/tcl8.6.10'
-TK_HOME='/home/pyrad/procs/tk8.6.10'
+TCL_HOME='/home/pyrad/procs/tcl8.6.17'
+TK_HOME='/home/pyrad/procs/tk8.6.17'
+
 #### Base path where all programs are installed into
-PREFIX_BASE='/home/pyrad/temp/tmpprocs'
+PREFIX_BASE='/home/pyrad/proc'
+
 #### Where is the tarball?
-TARBALL='/home/pyrad/temp/tmpswap/Python-3.8.3.tar.xz'
+TARBALL='/home/pyrad/swap/Python-3.13.7.tgz'
+
 #### Test mode? If it is, configure, make and
 #### make install will be skipped to avoid wasting
 #### time for test
-TESTMODE=1
+TESTMODE=0
+
+#### How many cores to compile?
+n_cpu=4
+
 #### wait time for reminder
 WAIT_SEC=1
 
+#### Path to openssl root path
+SSL_SEARCH_PATH='/home/pyrad/proc/openssl3.5.2'
 
-# tcl & tk include files & libs
+#### GCC
+GCC_PATH="/usr/bin"
+CXX_BIN="${GCC_PATH}/g++"
+CC_BIN="${GCC_PATH}/gcc"
+
+#### tcl & tk include files & libs
 TCL_INC="$TCL_HOME/include"
 TCL_LIB="$TCL_HOME/lib"
 TCL_LIB_NAME="tcl8.6"
+
+#### Set 2 variables so Python configure can aware of it
+export TCLTK_CFLAGS="-I${TCL_INC} -I${TK_INC}"
+export TCLTK_LIBS="-L$TCL_LIB -L$TK_LIB -l${TCL_LIB_NAME} -l${TK_LIB_NAME}"
+
+
+# export LDFLAGS="-L${SSL_SEARCH_PATH}/lib64 -lssl -lpthread -ldl -Wl,--rpath=${SSL_SEARCH_PATH}/lib64:${INSTALL_TO_PATH}/lib"
+# export CFLAGS="-I${SSL_SEARCH_PATH}/include"
+
+# LDFLAGS_VAL="-L${SSL_SEARCH_PATH}/lib64"
+# LDFLAGS_VAL="$LDFLAGS -lssl -lpthread -ldl"
+# LDFLAGS_VAL="$LDFLAGS -Wl,--rpath=${SSL_SEARCH_PATH}/lib64:${INSTALL_TO_PATH}/lib"
+# export LDFLAGS=$LDFLAGS_VAL
+
+########################################
+#### End setting variables before compile
+########################################
 
 TK_INC="$TK_HOME/include"
 TK_LIB="$TK_HOME/lib"
@@ -30,6 +61,7 @@ TK_LIB_NAME="tk8.6"
 
 # Path of tarball
 TARBALL_PATH=`dirname $TARBALL`
+TARBALL_PATH=${TARBALL_PATH%/}
 # Name of tarball
 TARBALL_NAME=`basename $TARBALL`
 
@@ -43,6 +75,22 @@ RESET_V='\033[0m'
 INFO="${GREEN_V}INFO${RESET_V}"
 WARNING="${YELLOW_V}WARNING${RESET_V}"
 ERROR="${RED_V}ERROR${RESET_V}"
+
+
+# Check if gcc and g++ exist
+if [[ -f $GXX_BIN ]]; then
+    echo -e "[${ERROR}] GXX_BIN is set to $GXX_BIN, but it does not exist, please check."
+    exit 1
+else
+    echo -e "[${INFO}] GXX_BIN is set to $GXX_BIN, it exists."
+fi
+if [[ -f $GCC_BIN ]]; then
+    echo -e "[${ERROR}] GCC_BIN is set to $GCC_BIN, but it does not exist, please check."
+    exit 1
+else
+    echo -e "[${INFO}] GCC_BIN is set to $GCC_BIN, it exists."
+fi
+
 
 echo -e "[${INFO}] Tarball path is: $TARBALL_PATH"
 echo -e "[${INFO}] Tarball name is: $TARBALL_NAME"
@@ -60,6 +108,7 @@ fi
 
 # Step 1.0: Check the folder name in tarball
 PY_FOLDER=`tar -tf $TARBALL_NAME | head -n 1`
+PY_FOLDER=${PY_FOLDER%/}
 echo -e "[${INFO}] PY_FOLDER is $PY_FOLDER"
 # Step 1.1: Check whether the folder for installation exists in PREFIX_BASE
 #           If it doesn't exist, create it
@@ -73,6 +122,13 @@ fi
 echo -e "[${INFO}] Python binary will be installed into $INSTALL_TO_PATH"
 
 
+# Set rpath option by LDFLAGS
+LDFLAGS_VAL="-L${SSL_SEARCH_PATH}/lib64"
+LDFLAGS_VAL="$LDFLAGS -lssl -lpthread -ldl"
+LDFLAGS_VAL="$LDFLAGS -Wl,--rpath=${SSL_SEARCH_PATH}/lib64:${INSTALL_TO_PATH}/lib"
+export LDFLAGS=$LDFLAGS_VAL
+
+
 # Step 2.0: Before decompressed, check whether it has 
 #           already been decompressed or not?
 # Step 2.1: decompress the tarball of python source
@@ -83,7 +139,7 @@ if [[ -d $BUILD_PATH ]]; then
 else
     echo -e "[${INFO}] Tarball hasn't been decompressed yet, ready to decompress"
     echo -e -n "[${INFO}] Decompressing... "
-    tar -xf $TARBALL
+    tar -zxf $TARBALL
     echo -e "Done"
 fi
 
@@ -98,14 +154,31 @@ cd $BUILD_PATH
 echo -e "[${INFO}] Change dir to $BUILD_PATH"
 echo -e "[$WARNING] Takes a while to configure..."
 sleep $WAIT_SEC
-if [[ -e ./configure ]]; then
+CONFIG_EXEC_FILE=./configure
+if [[ -e $CONFIG_EXEC_FILE ]]; then
     if [[ $TESTMODE -ne 1 ]]; then
         echo "[$INFO] Start configuration"
-        ./configure --prefix="${INSTALL_TO_PATH}" \
-            --enable-optimizations --with-lto \
-            --with-ssl \
-            --enable-shared --with-tcltk-includes="-I${TCL_INC} -I${TK_INC}" \
-            --with-tcltk-libs="-L${TCL_LIB} -L${TK_LIB} -l${TCL_LIB_NAME} -l${TK_LIB_NAME}"
+        # ./configure --prefix="${INSTALL_TO_PATH}" \
+        #    --enable-optimizations --with-lto \
+        #    --with-ssl \
+        #    --enable-shared --with-tcltk-includes="-I${TCL_INC} -I${TK_INC}" \
+        #    --with-tcltk-libs="-L${TCL_LIB} -L${TK_LIB} -l${TCL_LIB_NAME} -l${TK_LIB_NAME}"
+
+        $CONFIG_EXEC_FILE --prefix=${INSTALL_TO_PATH} \
+           --enable-optimizations \
+           --with-lto \
+           CXX=${CXX_BIN} CC=${CC_BIN} \
+           --enable-shared \
+           --with-openssl=$SSL_SEARCH_PATH \
+           --with-openssl-rpath=${SSL_SEARCH_PATH}/lib64 \
+
+        if [[ $? -eq 0 ]]; then
+           echo -e "[${INFO}] Configuration done (without error)"
+        else
+           echo -e "[${INFO}] Configuration failed (error occurred)"
+           exit 1
+        fi
+
         echo -e "[${INFO}] Configuration done"
     else
         echo -e "[$WARNING] Test-mode, skip configuration"
@@ -121,7 +194,7 @@ sleep $WAIT_SEC
 TIMECHK_BEFORE_MAKE=$SECONDS
 if [[ $TESTMODE -ne 1 ]]; then
     echo -e "[${INFO}] Start building..."
-    make
+    make -j $n_cpu
     echo -e "[${INFO}] Build done"
 else
     echo -e "[$WARNING] Test-mode, skip building"
