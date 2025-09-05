@@ -1,21 +1,48 @@
-#!/bin/sh -
+#!/bin/bash -
+
+########################################
+# NOTES
+# On Ubuntu, install the following packages if needed
+########################################
+# sudo apt-get install build-essential
+# sudo apt-get install manpages-dev man-db manpages-posix-dev
+# sudo apt install libx11-dev
+# sudo apt install cgdb
+# sudo apt-get install automake
+# sudo apt-get install zip
+# sudo apt-get install libssl-dev
+# sudo apt install build-essential
+# sudo apt install python3-dev libssl-dev cmake make git ubuntu-standard gdb valgrind strace
+# sudo apt install htop
+# sudo apt install libncurses-dev
+# sudo apt install flex bison
+# sudo apt install makeinfo
+# sudo apt install texinfo
+# sudo apt install libreadline-dev
 
 TIMECHK0=$SECONDS
 ########################################
 #### The following must be specified
 ########################################
 #### Base path where all programs are installed into
-PREFIX_BASE='/home/pyrad/procs'
+PREFIX_BASE='/home/pyrad/proc'
+
 #### Where is the tarball?
-TARBALL='/home/pyrad/swap/cgdb-master.zip'
+TARBALL='/home/pyrad/swap/cgdb-0.8.0.tar.gz'
+
 #### Install to where?
 INSTALL_DIR_NAME="cgdb"
+
 #### Test mode? If it is, configure, make and
 #### make install will be skipped to avoid wasting
 #### time for test
 TESTMODE=0
+
 #### wait time for reminder
 WAIT_SEC=2
+
+#### Number of cores to use
+n_cpu=2
 
 # Path of tarball
 TARBALL_PATH=`dirname $TARBALL`
@@ -47,8 +74,43 @@ if [[ ! -e $TARBALL ]]; then
     exit
 fi
 
+# Step 0.1: Check tarball to select which command to decompress
+TARBALL_FORMAT=`file $TARBALL | awk '{print $2}'`
+DECOMP_CMD=""
+case "$TARBALL_FORMAT" in
+    gzip)
+        DECOMP_CMD="tar -zxf "
+        ;;
+    bzip2)
+        DECOMP_CMD="tar -jxf "
+        ;;
+    XZ)
+        DECOMP_CMD="tar -Jxf "
+        ;;
+    Zip)
+        DECOMP_CMD="unzip -q "
+        ;;
+    *)
+        echo -e "[${ERROR}] Unknown file format for tarball: $TARBALL"
+        echo -e "[${ERROR}] Unable to decompress due to unknown format"
+        echo -e "[${ERROR}] Exit"
+        exit -1
+        ;;
+esac
+
+echo -e "[${INFO}] Tarball file format: $TARBALL_FORMAT"
+echo -e "[${INFO}] Command to decompress tarball: $DECOMP_CMD"
+
+
+
 # Step 1.0: Check the folder name in tarball
-TCL_FOLDER=`zip -sf $TARBALL_NAME | head -n 2 | tail -n 1`
+TCL_FOLDER=
+if [[ "$TARBALL_FORMAT" = "Zip" ]]; then
+    TCL_FOLDER=`zip -sf $TARBALL_NAME | head -n 2 | tail -n 1`
+else
+    TCL_FOLDER=`tar -tf $TARBALL_NAME | head -n 1`
+fi
+
 TCL_FOLDER=`echo $TCL_FOLDER | sed 's/ *$//g' | sed 's/^ *//g'`
 TCL_FOLDER=${TCL_FOLDER%/}
 echo -e "[${INFO}] TCL_FOLDER is: $TCL_FOLDER"
@@ -74,7 +136,8 @@ if [[ -d $BUILD_PATH ]]; then
 else
     echo -e "[${INFO}] Tarball hasn't been decompressed yet, ready to decompress"
     echo -e -n "[${INFO}] Decompressing... "
-    unzip -q $TARBALL
+    # unzip -q $TARBALL
+    $DECOMP_CMD $TARBALL
     echo -e "Done"
 fi
 
@@ -109,6 +172,12 @@ if [[ -e ./configure ]]; then
     if [[ $TESTMODE -ne 1 ]]; then
         echo "[$INFO] Start configuration"
         ./configure --prefix="$INSTALL_TO_PATH"
+	if [[ $? == 0 ]]; then
+            echo -e "[${INFO}] Configuration finished without errors"
+	else
+            echo -e "[${ERROR}] Configuration finished with errors, please check"
+	    exit 1
+	fi
         echo -e "[${INFO}] Configuration done"
     else
         echo -e "[$WARNING] Test-mode, skip configuration"
@@ -125,7 +194,7 @@ sleep $WAIT_SEC
 TIMECHK_BEFORE_MAKE=$SECONDS
 if [[ $TESTMODE -ne 1 ]]; then
     echo -e "[${INFO}] Start building..."
-    make
+    make -j $n_cpu
     echo -e "[${INFO}] Build done"
 else
     echo -e "[$WARNING] Test-mode, skip building"
