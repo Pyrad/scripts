@@ -5,14 +5,15 @@ TIMECHK0=$SECONDS
 #### The following must be specified
 ########################################
 #### Prerequisites: tcl & tk
-TCL_HOME='/home/pyrad/procs/tcl8.6.17'
-TK_HOME='/home/pyrad/procs/tk8.6.17'
+TCL_HOME='/home/pyrad/proc/tcl8.6.17'
+TK_HOME='/home/pyrad/proc/tk8.6.17'
 
 #### Base path where all programs are installed into
 PREFIX_BASE='/home/pyrad/proc'
 
 #### Where is the tarball?
 TARBALL='/home/pyrad/swap/Python-3.13.7.tgz'
+# TARBALL='/home/pyrad/swap/Python-3.12.11.tgz'
 
 #### Test mode? If it is, configure, make and
 #### make install will be skipped to avoid wasting
@@ -38,10 +39,16 @@ TCL_INC="$TCL_HOME/include"
 TCL_LIB="$TCL_HOME/lib"
 TCL_LIB_NAME="tcl8.6"
 
+TK_INC="$TK_HOME/include"
+TK_LIB="$TK_HOME/lib"
+TK_LIB_NAME="tk8.6"
+
 #### Set 2 variables so Python configure can aware of it
 export TCLTK_CFLAGS="-I${TCL_INC} -I${TK_INC}"
 export TCLTK_LIBS="-L$TCL_LIB -L$TK_LIB -l${TCL_LIB_NAME} -l${TK_LIB_NAME}"
 
+# Set PKG_CONFIG_PATH
+export PKG_CONFIG_PATH="${TCL_LIB}/pkgconfig:${TK_LIB}/pkgconfig:$PKG_CONFIG_PATH"
 
 # export LDFLAGS="-L${SSL_SEARCH_PATH}/lib64 -lssl -lpthread -ldl -Wl,--rpath=${SSL_SEARCH_PATH}/lib64:${INSTALL_TO_PATH}/lib"
 # export CFLAGS="-I${SSL_SEARCH_PATH}/include"
@@ -54,10 +61,6 @@ export TCLTK_LIBS="-L$TCL_LIB -L$TK_LIB -l${TCL_LIB_NAME} -l${TK_LIB_NAME}"
 ########################################
 #### End setting variables before compile
 ########################################
-
-TK_INC="$TK_HOME/include"
-TK_LIB="$TK_HOME/lib"
-TK_LIB_NAME="tk8.6"
 
 # Path of tarball
 TARBALL_PATH=`dirname $TARBALL`
@@ -78,17 +81,17 @@ ERROR="${RED_V}ERROR${RESET_V}"
 
 
 # Check if gcc and g++ exist
-if [[ -f $GXX_BIN ]]; then
-    echo -e "[${ERROR}] GXX_BIN is set to $GXX_BIN, but it does not exist, please check."
-    exit 1
+if [[ -f $CXX_BIN ]]; then
+    echo -e "[${INFO}] CXX_BIN is set to $CXX_BIN, it exists."
 else
-    echo -e "[${INFO}] GXX_BIN is set to $GXX_BIN, it exists."
+    echo -e "[${ERROR}] CXX_BIN is set to $CXX_BIN, but it does not exist, please check."
+    exit 1
 fi
-if [[ -f $GCC_BIN ]]; then
-    echo -e "[${ERROR}] GCC_BIN is set to $GCC_BIN, but it does not exist, please check."
-    exit 1
+if [[ -f $CC_BIN ]]; then
+    echo -e "[${INFO}] CC_BIN is set to $CC_BIN, it exists."
 else
-    echo -e "[${INFO}] GCC_BIN is set to $GCC_BIN, it exists."
+    echo -e "[${ERROR}] CC_BIN is set to $CC_BIN, but it does not exist, please check."
+    exit 1
 fi
 
 
@@ -170,7 +173,9 @@ if [[ -e $CONFIG_EXEC_FILE ]]; then
            CXX=${CXX_BIN} CC=${CC_BIN} \
            --enable-shared \
            --with-openssl=$SSL_SEARCH_PATH \
-           --with-openssl-rpath=${SSL_SEARCH_PATH}/lib64 \
+           --with-openssl-rpath=${SSL_SEARCH_PATH}/lib64 | tee myConfigure.log 2>&1
+           # --with-pydebug \
+           # --with-assertions \
 
         if [[ $? -eq 0 ]]; then
            echo -e "[${INFO}] Configuration done (without error)"
@@ -189,12 +194,21 @@ else
 fi
 TIMECHK_AFTER_CONFIG=$SECONDS
 
+# echo -e "[$WARNING] Stop as debug purpose"
+# exit 0
+
 echo -e "[$WARNING] Takes a while to build..."
 sleep $WAIT_SEC
 TIMECHK_BEFORE_MAKE=$SECONDS
 if [[ $TESTMODE -ne 1 ]]; then
     echo -e "[${INFO}] Start building..."
-    make -j $n_cpu
+    make -j $n_cpu | tee myGNUMake.log 2>&1
+    if [[ $? -eq 0 ]]; then
+       echo -e "[${INFO}] GNU make done (without error)"
+    else
+       echo -e "[${ERROR}] GNU make failed (error occurred)"
+       exit 1
+    fi
     echo -e "[${INFO}] Build done"
 else
     echo -e "[$WARNING] Test-mode, skip building"
@@ -206,12 +220,25 @@ sleep $WAIT_SEC
 TIMECHK_BEFORE_MAKEINSTALL=$SECONDS
 if [[ $TESTMODE -ne 1 ]]; then
     echo -e "[${INFO}] Start installing..."
-    make install
+    make install | tee myGNUMakeInstall.log 2>&1
+    if [[ $? -eq 0 ]]; then
+       echo -e "[${INFO}] GNU make install done (without error)"
+    else
+       echo -e "[${ERROR}] GNU make install failed (error occurred)"
+       exit 1
+    fi
     echo -e "[${INFO}] Installation done"
 else
     echo -e "[$WARNING] Test-mode, skip Installation"
 fi
 TIMECHK_AFTER_MAKEINSTALL=$SECONDS
+
+
+#### Unset variables
+unset TCLTK_CFLAGS
+unset TCLTK_LIBS
+unset PKG_CONFIG_PATH
+unset LDFLAGS
 
 # Final step, go back to where I came from
 echo -e "[${INFO}] All finished, go back to original path"
