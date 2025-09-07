@@ -30,6 +30,17 @@ sudo apt install makeinfo
 sudo apt install texinfo
 sudo apt install libreadline-dev
 
+sudo apt-get install build-essential zlib1g-dev libssl-dev libreadline-dev libsqlite3-dev libffi-dev libbz2-dev
+sudo apt-get install liblzma-dev tk-dev xz-utils
+sudo apt-get install libnsl-dev
+
+sudo apt-get build-dep python3
+sudo apt install nodejs npm
+
+sudo apt install build-essential python3 libbz2-dev libz-dev libicu-dev
+sudo apt install clangd xclip nodejs npm meld
+
+
 #
 # I.   Adjust font size
 # II.  Mount a shared folder from host(win10) to virtual machine
